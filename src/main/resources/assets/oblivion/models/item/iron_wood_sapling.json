@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "oblivion:block/iron_wood_sapling"
+  }
+}

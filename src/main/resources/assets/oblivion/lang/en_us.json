@@ -1,3 +1,27 @@
 {
+  "item.oblivion.item_group": "Oblivion",
 
+  "entity.oblivion.shlama": "Shlama",
+  "entity.oblivion.elysian_elk": "Elysian Elk",
+
+  "item.oblivion.spawn_shlama": "Shlama Spawn Egg",
+  "item.oblivion.spawn_elysian_elk": "Elysian Elk Spawn Egg",
+
+  "block.oblivion.iron_wood_button": "Iron Wood Button",
+  "block.oblivion.iron_wood_door": "Iron Wood Door",
+  "block.oblivion.iron_wood_fence": "Iron Wood Fence",
+  "block.oblivion.iron_wood_fence_gate": "Iron Wood Fence Gate",
+  "block.oblivion.iron_wood_hanging_sign": "Iron Wood Hanging Sign",
+  "block.oblivion.iron_wood_leaves": "Iron Wood Leaves",
+  "block.oblivion.iron_wood_log": "Iron Wood Log",
+  "block.oblivion.iron_wood_planks": "Iron Wood Planks",
+  "block.oblivion.iron_wood_pressure_plate": "Iron Wood Pressure Plate",
+  "block.oblivion.iron_wood_sapling": "Iron Wood Sapling",
+  "block.oblivion.iron_wood_sign": "Iron Wood Sign",
+  "block.oblivion.iron_wood_slab": "Iron Wood Slab",
+  "block.oblivion.iron_wood_stairs": "Iron Wood Stairs",
+  "block.oblivion.iron_wood_trapdoor": "Iron Wood Trapdoor",
+  "block.oblivion.iron_wood_wall_hanging_sign": "Iron Wood Wall Hanging Sign",
+  "block.oblivion.iron_wood_wall_sign": "Iron Wood Wall Sign",
+  "block.oblivion.iron_wood": "Iron Wood"
 }

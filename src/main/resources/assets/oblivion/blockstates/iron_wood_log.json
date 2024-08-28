@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "oblivion:block/iron_wood_log_x"
+    },
+    "axis=y": {
+      "model": "oblivion:block/iron_wood_log_y"
+    },
+    "axis=z": {
+      "model": "oblivion:block/iron_wood_log_z"
+    }
+  }
+}

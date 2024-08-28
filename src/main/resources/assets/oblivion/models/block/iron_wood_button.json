@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button",
+  "textures": {
+    "texture": "oblivion:block/iron_wood_planks"
+  }
+}

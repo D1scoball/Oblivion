@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "oblivion:block/stripped_iron_wood_log",
+    "side": "oblivion:block/stripped_iron_wood_log"
+  }
+}

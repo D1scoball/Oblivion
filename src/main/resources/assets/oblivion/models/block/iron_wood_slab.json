@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "oblivion:block/iron_wood_planks",
+    "side": "oblivion:block/iron_wood_planks",
+    "top": "oblivion:block/iron_wood_planks"
+  }
+}

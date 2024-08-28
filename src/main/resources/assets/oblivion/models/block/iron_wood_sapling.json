@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "oblivion:block/iron_wood_sapling"
+  }
+}
