@@ -23,7 +23,7 @@ public class OblivionMain implements ModInitializer {
         TagInit.init();
     }
 
-    public static Identifier id(String name) {
+    public static Identifier identifierOf(String name) {
         return Identifier.of("oblivion", name);
     }
 }

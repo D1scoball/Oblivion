@@ -3,7 +3,6 @@ package net.oblivion.init;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.BlockSetTypeBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.WoodTypeBuilder;
-import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.block.enums.NoteBlockInstrument;
@@ -15,11 +14,14 @@ import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.oblivion.OblivionMain;
+import net.oblivion.block.DrillBlock;
+import net.oblivion.block.MultiOreBlock;
+import net.oblivion.block.entity.DrillBlockEntity;
 
 public class BlockInit {
 
-    public static final BlockSetType IRON_WOOD_SET_TYPE = new BlockSetTypeBuilder().register(OblivionMain.id("iron_wood"));
-    public static final WoodType IRON_WOOD_TYPE = new WoodTypeBuilder().register(OblivionMain.id("iron_wood"),IRON_WOOD_SET_TYPE);
+    public static final BlockSetType IRON_WOOD_SET_TYPE = new BlockSetTypeBuilder().register(OblivionMain.identifierOf("iron_wood"));
+    public static final WoodType IRON_WOOD_TYPE = new WoodTypeBuilder().register(OblivionMain.identifierOf("iron_wood"),IRON_WOOD_SET_TYPE);
 
     public static final Block IRON_WOOD_PLANKS = register("iron_wood_planks", true, new Block(AbstractBlock.Settings.create().mapColor(MapColor.TERRACOTTA_WHITE).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).burnable()));
     public static final Block IRON_WOOD_SAPLING = register("iron_wood_sapling", true, new SaplingBlock(SaplingGenerator.CHERRY, AbstractBlock.Settings.create().mapColor(MapColor.PINK).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CHERRY_SAPLING).pistonBehavior(PistonBehavior.DESTROY)));
@@ -42,8 +44,15 @@ public class BlockInit {
     public static final Block IRON_WOOD_FENCE = register("iron_wood_fence", true, new FenceBlock(AbstractBlock.Settings.create().mapColor(IRON_WOOD_PLANKS.getDefaultMapColor()).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).burnable().sounds(BlockSoundGroup.WOOD)));
     public static final Block IRON_WOOD_DOOR = register("iron_wood_door", true, new DoorBlock(IRON_WOOD_SET_TYPE, AbstractBlock.Settings.create().mapColor(IRON_WOOD_PLANKS.getDefaultMapColor()).instrument(NoteBlockInstrument.BASS).strength(3.0F).nonOpaque().burnable().pistonBehavior(PistonBehavior.DESTROY)));
 
+    public static final Block DRILL = register("drill",true, new DrillBlock(AbstractBlock.Settings.copy(Blocks.LODESTONE).nonOpaque().pistonBehavior(PistonBehavior.IGNORE)));
+
+    public static final Block TEST = register("test",true, new MultiOreBlock(AbstractBlock.Settings.copy(Blocks.DIAMOND_ORE)));
+
+    public static BlockEntityType<DrillBlockEntity> DRILL_BLOCK_ENTITY = Registry.register(Registries.BLOCK_ENTITY_TYPE, OblivionMain.identifierOf("drill_entity"),
+            BlockEntityType.Builder.create(DrillBlockEntity::new, DRILL).build(null));
+
     private static Block register(String id, boolean registerItem, Block block) {
-        return register(OblivionMain.id(id), registerItem, block);
+        return register(OblivionMain.identifierOf(id), registerItem, block);
     }
 
     private static Block register(Identifier id, boolean registerItem, Block block) {

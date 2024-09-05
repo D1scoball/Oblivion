@@ -20,11 +20,11 @@ import java.util.function.UnaryOperator;
 public class ItemInit {
 
     // Item Group
-    public static final RegistryKey<ItemGroup> OBLIVION_ITEM_GROUP = RegistryKey.of(RegistryKeys.ITEM_GROUP, OblivionMain.id("item_group"));
+    public static final RegistryKey<ItemGroup> OBLIVION_ITEM_GROUP = RegistryKey.of(RegistryKeys.ITEM_GROUP, OblivionMain.identifierOf("item_group"));
 
 
     private static Item register(String id, Item item) {
-        return register(OblivionMain.id(id), item);
+        return register(OblivionMain.identifierOf(id), item);
     }
 
     private static Item register(Identifier id, Item item) {

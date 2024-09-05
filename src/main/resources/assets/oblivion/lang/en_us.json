@@ -3,9 +3,13 @@
 
   "entity.oblivion.shlama": "Shlama",
   "entity.oblivion.elysian_elk": "Elysian Elk",
+  "entity.oblivion.elysian_shaman": "Elysian Shaman",
+  "entity.oblivion.elysian_wolf": "Elysian Wolf",
 
   "item.oblivion.spawn_shlama": "Shlama Spawn Egg",
   "item.oblivion.spawn_elysian_elk": "Elysian Elk Spawn Egg",
+  "item.oblivion.spawn_elysian_shaman": "Elysian Shaman Spawn Egg",
+  "item.oblivion.spawn_elysian_wolf": "Elysian Wolf Spawn Egg",
 
   "block.oblivion.iron_wood_button": "Iron Wood Button",
   "block.oblivion.iron_wood_door": "Iron Wood Door",
@@ -23,5 +27,7 @@
   "block.oblivion.iron_wood_trapdoor": "Iron Wood Trapdoor",
   "block.oblivion.iron_wood_wall_hanging_sign": "Iron Wood Wall Hanging Sign",
   "block.oblivion.iron_wood_wall_sign": "Iron Wood Wall Sign",
-  "block.oblivion.iron_wood": "Iron Wood"
+  "block.oblivion.iron_wood": "Iron Wood",
+
+  "block.oblivion.drill": "Drill"
 }

@@ -13,10 +13,10 @@ import net.oblivion.init.RenderInit;
 
 @Environment(EnvType.CLIENT)
 public class ElysianElkRenderer extends MobEntityRenderer<ElysianElk, ElysianElkModel<ElysianElk>> {
-    private static final Identifier TEXTURE = OblivionMain.id("textures/entity/elysian_elk.png");
+    private static final Identifier TEXTURE = OblivionMain.identifierOf("textures/entity/elysian_elk.png");
 
     public ElysianElkRenderer(EntityRendererFactory.Context context) {
-        super(context, new ElysianElkModel<>(context.getPart(RenderInit.ELYSIAN_ELK_LAYER)), 0.7F);
+        super(context, new ElysianElkModel<>(context.getPart(RenderInit.ELYSIAN_ELK_LAYER)), 1.2F);
     }
 
     @Override
@@ -25,7 +25,7 @@ public class ElysianElkRenderer extends MobEntityRenderer<ElysianElk, ElysianElk
     }
 
     @Override
-    public Identifier getTexture(ElysianElk elysianElk) {
+    public Identifier getTexture(ElysianElk elk) {
         return TEXTURE;
     }
 }

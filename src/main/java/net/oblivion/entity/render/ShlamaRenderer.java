@@ -12,7 +12,7 @@ import net.oblivion.init.RenderInit;
 
 @Environment(EnvType.CLIENT)
 public class ShlamaRenderer extends MobEntityRenderer<Shlama, ShlamaModel<Shlama>> {
-    private static final Identifier TEXTURE = OblivionMain.id("textures/entity/shlama.png");
+    private static final Identifier TEXTURE = OblivionMain.identifierOf("textures/entity/shlama.png");
 
     public ShlamaRenderer(EntityRendererFactory.Context context) {
         super(context, new ShlamaModel<>(context.getPart(RenderInit.SHLAMA_LAYER)), 1.0F);
