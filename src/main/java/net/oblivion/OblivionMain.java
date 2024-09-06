@@ -21,6 +21,7 @@ public class OblivionMain implements ModInitializer {
         SoundInit.init();
         SpawnInit.init();
         TagInit.init();
+        WorldInit.init();
     }
 
     public static Identifier identifierOf(String name) {
