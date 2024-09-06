@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "oblivion:iron_wood_sapling"
+    "oblivion:iron_wood_sapling",
+    "oblivion:silver_birch_sapling"
   ]
 }

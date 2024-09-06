@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "oblivion:block/silver_birch_planks",
+    "side": "oblivion:block/silver_birch_planks",
+    "top": "oblivion:block/silver_birch_planks"
+  }
+}

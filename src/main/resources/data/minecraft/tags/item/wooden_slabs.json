@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "oblivion:iron_wood_slab"
+    "oblivion:iron_wood_slab",
+    "oblivion:silver_birch_slab"
   ]
 }

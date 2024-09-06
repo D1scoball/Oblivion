@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "oblivion:iron_wood_planks"
+    "oblivion:iron_wood_planks",
+    "oblivion:silver_birch_planks"
   ]
 }

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "oblivion:block/silver_birch_sapling"
+  }
+}

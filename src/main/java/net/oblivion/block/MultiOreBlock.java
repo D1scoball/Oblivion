@@ -1,33 +1,55 @@
 package net.oblivion.block;
 
-import net.minecraft.block.Block;
+import com.mojang.serialization.MapCodec;
+import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.BlockWithEntity;
+import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.text.Text;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldAccess;
+import net.oblivion.block.entity.MultiOreBlockEntity;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
-public class MultiOreBlock extends Block {
+public class MultiOreBlock extends BlockWithEntity {
 
     public MultiOreBlock(Settings settings) {
         super(settings);
     }
 
     @Override
+    protected MapCodec<? extends BlockWithEntity> getCodec() {
+        return null;
+    }
+
+    @Override
+    protected void onBlockBreakStart(BlockState state, World world, BlockPos pos, PlayerEntity player) {
+        super.onBlockBreakStart(state, world, pos, player);
+        if (!player.isCreative()) {
+            player.sendMessage(Text.translatable("block.multi_ore.drill"), true);
+        }
+    }
+
+    @Override
+    protected BlockRenderType getRenderType(BlockState state) {
+        return BlockRenderType.MODEL;
+    }
+
+    @Override
     public BlockState onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
+        breakMultiOre(world, pos,player);
+        return super.onBreak(world, pos, state, player);
+    }
+
+    public void breakMultiOre(World world, BlockPos pos, @Nullable PlayerEntity player) {
         if (!world.isClient()) {
             for (BlockPos blockPos : getMultiOreBlockPoses(world, pos)) {
                 world.breakBlock(blockPos, true, player);
             }
         }
-        return super.onBreak(world, pos, state, player);
-    }
-
-    @Override
-    public void onBroken(WorldAccess world, BlockPos pos, BlockState state) {
-        super.onBroken(world, pos, state);
     }
 
     public List<BlockPos> getMultiOreBlockPoses(World world, BlockPos startPos) {
@@ -80,4 +102,8 @@ public class MultiOreBlock extends Block {
         return poses;
     }
 
+    @Override
+    public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
+        return new MultiOreBlockEntity(pos, state);
+    }
 }

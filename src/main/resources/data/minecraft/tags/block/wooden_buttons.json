@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "oblivion:iron_wood_button"
+    "oblivion:iron_wood_button",
+    "oblivion:silver_birch_button"
   ]
 }

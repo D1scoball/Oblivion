@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "oblivion:iron_wood_stairs"
+    "oblivion:iron_wood_stairs",
+    "oblivion:silver_birch_stairs"
   ]
 }

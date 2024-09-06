@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_uv_locked_z",
+  "textures": {
+    "end": "oblivion:block/silver_birch_log_top",
+    "side": "oblivion:block/silver_birch_log"
+  }
+}

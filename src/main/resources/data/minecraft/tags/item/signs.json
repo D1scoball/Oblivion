@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "oblivion:iron_wood_sign"
+    "oblivion:iron_wood_sign",
+    "oblivion:silver_birch_sign"
   ]
 }

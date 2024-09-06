@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "oblivion:iron_wood_fence"
+    "oblivion:iron_wood_fence",
+    "oblivion:silver_birch_fence"
   ]
 }

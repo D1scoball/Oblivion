@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "oblivion:block/silver_birch_slab"
+    },
+    "type=double": {
+      "model": "oblivion:block/silver_birch_planks"
+    },
+    "type=top": {
+      "model": "oblivion:block/silver_birch_slab_top"
+    }
+  }
+}

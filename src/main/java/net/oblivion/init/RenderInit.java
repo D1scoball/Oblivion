@@ -31,6 +31,13 @@ public class RenderInit {
 
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.IRON_WOOD_LEAVES, RenderLayer.getCutoutMipped());
 
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.SILVER_BIRCH_SAPLING, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.SILVER_BIRCH_DOOR, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.SILVER_BIRCH_TRAPDOOR, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.POTTED_SILVER_BIRCH_SAPLING, RenderLayer.getCutout());
+
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.SILVER_BIRCH_LEAVES, RenderLayer.getCutoutMipped());
+
         EntityModelLayerRegistry.registerModelLayer(DRILL_LAYER, DrillBlockEntityRenderer::getTexturedModelData);
 
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.DRILL, RenderLayer.getCutout());

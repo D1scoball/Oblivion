@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "oblivion:iron_wood_pressure_plate"
+    "oblivion:iron_wood_pressure_plate",
+    "oblivion:silver_birch_pressure_plate"
   ]
 }

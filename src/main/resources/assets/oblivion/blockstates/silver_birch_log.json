@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "oblivion:block/silver_birch_log_x"
+    },
+    "axis=y": {
+      "model": "oblivion:block/silver_birch_log_y"
+    },
+    "axis=z": {
+      "model": "oblivion:block/silver_birch_log_z"
+    }
+  }
+}

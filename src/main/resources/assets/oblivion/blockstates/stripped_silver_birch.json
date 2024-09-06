@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "oblivion:block/stripped_silver_birch",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "oblivion:block/stripped_silver_birch"
+    },
+    "axis=z": {
+      "model": "oblivion:block/stripped_silver_birch",
+      "x": 90
+    }
+  }
+}

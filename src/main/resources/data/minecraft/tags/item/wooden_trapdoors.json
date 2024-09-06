@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "oblivion:iron_wood_trapdoor"
+    "oblivion:iron_wood_trapdoor",
+    "oblivion:silver_birch_trapdoor"
   ]
 }

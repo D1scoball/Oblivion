@@ -29,5 +29,25 @@
   "block.oblivion.iron_wood_wall_sign": "Iron Wood Wall Sign",
   "block.oblivion.iron_wood": "Iron Wood",
 
-  "block.oblivion.drill": "Drill"
+  "block.oblivion.silver_birch_button": "Silver Birch Button",
+  "block.oblivion.silver_birch_door": "Silver Birch Door",
+  "block.oblivion.silver_birch_fence": "Silver Birch Fence",
+  "block.oblivion.silver_birch_fence_gate": "Silver Birch Fence Gate",
+  "block.oblivion.silver_birch_hanging_sign": "Silver Birch Hanging Sign",
+  "block.oblivion.silver_birch_leaves": "Silver Birch Leaves",
+  "block.oblivion.silver_birch_log": "Silver Birch Log",
+  "block.oblivion.silver_birch_planks": "Silver Birch Planks",
+  "block.oblivion.silver_birch_pressure_plate": "Silver Birch Pressure Plate",
+  "block.oblivion.silver_birch_sapling": "Silver Birch Sapling",
+  "block.oblivion.silver_birch_sign": "Silver Birch Sign",
+  "block.oblivion.silver_birch_slab": "Silver Birch Slab",
+  "block.oblivion.silver_birch_stairs": "Silver Birch Stairs",
+  "block.oblivion.silver_birch_trapdoor": "Silver Birch Trapdoor",
+  "block.oblivion.silver_birch_wall_hanging_sign": "Silver Birch Wall Hanging Sign",
+  "block.oblivion.silver_birch_wall_sign": "Silver Birch Wall Sign",
+  "block.oblivion.silver_birch": "Silver Birch",
+
+  "block.oblivion.drill": "Drill",
+
+  "block.multi_ore.drill": "You need a stationary drill"
 }
