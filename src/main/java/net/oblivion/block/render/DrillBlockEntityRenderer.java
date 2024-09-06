@@ -27,8 +27,6 @@ public class DrillBlockEntityRenderer implements BlockEntityRenderer<DrillBlockE
     private final ModelPart head;
     private final ModelPart base;
 
-    private float angle;
-
     public DrillBlockEntityRenderer(BlockEntityRendererFactory.Context ctx) {
         ModelPart modelPart = ctx.getLayerModelPart(RenderInit.DRILL_LAYER);
         this.head = modelPart.getChild("head");
@@ -62,9 +60,7 @@ public class DrillBlockEntityRenderer implements BlockEntityRenderer<DrillBlockE
         matrices.push();
         VertexConsumer vertexConsumer = vertexConsumerProvider.getBuffer(RenderLayer.getEntityCutoutNoCull(TEXTURE));
 
-
         matrices.translate(0.5D, -0.5D, 0.5D);
-
 
         BlockState state = entity.getCachedState();
         Direction blockDirection = state.get(Properties.FACING);
@@ -82,16 +78,19 @@ public class DrillBlockEntityRenderer implements BlockEntityRenderer<DrillBlockE
             matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(-90F));
         }
         base.render(matrices, vertexConsumer, light, overlay);
-        head.render(matrices, vertexConsumer, light, overlay);
 
-        if (state.get(DrillBlock.POWERED)) {
+        if (entity.getCachedState().get(DrillBlock.POWERED)) {
             head.roll = entity.getRotation(tickDelta);
-            BlockState lookingState = entity.getWorld().getBlockState(entity.getPos().offset(blockDirection));
-            if (!lookingState.isAir() && lookingState.isFullCube(entity.getWorld(), entity.getPos().offset(blockDirection))) {
-                entity.getWorld().addBlockBreakParticles(entity.getPos().offset(blockDirection),lookingState);
+            if (entity.getWorld() != null) {
+                BlockState lookingState = entity.getWorld().getBlockState(entity.getPos().offset(blockDirection));
+                if (entity.getWorld().getRandom().nextFloat() <= 0.03f && !lookingState.isAir() && lookingState.isFullCube(entity.getWorld(), entity.getPos().offset(blockDirection))) {
+                    entity.getWorld().addBlockBreakParticles(entity.getPos().offset(blockDirection), lookingState);
+                }
             }
+        } else {
+            head.roll = 0.0f;
         }
-
+        head.render(matrices, vertexConsumer, light, overlay);
         matrices.pop();
     }
 }
