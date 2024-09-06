@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "oblivion:iron_wood_fence_gate",
-    "oblivion:silver_birch_fence_gate"
+    "oblivion:silver_birch_fence_gate",
+    "oblivion:rune_wood_fence_gate"
   ]
 }

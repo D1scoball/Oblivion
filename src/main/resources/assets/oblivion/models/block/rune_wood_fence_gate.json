@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_fence_gate",
+  "textures": {
+    "texture": "oblivion:block/rune_wood_planks"
+  }
+}

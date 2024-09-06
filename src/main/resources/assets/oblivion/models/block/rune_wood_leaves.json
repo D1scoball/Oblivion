@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "oblivion:block/rune_wood_leaves"
+  }
+}

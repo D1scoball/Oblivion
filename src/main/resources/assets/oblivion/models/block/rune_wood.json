@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "oblivion:block/rune_wood_log",
+    "side": "oblivion:block/rune_wood_log"
+  }
+}

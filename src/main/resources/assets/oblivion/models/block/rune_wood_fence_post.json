@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_post",
+  "textures": {
+    "texture": "oblivion:block/rune_wood_planks"
+  }
+}

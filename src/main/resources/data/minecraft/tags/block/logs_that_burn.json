@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "#minecraft:iron_wood_logs",
-    "#minecraft:silver_birch_logs"
+    "#minecraft:silver_birch_logs",
+    "#minecraft:rune_wood_logs"
   ]
 }

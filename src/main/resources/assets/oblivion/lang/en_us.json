@@ -47,6 +47,24 @@
   "block.oblivion.silver_birch_wall_sign": "Silver Birch Wall Sign",
   "block.oblivion.silver_birch": "Silver Birch",
 
+  "block.oblivion.rune_wood_button": "Rune Wood Button",
+  "block.oblivion.rune_wood_door": "Rune Wood Door",
+  "block.oblivion.rune_wood_fence": "Rune Wood Fence",
+  "block.oblivion.rune_wood_fence_gate": "Rune Wood Fence Gate",
+  "block.oblivion.rune_wood_hanging_sign": "Rune Wood Hanging Sign",
+  "block.oblivion.rune_wood_leaves": "Rune Wood Leaves",
+  "block.oblivion.rune_wood_log": "Rune Wood Log",
+  "block.oblivion.rune_wood_planks": "Rune Wood Planks",
+  "block.oblivion.rune_wood_pressure_plate": "Rune Wood Pressure Plate",
+  "block.oblivion.rune_wood_sapling": "Rune Wood Sapling",
+  "block.oblivion.rune_wood_sign": "Rune Wood Sign",
+  "block.oblivion.rune_wood_slab": "Rune Wood Slab",
+  "block.oblivion.rune_wood_stairs": "Rune Wood Stairs",
+  "block.oblivion.rune_wood_trapdoor": "Rune Wood Trapdoor",
+  "block.oblivion.rune_wood_wall_hanging_sign": "Rune Wood Wall Hanging Sign",
+  "block.oblivion.rune_wood_wall_sign": "Rune Wood Wall Sign",
+  "block.oblivion.rune_wood": "Rune Wood",
+
   "block.oblivion.drill": "Drill",
 
   "block.multi_ore.drill": "You need a stationary drill"

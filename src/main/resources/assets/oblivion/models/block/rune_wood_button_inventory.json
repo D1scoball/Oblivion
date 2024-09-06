@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button_inventory",
+  "textures": {
+    "texture": "oblivion:block/rune_wood_planks"
+  }
+}

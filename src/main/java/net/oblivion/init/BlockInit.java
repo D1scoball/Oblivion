@@ -23,8 +23,11 @@ public class BlockInit {
 
     public static final BlockSetType IRON_WOOD_SET_TYPE = new BlockSetTypeBuilder().register(OblivionMain.identifierOf("iron_wood"));
     public static final BlockSetType SILVER_BIRCH_SET_TYPE = new BlockSetTypeBuilder().register(OblivionMain.identifierOf("silver_birch"));
+    public static final BlockSetType RUNE_WOOD_SET_TYPE = new BlockSetTypeBuilder().register(OblivionMain.identifierOf("rune_wood"));
+
     public static final WoodType IRON_WOOD_TYPE = new WoodTypeBuilder().register(OblivionMain.identifierOf("iron_wood"), IRON_WOOD_SET_TYPE);
     public static final WoodType SILVER_BIRCH_TYPE = new WoodTypeBuilder().register(OblivionMain.identifierOf("silver_birch"), SILVER_BIRCH_SET_TYPE);
+    public static final WoodType RUNE_WOOD_TYPE = new WoodTypeBuilder().register(OblivionMain.identifierOf("rune_wood"), RUNE_WOOD_SET_TYPE);
 
     public static final Block IRON_WOOD_PLANKS = register("iron_wood_planks", true, new Block(AbstractBlock.Settings.create().mapColor(MapColor.BROWN).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).burnable()));
     public static final Block IRON_WOOD_SAPLING = register("iron_wood_sapling", true, new SaplingBlock(SaplingGenerator.CHERRY, AbstractBlock.Settings.create().mapColor(MapColor.PINK).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CHERRY_SAPLING).pistonBehavior(PistonBehavior.DESTROY)));
@@ -68,6 +71,27 @@ public class BlockInit {
     public static final Block SILVER_BIRCH_FENCE = register("silver_birch_fence", true, new FenceBlock(AbstractBlock.Settings.create().mapColor(SILVER_BIRCH_PLANKS.getDefaultMapColor()).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).burnable().sounds(BlockSoundGroup.WOOD)));
     public static final Block SILVER_BIRCH_DOOR = register("silver_birch_door", true, new DoorBlock(SILVER_BIRCH_SET_TYPE, AbstractBlock.Settings.create().mapColor(SILVER_BIRCH_PLANKS.getDefaultMapColor()).instrument(NoteBlockInstrument.BASS).strength(3.0F).nonOpaque().burnable().pistonBehavior(PistonBehavior.DESTROY)));
 
+    public static final Block RUNE_WOOD_PLANKS = register("rune_wood_planks", true, new Block(AbstractBlock.Settings.create().mapColor(MapColor.PALE_PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).burnable()));
+    public static final Block RUNE_WOOD_SAPLING = register("rune_wood_sapling", true, new SaplingBlock(SaplingGenerator.CHERRY, AbstractBlock.Settings.create().mapColor(MapColor.PINK).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CHERRY_SAPLING).pistonBehavior(PistonBehavior.DESTROY)));
+    public static final Block RUNE_WOOD_LOG = register("rune_wood_log", true, Blocks.createLogBlock(MapColor.PALE_PURPLE, MapColor.TERRACOTTA_GRAY, BlockSoundGroup.WOOD));
+    public static final Block STRIPPED_RUNE_WOOD_LOG = register("stripped_rune_wood_log", true, Blocks.createLogBlock(MapColor.PALE_PURPLE, MapColor.TERRACOTTA_PINK, BlockSoundGroup.WOOD));
+    public static final Block RUNE_WOOD = register("rune_wood", true, new PillarBlock(AbstractBlock.Settings.create().mapColor(MapColor.TERRACOTTA_GRAY).instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD).burnable()));
+    public static final Block STRIPPED_RUNE_WOOD = register("stripped_rune_wood", true, new PillarBlock(AbstractBlock.Settings.create().mapColor(MapColor.TERRACOTTA_PINK).instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD).burnable()));
+    public static final Block RUNE_WOOD_LEAVES = register("rune_wood_leaves", true, new CherryLeavesBlock(AbstractBlock.Settings.create().mapColor(MapColor.PINK).strength(0.2F).ticksRandomly().sounds(BlockSoundGroup.CHERRY_LEAVES).nonOpaque().allowsSpawning(Blocks::canSpawnOnLeaves).suffocates(Blocks::never).blockVision(Blocks::never).burnable().pistonBehavior(PistonBehavior.DESTROY).solidBlock(Blocks::never)));
+    public static final Block RUNE_WOOD_SIGN = register("rune_wood_sign", true, new SignBlock(RUNE_WOOD_TYPE, AbstractBlock.Settings.create().mapColor(RUNE_WOOD_PLANKS.getDefaultMapColor()).solid().instrument(NoteBlockInstrument.BASS).noCollision().strength(1.0F).burnable()));
+    public static final Block RUNE_WOOD_WALL_SIGN = register("rune_wood_wall_sign", false, new WallSignBlock(RUNE_WOOD_TYPE, AbstractBlock.Settings.create().mapColor(RUNE_WOOD_LOG.getDefaultMapColor()).solid().instrument(NoteBlockInstrument.BASS).noCollision().strength(1.0F).dropsLike(RUNE_WOOD_SIGN).burnable()));
+    public static final Block RUNE_WOOD_HANGING_SIGN = register("rune_wood_hanging_sign", true, new HangingSignBlock(RUNE_WOOD_TYPE, AbstractBlock.Settings.create().mapColor(MapColor.TERRACOTTA_PINK).solid().instrument(NoteBlockInstrument.BASS).noCollision().strength(1.0F).burnable()));
+    public static final Block RUNE_WOOD_WALL_HANGING_SIGN = register("rune_wood_wall_hanging_sign", false, new WallHangingSignBlock(RUNE_WOOD_TYPE, AbstractBlock.Settings.create().mapColor(MapColor.TERRACOTTA_PINK).solid().instrument(NoteBlockInstrument.BASS).noCollision().strength(1.0F).burnable().dropsLike(RUNE_WOOD_HANGING_SIGN)));
+    public static final Block RUNE_WOOD_PRESSURE_PLATE = register("rune_wood_pressure_plate", true, new PressurePlateBlock(RUNE_WOOD_SET_TYPE, AbstractBlock.Settings.create().mapColor(RUNE_WOOD_PLANKS.getDefaultMapColor()).solid().instrument(NoteBlockInstrument.BASS).noCollision().strength(0.5F).burnable().pistonBehavior(PistonBehavior.DESTROY)));
+    public static final Block RUNE_WOOD_TRAPDOOR = register("rune_wood_trapdoor", true, new TrapdoorBlock(RUNE_WOOD_SET_TYPE, AbstractBlock.Settings.create().mapColor(MapColor.PALE_PURPLE).instrument(NoteBlockInstrument.BASS).strength(3.0F).nonOpaque().allowsSpawning(Blocks::never).burnable()));
+    public static final Block POTTED_RUNE_WOOD_SAPLING = register("potted_rune_wood_sapling", false, Blocks.createFlowerPotBlock(RUNE_WOOD_SAPLING));
+    public static final Block RUNE_WOOD_BUTTON = register("rune_wood_button", true, Blocks.createWoodenButtonBlock(RUNE_WOOD_SET_TYPE));
+    public static final Block RUNE_WOOD_STAIRS = register("rune_wood_stairs", true, createStairsBlock(RUNE_WOOD_PLANKS));
+    public static final Block RUNE_WOOD_SLAB = register("rune_wood_slab", true, new SlabBlock(AbstractBlock.Settings.create().mapColor(MapColor.PALE_PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).burnable()));
+    public static final Block RUNE_WOOD_FENCE_GATE = register("rune_wood_fence_gate", true, new FenceGateBlock(RUNE_WOOD_TYPE, AbstractBlock.Settings.create().mapColor(RUNE_WOOD_PLANKS.getDefaultMapColor()).solid().instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).burnable()));
+    public static final Block RUNE_WOOD_FENCE = register("rune_wood_fence", true, new FenceBlock(AbstractBlock.Settings.create().mapColor(RUNE_WOOD_PLANKS.getDefaultMapColor()).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).burnable().sounds(BlockSoundGroup.WOOD)));
+    public static final Block RUNE_WOOD_DOOR = register("rune_wood_door", true, new DoorBlock(RUNE_WOOD_SET_TYPE, AbstractBlock.Settings.create().mapColor(RUNE_WOOD_PLANKS.getDefaultMapColor()).instrument(NoteBlockInstrument.BASS).strength(3.0F).nonOpaque().burnable().pistonBehavior(PistonBehavior.DESTROY)));
+
     public static final Block DRILL = register("drill", true, new DrillBlock(AbstractBlock.Settings.copy(Blocks.BARREL).nonOpaque().pistonBehavior(PistonBehavior.IGNORE)));
 
     public static final Block TEST = register("test", true, new MultiOreBlock(AbstractBlock.Settings.copy(Blocks.DIAMOND_ORE)));
@@ -103,6 +127,11 @@ public class BlockInit {
         BlockEntityType.SIGN.addSupportedBlock(SILVER_BIRCH_WALL_SIGN);
         BlockEntityType.HANGING_SIGN.addSupportedBlock(SILVER_BIRCH_HANGING_SIGN);
         BlockEntityType.HANGING_SIGN.addSupportedBlock(SILVER_BIRCH_WALL_HANGING_SIGN);
+
+        BlockEntityType.SIGN.addSupportedBlock(RUNE_WOOD_SIGN);
+        BlockEntityType.SIGN.addSupportedBlock(RUNE_WOOD_WALL_SIGN);
+        BlockEntityType.HANGING_SIGN.addSupportedBlock(RUNE_WOOD_HANGING_SIGN);
+        BlockEntityType.HANGING_SIGN.addSupportedBlock(RUNE_WOOD_WALL_HANGING_SIGN);
 
 //        FlammableBlockRegistry.getDefaultInstance().add();
     }
