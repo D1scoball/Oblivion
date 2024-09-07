@@ -22,6 +22,7 @@ public class RenderInit {
     public static final EntityModelLayer ELYSIAN_WOLF_LAYER = new EntityModelLayer(OblivionMain.identifierOf("elysian_wolf_render_layer"), "elysian_wolf_render_layer");
     public static final EntityModelLayer GOBLIN_LAYER = new EntityModelLayer(OblivionMain.identifierOf("goblin_render_layer"), "goblin_render_layer");
     public static final EntityModelLayer TREEDER_LAYER = new EntityModelLayer(OblivionMain.identifierOf("treeder_render_layer"), "treeder_render_layer");
+    public static final EntityModelLayer SHROOM_LAYER = new EntityModelLayer(OblivionMain.identifierOf("shroom_render_layer"), "shroom_render_layer");
 
     public static final EntityModelLayer DRILL_LAYER = new EntityModelLayer(OblivionMain.identifierOf("drill_render_layer"), "drill_render_layer");
 
@@ -59,6 +60,7 @@ public class RenderInit {
         EntityRendererRegistry.register(EntityInit.ELYSIAN_WOLF, ElysianWolfRenderer::new);
         EntityRendererRegistry.register(EntityInit.GOBLIN, GoblinRenderer::new);
         EntityRendererRegistry.register(EntityInit.TREEDER, TreederRenderer::new);
+        EntityRendererRegistry.register(EntityInit.SHROOM, ShroomRenderer::new);
         // Entity Model
         EntityModelLayerRegistry.registerModelLayer(SHLAMA_LAYER, ShlamaModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(ELYSIAN_ELK_LAYER, ElysianElkModel::getTexturedModelData);
@@ -66,5 +68,6 @@ public class RenderInit {
         EntityModelLayerRegistry.registerModelLayer(ELYSIAN_WOLF_LAYER, ElysianWolfModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(GOBLIN_LAYER, GoblinModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(TREEDER_LAYER, TreederModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(SHROOM_LAYER, ShroomModel::getTexturedModelData);
     }
 }

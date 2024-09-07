@@ -1,6 +1,5 @@
 package net.oblivion.entity;
 
-import net.minecraft.client.render.entity.model.BipedEntityModel;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
@@ -9,32 +8,23 @@ import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.mob.HostileEntity;
-import net.minecraft.entity.mob.ZombieEntity;
 import net.minecraft.entity.passive.MerchantEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.entry.RegistryEntry;
-import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.world.LocalDifficulty;
 import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Optional;
+public class Shroom extends HostileEntity {
 
-public class Goblin extends HostileEntity {
+    public static final TrackedData<Integer> SIZE = DataTracker.registerData(Shroom.class, TrackedDataHandlerRegistry.INTEGER);
 
-    public static final TrackedData<Integer> SIZE = DataTracker.registerData(Goblin.class, TrackedDataHandlerRegistry.INTEGER);
-
-    public Goblin(EntityType<? extends HostileEntity> entityType, World world) {
+    public Shroom(EntityType<? extends HostileEntity> entityType, World world) {
         super(entityType, world);
     }
 
-    public static DefaultAttributeContainer.Builder createGoblinAttributes() {
+    public static DefaultAttributeContainer.Builder createShroomAttributes() {
         return HostileEntity.createHostileAttributes()
                 .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 35.0)
                 .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.23F)
@@ -49,7 +39,7 @@ public class Goblin extends HostileEntity {
 
         this.goalSelector.add(2, new MeleeAttackGoal(this, 1.0, false));
         this.goalSelector.add(7, new WanderAroundFarGoal(this, 1.0));
-        this.targetSelector.add(1, new RevengeGoal(this).setGroupRevenge(Goblin.class));
+        this.targetSelector.add(1, new RevengeGoal(this).setGroupRevenge(Shroom.class));
         this.targetSelector.add(2, new ActiveTargetGoal(this, PlayerEntity.class, true));
         this.targetSelector.add(3, new ActiveTargetGoal(this, MerchantEntity.class, false));
     }
@@ -116,11 +106,6 @@ public class Goblin extends HostileEntity {
     @Override
     public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData) {
         this.setSize(this.getRandom().nextInt(3) + 1, true);
-        if (this.getRandom().nextFloat() <= 0.5f) {
-            this.equipStack(EquipmentSlot.CHEST, new ItemStack(Items.IRON_CHESTPLATE));
-            Optional<RegistryEntry<Item>> optional = Registries.ITEM.getRandomEntry(ItemTags.SWORDS, this.getRandom());
-            optional.ifPresent(itemRegistryEntry -> this.equipStack(EquipmentSlot.MAINHAND, new ItemStack(itemRegistryEntry)));
-        }
         return super.initialize(world, difficulty, spawnReason, entityData);
     }
 
@@ -145,5 +130,4 @@ public class Goblin extends HostileEntity {
             this.setHealth(this.getMaxHealth());
         }
     }
-
 }

@@ -27,6 +27,7 @@ public class EntityInit {
     public static final EntityType<ElysianWolf> ELYSIAN_WOLF = register("elysian_wolf", 14538161, 5269804, ElysianWolf.createElysianWolfAttributes(), EntityType.Builder.create(ElysianWolf::new, SpawnGroup.CREATURE).dimensions(2.1F, 2.0F).build());
     public static final EntityType<Goblin> GOBLIN = register("goblin", 4617514, 6044466, Goblin.createGoblinAttributes(), EntityType.Builder.create(Goblin::new, SpawnGroup.CREATURE).dimensions(1.0F, 1.4F).build());
     public static final EntityType<Treeder> TREEDER = register("treeder", 4996390, 7625270, Treeder.createTreederAttributes(), EntityType.Builder.create(Treeder::new, SpawnGroup.CREATURE).dimensions(0.6F, 0.65F).build());
+    public static final EntityType<Shroom> SHROOM = register("shroom", 14930887, 13382711, Shroom.createShroomAttributes(), EntityType.Builder.create(Shroom::new, SpawnGroup.CREATURE).dimensions(1.2F, 1.9F).build());
 
     @SuppressWarnings("unchecked")
     private static <T extends Entity> EntityType<T> register(String id, int primaryColor, int secondaryColor, DefaultAttributeContainer.Builder builder, EntityType<T> entityType) {
