@@ -2,6 +2,8 @@ package net.oblivion.entity.model;
 
 import com.google.common.collect.ImmutableList;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.model.Dilation;
 import net.minecraft.client.model.ModelData;
 import net.minecraft.client.model.ModelPart;
@@ -13,6 +15,7 @@ import net.minecraft.client.render.entity.model.AnimalModel;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.util.math.MathHelper;
 
+@Environment(EnvType.CLIENT)
 public class ShlamaModel<T extends AnimalEntity> extends AnimalModel<T> {
     private final ModelPart head;
     private final ModelPart antler;

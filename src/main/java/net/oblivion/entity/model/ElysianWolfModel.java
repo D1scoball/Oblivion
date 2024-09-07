@@ -1,5 +1,7 @@
 package net.oblivion.entity.model;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.EntityModel;
@@ -7,8 +9,7 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.MathHelper;
 
-
-
+@Environment(EnvType.CLIENT)
 public class ElysianWolfModel<T extends LivingEntity> extends EntityModel<T> {
     private final ModelPart main;
     private final ModelPart head;
@@ -82,7 +83,7 @@ public class ElysianWolfModel<T extends LivingEntity> extends EntityModel<T> {
 
     @Override
     public void render(MatrixStack matrices, VertexConsumer vertices, int light, int overlay, int color) {
-        this.main.render(matrices,vertices,light,overlay,color);
+        this.main.render(matrices, vertices, light, overlay, color);
     }
 
 }
