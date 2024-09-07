@@ -47,9 +47,8 @@ public class Shlama extends AnimalEntity {
         this.goalSelector.add(0, new SwimGoal(this));
         this.goalSelector.add(1, new EscapeDangerGoal(this, 2.0D));
         this.goalSelector.add(2, new AnimalMateGoal(this, 1.0D));
-        this.goalSelector.add(3, new TemptGoal(this, 1.22D, Ingredient.ofItems(Items.SHORT_GRASS, Items.TALL_GRASS, Items.FERN), true));
+        this.goalSelector.add(3, new TemptGoal(this, 1.0D, Ingredient.ofItems(Items.SHORT_GRASS, Items.TALL_GRASS, Items.FERN), true));
         this.goalSelector.add(4, new FollowParentGoal(this, 1.25D));
-        this.goalSelector.add(5, new EscapePlayerGoal(this, 2.0D));
         this.goalSelector.add(6, new WanderAroundFarGoal(this, 1.0D));
         this.goalSelector.add(7, new LookAtEntityGoal(this, PlayerEntity.class, 6.0F));
         this.goalSelector.add(8, new LookAroundGoal(this));
@@ -70,10 +69,10 @@ public class Shlama extends AnimalEntity {
 //        return this.isBaby() ? SoundInit.BABY_DEER_HURT_EVENT : SoundInit.DEER_DEATH_EVENT;
 //    }
 
-    @Override
-    protected void playStepSound(BlockPos pos, BlockState state) {
-        this.playSound(SoundEvents.ENTITY_WOLF_STEP, 0.15F, 1.0F);
-    }
+//    @Override
+//    protected void playStepSound(BlockPos pos, BlockState state) {
+//        this.playSound(SoundEvents.ENTITY_WOLF_STEP, 0.15F, 1.0F);
+//    }
 
     @Override
     public Shlama createChild(ServerWorld serverWorld, PassiveEntity passiveEntity) {
@@ -83,52 +82,6 @@ public class Shlama extends AnimalEntity {
     @Override
     public boolean isBreedingItem(ItemStack stack) {
         return stack.isOf(Items.SHORT_GRASS) || stack.isOf(Items.FERN) || stack.isOf(Items.TALL_GRASS);
-    }
-
-    private class EscapePlayerGoal extends Goal {
-        protected final Shlama deerEntity;
-        protected final double speed;
-        protected double targetX;
-        protected double targetY;
-        protected double targetZ;
-
-        public EscapePlayerGoal(Shlama deerEntity, double speed) {
-            this.deerEntity = deerEntity;
-            this.speed = speed;
-            this.setControls(EnumSet.of(Control.MOVE));
-        }
-
-        @Override
-        public boolean canStart() {
-            if (this.deerEntity.getWorld().getClosestPlayer(this.deerEntity, 4.0D) == null) {
-                return false;
-            } else {
-                return this.findTarget();
-            }
-        }
-
-        private boolean findTarget() {
-            Vec3d vec3d = NoPenaltyTargeting.find(this.deerEntity, 12, 4);
-            if (vec3d == null) {
-                return false;
-            } else {
-                this.targetX = vec3d.x;
-                this.targetY = vec3d.y;
-                this.targetZ = vec3d.z;
-                return true;
-            }
-        }
-
-        @Override
-        public void start() {
-            this.deerEntity.getNavigation().startMovingTo(this.targetX, this.targetY, this.targetZ, this.speed);
-        }
-
-        @Override
-        public boolean shouldContinue() {
-            return !this.deerEntity.getNavigation().isIdle();
-        }
-
     }
 
 }

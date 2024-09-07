@@ -5,12 +5,15 @@ import net.fabricmc.api.Environment;
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.EntityModel;
+import net.minecraft.client.render.entity.model.ModelWithArms;
 import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.Arm;
 import net.minecraft.util.math.MathHelper;
 
 @Environment(EnvType.CLIENT)
-public class GoblinModel<T extends LivingEntity> extends EntityModel<T> {
+public class GoblinModel<T extends LivingEntity> extends EntityModel<T> implements ModelWithArms {
     private final ModelPart base;
     private final ModelPart body;
     private final ModelPart body_armor;
@@ -91,6 +94,22 @@ public class GoblinModel<T extends LivingEntity> extends EntityModel<T> {
         this.right_leg.pitch = MathHelper.cos(limbAngle * 0.6662F + 3.1415927F) * 1.4F * limbDistance;
         this.right_arm.pitch = MathHelper.cos(limbAngle * 0.6662F + 3.1415927F) * 1.4F * limbDistance;
         this.left_leg.pitch = MathHelper.cos(limbAngle * 0.6662F) * 1.4F * limbDistance;
+
+        if (!entity.getEquippedStack(EquipmentSlot.CHEST).isEmpty()) {
+            this.head_armor.visible = true;
+            this.body_armor.visible = true;
+            this.right_armor.visible = true;
+            this.left_armor.visible = true;
+            this.right_leg_armor.visible = true;
+            this.left_leg_armor.visible = true;
+        } else {
+            this.head_armor.visible = false;
+            this.body_armor.visible = false;
+            this.right_armor.visible = false;
+            this.left_armor.visible = false;
+            this.right_leg_armor.visible = false;
+            this.left_leg_armor.visible = false;
+        }
     }
 
     @Override
@@ -98,5 +117,18 @@ public class GoblinModel<T extends LivingEntity> extends EntityModel<T> {
         this.base.render(matrices, vertices, light, overlay, color);
     }
 
+    @Override
+    public void setArmAngle(Arm arm, MatrixStack matrices) {
+        matrices.translate(0.0f,0.7f,0.0f);
+        this.getArm(arm).rotate(matrices);
+    }
+
+    private ModelPart getArm(Arm arm) {
+        if (arm == Arm.LEFT) {
+            return this.right_arm;
+        } else {
+            return this.left_arm;
+        }
+    }
 }
 

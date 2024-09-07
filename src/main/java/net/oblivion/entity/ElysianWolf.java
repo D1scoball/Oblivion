@@ -20,10 +20,9 @@ public class ElysianWolf extends HostileEntity {
     public static DefaultAttributeContainer.Builder createElysianWolfAttributes() {
         return HostileEntity.createHostileAttributes()
                 .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 35.0)
-                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.23F)
+                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.3F)
                 .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 3.0)
-                .add(EntityAttributes.GENERIC_ARMOR, 2.0)
-                .add(EntityAttributes.ZOMBIE_SPAWN_REINFORCEMENTS);
+                .add(EntityAttributes.GENERIC_ARMOR, 2.0);
     }
 
     @Override
@@ -33,7 +32,7 @@ public class ElysianWolf extends HostileEntity {
 
         this.goalSelector.add(2, new MeleeAttackGoal(this, 1.0, false));
         this.goalSelector.add(7, new WanderAroundFarGoal(this, 1.0));
-        this.targetSelector.add(1, new RevengeGoal(this).setGroupRevenge(ElysianWolf.class, ElysianElk.class));
+        this.targetSelector.add(1, new RevengeGoal(this).setGroupRevenge(ElysianWolf.class, ElysianElk.class, ElysianShaman.class));
         this.targetSelector.add(2, new ActiveTargetGoal(this, PlayerEntity.class, true));
         this.targetSelector.add(3, new ActiveTargetGoal(this, MerchantEntity.class, false));
         this.targetSelector.add(3, new ActiveTargetGoal(this, IronGolemEntity.class, true));
