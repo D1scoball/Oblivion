@@ -3,6 +3,8 @@ package net.oblivion.init;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.BlockSetTypeBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.block.type.WoodTypeBuilder;
+import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
+import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.block.enums.NoteBlockInstrument;
@@ -15,7 +17,6 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.world.gen.feature.ConfiguredFeatures;
-import net.minecraft.world.gen.feature.TreeConfiguredFeatures;
 import net.oblivion.OblivionMain;
 import net.oblivion.block.DrillBlock;
 import net.oblivion.block.MultiOreBlock;
@@ -156,6 +157,41 @@ public class BlockInit {
         BlockEntityType.HANGING_SIGN.addSupportedBlock(RUNE_WOOD_HANGING_SIGN);
         BlockEntityType.HANGING_SIGN.addSupportedBlock(RUNE_WOOD_WALL_HANGING_SIGN);
 
-//        FlammableBlockRegistry.getDefaultInstance().add();
+        StrippableBlockRegistry.register(IRON_WOOD, STRIPPED_IRON_WOOD);
+        StrippableBlockRegistry.register(IRON_WOOD_LOG, STRIPPED_IRON_WOOD_LOG);
+        StrippableBlockRegistry.register(SILVER_BIRCH, STRIPPED_SILVER_BIRCH);
+        StrippableBlockRegistry.register(SILVER_BIRCH_LOG, STRIPPED_SILVER_BIRCH_LOG);
+        StrippableBlockRegistry.register(RUNE_WOOD, STRIPPED_RUNE_WOOD);
+        StrippableBlockRegistry.register(RUNE_WOOD_LOG, STRIPPED_RUNE_WOOD_LOG);
+
+        FlammableBlockRegistry.getDefaultInstance().add(STRIPPED_IRON_WOOD_LOG, 5, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(IRON_WOOD_PLANKS, 5, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(IRON_WOOD_SLAB, 5, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(IRON_WOOD_FENCE_GATE, 5, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(IRON_WOOD_FENCE, 5, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(IRON_WOOD_STAIRS, 5, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(IRON_WOOD, 5, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(IRON_WOOD_LOG, 5, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(IRON_WOOD_LEAVES, 30, 60);
+
+        FlammableBlockRegistry.getDefaultInstance().add(STRIPPED_SILVER_BIRCH_LOG, 5, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(SILVER_BIRCH_PLANKS, 5, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(SILVER_BIRCH_SLAB, 5, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(SILVER_BIRCH_FENCE_GATE, 5, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(SILVER_BIRCH_FENCE, 5, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(SILVER_BIRCH_STAIRS, 5, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(SILVER_BIRCH, 5, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(SILVER_BIRCH_LOG, 5, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(SILVER_BIRCH_LEAVES, 30, 60);
+
+        FlammableBlockRegistry.getDefaultInstance().add(STRIPPED_RUNE_WOOD_LOG, 5, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(RUNE_WOOD_PLANKS, 5, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(RUNE_WOOD_SLAB, 5, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(RUNE_WOOD_FENCE_GATE, 5, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(RUNE_WOOD_FENCE, 5, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(RUNE_WOOD_STAIRS, 5, 20);
+        FlammableBlockRegistry.getDefaultInstance().add(RUNE_WOOD, 5, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(RUNE_WOOD_LOG, 5, 5);
+        FlammableBlockRegistry.getDefaultInstance().add(RUNE_WOOD_LEAVES, 30, 60);
     }
 }
