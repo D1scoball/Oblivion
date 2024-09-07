@@ -11,6 +11,27 @@
   "item.oblivion.spawn_elysian_shaman": "Elysian Shaman Spawn Egg",
   "item.oblivion.spawn_elysian_wolf": "Elysian Wolf Spawn Egg",
 
+  "item.oblivion.octarine_axe": "Octarine Axe",
+  "item.oblivion.octarine_boots": "Octarine Boots",
+  "item.oblivion.octarine_chestplate": "Octarine Chestplate",
+  "item.oblivion.octarine_helmet": "Octarine Helmet",
+  "item.oblivion.octarine_hoe": "Octarine Hoe",
+  "item.oblivion.octarine_horse_armor": "Octarine Horse Armor",
+  "item.oblivion.octarine_ingot": "Octarine Ingot",
+  "item.oblivion.octarine_leggings": "Octarine Leggings",
+  "item.oblivion.octarine_nugget": "Octarine Nugget",
+  "item.oblivion.octarine_pickaxe": "Octarine Pickaxe",
+  "item.oblivion.octarine_shovel": "Octarine Shovel",
+  "item.oblivion.octarine_sword": "Octarine Sword",
+  "item.oblivion.raw_octarine": "Raw Octarine",
+
+  "trim_material.oblivion.octarine": "Octarine Material",
+
+  "block.oblivion.deepslate_iron_ore": "Deepslate Octarine Ore",
+  "block.oblivion.octarine_block": "Block of Octarine",
+  "block.oblivion.octarine_ore": "Octarine Ore",
+  "block.oblivion.raw_octarine_block": "Block of Raw Octarine",
+
   "block.oblivion.iron_wood_button": "Iron Wood Button",
   "block.oblivion.iron_wood_door": "Iron Wood Door",
   "block.oblivion.iron_wood_fence": "Iron Wood Fence",
