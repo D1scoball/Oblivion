@@ -29,6 +29,7 @@ public class EntityInit {
     public static final EntityType<Treeder> TREEDER = register("treeder", 4996390, 7625270, Treeder.createTreederAttributes(), EntityType.Builder.create(Treeder::new, SpawnGroup.CREATURE).dimensions(0.6F, 0.65F).build());
     public static final EntityType<Shroom> SHROOM = register("shroom", 14930887, 13382711, Shroom.createShroomAttributes(), EntityType.Builder.create(Shroom::new, SpawnGroup.MONSTER).dimensions(1.2F, 1.9F).build());
     public static final EntityType<Elk> ELK = register("elk", 5779211, 9724212, Elk.createElkAttributes(), EntityType.Builder.create(Elk::new, SpawnGroup.CREATURE).dimensions(1.5F, 2.2F).build());
+    public static final EntityType<Boar> BOAR = register("boar", 4001544, 9724212, Boar.createBoarAttributes(), EntityType.Builder.create(Boar::new, SpawnGroup.CREATURE).dimensions(1.5F, 1.2F).build());
 
     @SuppressWarnings("unchecked")
     private static <T extends Entity> EntityType<T> register(String id, int primaryColor, int secondaryColor, DefaultAttributeContainer.Builder builder, EntityType<T> entityType) {
