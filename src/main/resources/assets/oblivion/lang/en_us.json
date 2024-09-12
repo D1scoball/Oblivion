@@ -8,6 +8,7 @@
   "entity.oblivion.goblin": "Goblin",
   "entity.oblivion.treeder": "Treeder",
   "entity.oblivion.shroom": "Shroom",
+  "entity.oblivion.elk": "Elk",
 
   "item.oblivion.spawn_shlama": "Shlama Spawn Egg",
   "item.oblivion.spawn_elysian_elk": "Elysian Elk Spawn Egg",
@@ -16,6 +17,7 @@
   "item.oblivion.spawn_goblin": "Goblin Spawn Egg",
   "item.oblivion.spawn_treeder": "Treeder Spawn Egg",
   "item.oblivion.spawn_shroom": "Shroom Spawn Egg",
+  "item.oblivion.spawn_elk": "Elk Spawn Egg",
 
   "item.oblivion.octarine_axe": "Octarine Axe",
   "item.oblivion.octarine_boots": "Octarine Boots",
