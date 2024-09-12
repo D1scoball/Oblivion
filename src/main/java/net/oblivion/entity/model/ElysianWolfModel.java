@@ -13,6 +13,7 @@ import net.minecraft.util.math.MathHelper;
 public class ElysianWolfModel<T extends LivingEntity> extends EntityModel<T> {
     private final ModelPart main;
     private final ModelPart head;
+    private final ModelPart lower_yaw;
     private final ModelPart ear_right;
     private final ModelPart ear_left;
     private final ModelPart body;
@@ -25,6 +26,7 @@ public class ElysianWolfModel<T extends LivingEntity> extends EntityModel<T> {
     public ElysianWolfModel(ModelPart root) {
         this.main = root.getChild("main");
         this.head = main.getChild("head");
+        this.lower_yaw = head.getChild("lower_yaw");
         this.ear_right = head.getChild("ear_right");
         this.ear_left = head.getChild("ear_left");
         this.body = main.getChild("body");
@@ -43,22 +45,28 @@ public class ElysianWolfModel<T extends LivingEntity> extends EntityModel<T> {
         ModelPartData head = main.addChild("head", ModelPartBuilder.create().uv(76, 0).cuboid(-5.5F, -7.5F, -12.0F, 11.0F, 12.0F, 12.0F, new Dilation(0.0F))
                 .uv(96, 24).mirrored().cuboid(-7.0F, -4.5F, -9.0F, 2.0F, 8.0F, 8.0F, new Dilation(0.0F)).mirrored(false)
                 .uv(96, 24).cuboid(5.0F, -4.5F, -9.0F, 2.0F, 8.0F, 8.0F, new Dilation(0.0F))
-                .uv(46, 21).cuboid(-4.5F, -2.0F, -22.0F, 9.0F, 6.0F, 10.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, -21.5F, -14.0F));
+                .uv(48, 23).cuboid(-4.5F, -2.0F, -20.0F, 9.0F, 4.0F, 8.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, -21.5F, -14.0F));
 
-        ModelPartData ear_right = head.addChild("ear_right", ModelPartBuilder.create().uv(84, 24).cuboid(-1.5F, -8.0F, -2.0F, 3.0F, 10.0F, 3.0F, new Dilation(0.0F))
-                .uv(84, 24).cuboid(-4.3121F, -10.8711F, 2.8835F, 3.0F, 10.0F, 3.0F, new Dilation(0.0F))
-                .uv(84, 24).cuboid(-7.2759F, -14.3226F, 8.5672F, 3.0F, 10.0F, 3.0F, new Dilation(0.0F)), ModelTransform.of(-5.0F, -6.5F, -4.0F, -0.6276F, 0.1522F, -1.2956F));
+        ModelPartData lower_yaw = head.addChild("lower_yaw", ModelPartBuilder.create().uv(48, 27).cuboid(-4.5F, 0.0F, -8.0F, 9.0F, 2.0F, 8.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 2.0F, -12.0F));
 
-        ModelPartData ear_left = head.addChild("ear_left", ModelPartBuilder.create().uv(84, 24).mirrored().cuboid(-1.5F, -8.0F, -2.0F, 3.0F, 10.0F, 3.0F, new Dilation(0.0F)).mirrored(false)
-                .uv(84, 24).mirrored().cuboid(1.3121F, -10.8711F, 2.8835F, 3.0F, 10.0F, 3.0F, new Dilation(0.0F)).mirrored(false)
-                .uv(84, 24).mirrored().cuboid(4.2759F, -14.3226F, 8.5672F, 3.0F, 10.0F, 3.0F, new Dilation(0.0F)).mirrored(false), ModelTransform.of(5.0F, -6.5F, -4.0F, -0.6276F, -0.1522F, 1.2956F));
+        ModelPartData ear_right = head.addChild("ear_right", ModelPartBuilder.create().uv(84, 24).cuboid(-1.5F, -8.0F, -2.0F, 3.0F, 10.0F, 3.0F, new Dilation(0.2F)), ModelTransform.of(-5.0F, -6.5F, -4.0F, -0.6276F, 0.1522F, -1.2956F));
+
+        ModelPartData ear_left = head.addChild("ear_left", ModelPartBuilder.create().uv(84, 24).mirrored().cuboid(-1.5F, -8.0F, -2.0F, 3.0F, 10.0F, 3.0F, new Dilation(0.2F)).mirrored(false), ModelTransform.of(5.0F, -6.5F, -4.0F, -0.6276F, -0.1522F, 1.2956F));
 
         ModelPartData body = main.addChild("body", ModelPartBuilder.create().uv(0, 0).cuboid(-7.0F, -7.75F, -15.25F, 14.0F, 15.0F, 14.0F, new Dilation(0.0F))
                 .uv(0, 29).cuboid(-6.0F, -5.75F, -1.25F, 12.0F, 12.0F, 19.0F, new Dilation(0.1F)), ModelTransform.pivot(0.0F, -20.25F, 1.25F));
 
+        ModelPartData cube_r1 = body.addChild("cube_r1", ModelPartBuilder.create().uv(84, 24).cuboid(-1.5F, -10.0F, -1.0F, 3.0F, 10.0F, 3.0F, new Dilation(-0.2F)), ModelTransform.of(4.5F, -6.75F, -6.25F, -1.2451F, 0.6286F, 0.0F));
+
+        ModelPartData cube_r2 = body.addChild("cube_r2", ModelPartBuilder.create().uv(84, 24).cuboid(-1.5F, -10.0F, -1.0F, 3.0F, 10.0F, 3.0F, new Dilation(-0.2F)), ModelTransform.of(-4.5F, -6.75F, -6.25F, -1.2451F, -0.6286F, 0.0F));
+
+        ModelPartData cube_r3 = body.addChild("cube_r3", ModelPartBuilder.create().uv(84, 24).cuboid(-1.5F, -10.0F, -1.0F, 3.0F, 10.0F, 3.0F, new Dilation(0.0F)), ModelTransform.of(5.5F, -5.75F, -13.25F, -0.9076F, 0.576F, 0.384F));
+
+        ModelPartData cube_r4 = body.addChild("cube_r4", ModelPartBuilder.create().uv(84, 24).cuboid(-1.5F, -10.0F, -1.0F, 3.0F, 10.0F, 3.0F, new Dilation(0.0F)), ModelTransform.of(-5.5F, -5.75F, -13.25F, -0.9076F, -0.576F, -0.384F));
+
         ModelPartData tail = body.addChild("tail", ModelPartBuilder.create(), ModelTransform.of(0.0F, 0.25F, 17.75F, -0.7854F, 0.0F, 0.0F));
 
-        ModelPartData cube_r1 = tail.addChild("cube_r1", ModelPartBuilder.create().uv(0, 60).cuboid(-1.5F, -8.5F, -1.5F, 4.0F, 20.0F, 4.0F, new Dilation(0.0F)), ModelTransform.of(0.5F, 0.0F, 5.0F, 1.5708F, 0.0F, -1.5708F));
+        ModelPartData cube_r5 = tail.addChild("cube_r5", ModelPartBuilder.create().uv(0, 60).cuboid(-1.5F, -8.5F, -1.5F, 4.0F, 20.0F, 4.0F, new Dilation(0.0F)), ModelTransform.of(0.5F, 0.0F, 5.0F, 1.5708F, 0.0F, -1.5708F));
 
         ModelPartData leg_left_front = main.addChild("leg_left_front", ModelPartBuilder.create().uv(56, 0).cuboid(-2.5F, -1.0F, -2.5F, 5.0F, 16.0F, 5.0F, new Dilation(0.0F)), ModelTransform.pivot(3.5F, -15.0F, -9.5F));
 

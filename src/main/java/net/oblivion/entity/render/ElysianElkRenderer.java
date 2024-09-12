@@ -20,7 +20,7 @@ public class ElysianElkRenderer extends MobEntityRenderer<ElysianElk, ElysianElk
     }
 
     @Override
-    public void scale(ElysianElk stone, MatrixStack matrixStack, float f) {
+    public void scale(ElysianElk entity, MatrixStack matrixStack, float f) {
         matrixStack.scale(2.0F, 2.0F, 2.0F);
     }
 
