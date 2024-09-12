@@ -16,7 +16,7 @@ public class ElkRenderer extends MobEntityRenderer<Elk, ElkModel<Elk>> {
     private static final Identifier TEXTURE = OblivionMain.identifierOf("textures/entity/elk.png");
 
     public ElkRenderer(EntityRendererFactory.Context context) {
-        super(context, new ElkModel<>(context.getPart(RenderInit.ELYSIAN_ELK_LAYER)), 0.8F);
+        super(context, new ElkModel<>(context.getPart(RenderInit.ELK_LAYER)), 0.8F);
     }
 
     @Override
