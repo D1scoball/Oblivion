@@ -10,6 +10,7 @@ import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.oblivion.OblivionMain;
 import net.oblivion.block.render.DrillBlockEntityRenderer;
+import net.oblivion.block.render.GuidelightBlockEntityRenderer;
 import net.oblivion.entity.model.*;
 import net.oblivion.entity.render.*;
 
@@ -54,6 +55,9 @@ public class RenderInit {
 
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.DRILL, RenderLayer.getCutout());
         BlockEntityRendererFactories.register(BlockInit.DRILL_BLOCK_ENTITY, DrillBlockEntityRenderer::new);
+
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.GUIDELIGHT, RenderLayer.getCutout());
+        BlockEntityRendererFactories.register(BlockInit.GUIDELIGHT_BLOCK_ENTITY, GuidelightBlockEntityRenderer::new);
 
         // Entity Renderer
         EntityRendererRegistry.register(EntityInit.SHLAMA, ShlamaRenderer::new);

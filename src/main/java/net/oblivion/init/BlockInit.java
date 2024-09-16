@@ -18,10 +18,8 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.world.gen.feature.ConfiguredFeatures;
 import net.oblivion.OblivionMain;
-import net.oblivion.block.DrillBlock;
-import net.oblivion.block.MultiOreBlock;
-import net.oblivion.block.entity.DrillBlockEntity;
-import net.oblivion.block.entity.MultiOreBlockEntity;
+import net.oblivion.block.*;
+import net.oblivion.block.entity.*;
 
 import java.util.ArrayList;
 import java.util.Optional;
@@ -108,6 +106,7 @@ public class BlockInit {
     public static final Block RUNE_WOOD_DOOR = register("rune_wood_door", true, false, new DoorBlock(RUNE_WOOD_SET_TYPE, AbstractBlock.Settings.create().mapColor(RUNE_WOOD_PLANKS.getDefaultMapColor()).instrument(NoteBlockInstrument.BASS).strength(3.0F).nonOpaque().burnable().pistonBehavior(PistonBehavior.DESTROY)));
 
     public static final Block DRILL = register("drill", true, false, new DrillBlock(AbstractBlock.Settings.copy(Blocks.BARREL).nonOpaque().pistonBehavior(PistonBehavior.IGNORE)));
+    public static final Block GUIDELIGHT = register("guidelight", true, false, new GuidelightBlock(AbstractBlock.Settings.copy(Blocks.BEACON)));
 
     public static final Block TEST = register("test", true, false, new MultiOreBlock(AbstractBlock.Settings.copy(Blocks.DIAMOND_ORE)));
 
@@ -120,7 +119,8 @@ public class BlockInit {
             BlockEntityType.Builder.create(DrillBlockEntity::new, DRILL).build(null));
     public static BlockEntityType<MultiOreBlockEntity> MULTI_ORE_BLOCK_ENTITY = Registry.register(Registries.BLOCK_ENTITY_TYPE, OblivionMain.identifierOf("multi_ore_entity"),
             BlockEntityType.Builder.create(MultiOreBlockEntity::new, TEST).build(null));
-
+    public static BlockEntityType<GuidelightBlockEntity> GUIDELIGHT_BLOCK_ENTITY = Registry.register(Registries.BLOCK_ENTITY_TYPE, OblivionMain.identifierOf("guidelight_entity"),
+            BlockEntityType.Builder.create(GuidelightBlockEntity::new, GUIDELIGHT).build(null));
 
     private static Block register(String id, boolean registerItem, boolean datagenModel, Block block) {
         if (datagenModel) {
