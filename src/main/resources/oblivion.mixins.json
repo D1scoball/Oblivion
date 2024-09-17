@@ -5,7 +5,9 @@
   "mixins": [
   ],
   "client": [
-    "client.BuiltinModelItemRendererMixin"
+    "client.BuiltinModelItemRendererMixin",
+    "client.InGameOverlayRendererMixin",
+    "client.ClientPlayerEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1

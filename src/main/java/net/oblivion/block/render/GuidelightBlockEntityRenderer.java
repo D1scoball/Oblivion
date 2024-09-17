@@ -21,7 +21,7 @@ import net.oblivion.block.entity.GuidelightBlockEntity;
 @Environment(EnvType.CLIENT)
 public class GuidelightBlockEntityRenderer implements BlockEntityRenderer<GuidelightBlockEntity> {
 
-    private static final Identifier TEXTURE = OblivionMain.identifierOf("textures/entity/guidelight_beam.png");
+    public static final Identifier TEXTURE = OblivionMain.identifierOf("textures/entity/guidelight_beam.png");
 
     public GuidelightBlockEntityRenderer(BlockEntityRendererFactory.Context ctx) {
     }
@@ -32,7 +32,7 @@ public class GuidelightBlockEntityRenderer implements BlockEntityRenderer<Guidel
             long worldTime = guidelightBlockEntity.getWorld().getTime();
             float innerRadius = Math.max(0.3f, 0.3f + (float) guidelightBlockEntity.getTeleportTick() / (float) GuidelightBlockEntity.TELEPORT_TICKS * 2.7f);
 //            int extraMaxY = (int) ((float) guidelightBlockEntity.getInitialActivationTick() / (float) GuidelightBlockEntity.ACTIVATION_TICKS * 1024f);
-            float speed = Math.max(1f,1f + (float) guidelightBlockEntity.getTeleportTick() / (float) GuidelightBlockEntity.TELEPORT_TICKS * 8f);
+            float speed = Math.max(1f, 1f + (float) guidelightBlockEntity.getTeleportTick() / (float) GuidelightBlockEntity.TELEPORT_TICKS * 8f);
 
             float heightScale = 1.0f;
             float outerRadius = 3f;
