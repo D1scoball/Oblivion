@@ -4,14 +4,11 @@ import java.util.List;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.client.render.LightmapTextureManager;
-import net.minecraft.client.render.OverlayTexture;
-import net.minecraft.client.render.RenderLayer;
-import net.minecraft.client.render.VertexConsumer;
-import net.minecraft.client.render.VertexConsumerProvider;
+import net.minecraft.client.render.*;
 import net.minecraft.client.render.block.entity.BeaconBlockEntityRenderer;
 import net.minecraft.client.render.block.entity.BlockEntityRenderer;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactory;
+import net.minecraft.client.render.entity.EnderDragonEntityRenderer;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.ColorHelper;
@@ -31,21 +28,21 @@ public class GuidelightBlockEntityRenderer implements BlockEntityRenderer<Guidel
 
     @Override
     public void render(GuidelightBlockEntity guidelightBlockEntity, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumerProvider, int light, int overlay) {
-        if (guidelightBlockEntity.isActive() || guidelightBlockEntity.getInitialActivationTick() > 0) {
+        if (guidelightBlockEntity.isActive()) {//|| guidelightBlockEntity.getInitialActivationTick() > 0
             long worldTime = guidelightBlockEntity.getWorld().getTime();
-            float innerRadius = 0.3f + (float) guidelightBlockEntity.getTeleportTick() / (float) GuidelightBlockEntity.TELEPORT_TICKS * 2.7f;
-            int extraMaxY = (int) ((float) guidelightBlockEntity.getInitialActivationTick() / (float) GuidelightBlockEntity.ACTIVATION_TICKS * 1024f);
-            float speed = 1f + (float) guidelightBlockEntity.getTeleportTick() / (float) GuidelightBlockEntity.TELEPORT_TICKS * 8f;
-//            renderGuidelight(matrixStack, vertexConsumerProvider, TEXTURE, tickDelta, 1.0F, worldTime, speed, 0, 1024, extraMaxY, 16383998, radius, 3f);
-float heightScale = 1.0f;
+            float innerRadius = Math.max(0.3f, 0.3f + (float) guidelightBlockEntity.getTeleportTick() / (float) GuidelightBlockEntity.TELEPORT_TICKS * 2.7f);
+//            int extraMaxY = (int) ((float) guidelightBlockEntity.getInitialActivationTick() / (float) GuidelightBlockEntity.ACTIVATION_TICKS * 1024f);
+            float speed = Math.max(1f,1f + (float) guidelightBlockEntity.getTeleportTick() / (float) GuidelightBlockEntity.TELEPORT_TICKS * 8f);
+
+            float heightScale = 1.0f;
             float outerRadius = 3f;
-            int color = 16383998;
-//            float innerRadius =
+            int color = 16698342;
+
             int height = 1024;
             matrices.push();
             matrices.translate(0.5, 0.0, 0.5);
             float f = (float) Math.floorMod(worldTime, 40) + tickDelta;
-            float g =  -f;
+            float g = -f;
             float h = MathHelper.fractionalPart(g * 0.2F - (float) MathHelper.floor(g * 0.1F));
 
             matrices.push();
@@ -55,26 +52,27 @@ float heightScale = 1.0f;
             float q = -innerRadius;
             float t = -1.0F + h;
             float u = (float) height * heightScale * (0.5F / innerRadius) + t;
+
             // small beam
             renderGuidelightLayer(matrices, vertexConsumerProvider.getBuffer(RenderLayer.getBeaconBeam(TEXTURE, false)), color, 0, height, speed, 0.0F, innerRadius, innerRadius, 0.0F, n, 0.0F, 0.0F, q, 0.0F, 1.0F, u, t);
             matrices.pop();
 
-            float j = -outerRadius;
-            float k = -outerRadius;
-            float m = -outerRadius;
-            n = -outerRadius;
-            t = -1.0F + h;
-            u = (float) height * heightScale + t;
-            // radius beam
-            renderGuidelightLayer(matrices, vertexConsumerProvider.getBuffer(RenderLayer.getBeaconBeam(TEXTURE, true)), ColorHelper.Argb.withAlpha(32, color), 0, extraMaxY, speed, j, k, outerRadius, m, n, outerRadius, outerRadius, outerRadius, 0.0F, 1.0F, u, t);
+            if (guidelightBlockEntity.getTeleportTick() >= 0) {
+                float j = -outerRadius;
+                float k = -outerRadius;
+                float m = -outerRadius;
+                n = -outerRadius;
+                t = -1.0F + h;
+                u = (float) height * heightScale + t;
+                // radius beam
+                for (int i = 0; i < 16; i++) {
+                    renderGuidelightLayer(matrices, vertexConsumerProvider.getBuffer(RenderLayer.getBeaconBeam(TEXTURE, true)), ColorHelper.Argb.withAlpha(16 - i, color), i, i + 1, speed, j, k, outerRadius, m, n, outerRadius, outerRadius, outerRadius, 0.0F, 1.0F, u, t);
+                }
+            }
+
             matrices.pop();
         }
     }
-
-
-//    private static void renderGuidelight(MatrixStack matrices, VertexConsumerProvider vertexConsumers, Identifier textureId, float tickDelta, float heightScale, long worldTime, float speed, int yOffset, int maxY, int extraMaxY, int color, float innerRadius, float outerRadius) {
-//
-//    }
 
     private static void renderGuidelightLayer(MatrixStack matrices, VertexConsumer vertices, int color, int yOffset, int height, float speed, float x1, float z1, float x2, float z2, float x3, float z3, float x4, float z4, float u1, float u2, float v1, float v2) {
         MatrixStack.Entry entry = matrices.peek();

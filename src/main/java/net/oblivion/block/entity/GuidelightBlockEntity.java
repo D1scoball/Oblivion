@@ -23,14 +23,15 @@ public class GuidelightBlockEntity extends BlockEntity {
 
     private boolean isActive = false;
     private boolean isEntityNearby = false;
-    private int initialActivationTick = 0;
-    private int teleportTick = 0;
-    private int cooldownTick = 0;
+    //    private int initialActivationTick = 0;
+    private int teleportTick = -200;
+//    private int cooldownTick = 0;
 
     public static final int TELEPORT_TICKS = 200;
-    public static final int ACTIVATION_TICKS = 600;
+    public static final int TELEPORT_COOLDOWN_TICKS = 200;
+//    public static final int ACTIVATION_TICKS = 600;
 
-    private static final int COOLDOWN_TICKS = 600;
+//    private static final int COOLDOWN_TICKS = 600;
 
     public GuidelightBlockEntity(BlockPos pos, BlockState state) {
         super(BlockInit.GUIDELIGHT_BLOCK_ENTITY, pos, state);
@@ -41,9 +42,9 @@ public class GuidelightBlockEntity extends BlockEntity {
         super.readNbt(nbt, registryLookup);
 
         this.isActive = nbt.getBoolean("IsActive");
-        this.initialActivationTick = nbt.getInt("InitialActivationTick");
+//        this.initialActivationTick = nbt.getInt("InitialActivationTick");
         this.teleportTick = nbt.getInt("TeleportTick");
-        this.cooldownTick = nbt.getInt("CooldownTick");
+//        this.cooldownTick = nbt.getInt("CooldownTick");
     }
 
     @Override
@@ -51,9 +52,9 @@ public class GuidelightBlockEntity extends BlockEntity {
         super.writeNbt(nbt, registryLookup);
 
         nbt.putBoolean("IsActive", this.isActive);
-        nbt.putInt("InitialActivationTick", this.initialActivationTick);
+//        nbt.putInt("InitialActivationTick", this.initialActivationTick);
         nbt.putInt("TeleportTick", this.teleportTick);
-        nbt.putInt("CooldownTick", this.cooldownTick);
+//        nbt.putInt("CooldownTick", this.cooldownTick);
     }
 
     @Override
@@ -74,13 +75,13 @@ public class GuidelightBlockEntity extends BlockEntity {
         return this.isActive;
     }
 
-    public void setInitialActivationTick(int initialActivationTick) {
-        this.initialActivationTick = initialActivationTick;
-    }
-
-    public int getInitialActivationTick() {
-        return this.initialActivationTick;
-    }
+//    public void setInitialActivationTick(int initialActivationTick) {
+//        this.initialActivationTick = initialActivationTick;
+//    }
+//
+//    public int getInitialActivationTick() {
+//        return this.initialActivationTick;
+//    }
 
     public void setTeleportTick(int teleportTick) {
         this.teleportTick = teleportTick;
@@ -98,13 +99,13 @@ public class GuidelightBlockEntity extends BlockEntity {
         return this.isEntityNearby;
     }
 
-    public void setCooldownTick(int cooldownTick) {
-        this.cooldownTick = cooldownTick;
-    }
-
-    public int getCooldownTick() {
-        return this.cooldownTick;
-    }
+//    public void setCooldownTick(int cooldownTick) {
+//        this.cooldownTick = cooldownTick;
+//    }
+//
+//    public int getCooldownTick() {
+//        return this.cooldownTick;
+//    }
 
     public static void serverTick(World world, BlockPos pos, BlockState state, GuidelightBlockEntity blockEntity) {
         if (world.getTime() % 20 == 0) {
@@ -114,9 +115,11 @@ public class GuidelightBlockEntity extends BlockEntity {
                     if (!world.getBlockState(checkPos).isIn(TagInit.GUIDELIGHT_BASE_BLOCKS)) {
                         if (blockEntity.isActive()) {
                             blockEntity.setActive(false);
-                            blockEntity.setTeleportTick(0);
+                            blockEntity.setTeleportTick(-TELEPORT_COOLDOWN_TICKS);
                             blockEntity.markDirty();
                             world.updateListeners(pos, state, state, 0);
+
+                            world.playSound(null, pos.getX(), pos.getY(), pos.getZ(), SoundEvents.BLOCK_BEACON_DEACTIVATE, SoundCategory.BLOCKS, 1, 0.5f, world.getTime());
                         }
                         return;
                     }
@@ -127,7 +130,7 @@ public class GuidelightBlockEntity extends BlockEntity {
                 blockEntity.markDirty();
                 world.updateListeners(pos, state, state, 0);
             }
-            if (blockEntity.isActive()) {
+            if (blockEntity.isActive() && blockEntity.getTeleportTick() >= 0) {
                 Box box = new Box(pos).expand(2.5D, 3D, 2.5D);
                 if (!world.getEntitiesByClass(LivingEntity.class, box, EntityPredicates.EXCEPT_SPECTATOR).isEmpty()) {
                     blockEntity.setEntityNearby(true);
@@ -137,31 +140,46 @@ public class GuidelightBlockEntity extends BlockEntity {
             }
         }
         if (!blockEntity.isActive()) {
-            if (blockEntity.getInitialActivationTick() > 0) {
-                blockEntity.setInitialActivationTick(blockEntity.getInitialActivationTick() - 1);
-                blockEntity.markDirty();
-                world.updateListeners(pos, state, state, 0);
-            }
+//            if (blockEntity.getInitialActivationTick() > 0) {
+//                blockEntity.setInitialActivationTick(blockEntity.getInitialActivationTick() - 1);
+//                blockEntity.markDirty();
+//                world.updateListeners(pos, state, state, 0);
+//            }
         } else {
-            if (blockEntity.getInitialActivationTick() <= ACTIVATION_TICKS) {
-                blockEntity.setInitialActivationTick(blockEntity.getInitialActivationTick() + 1);
+
+//            if (blockEntity.getInitialActivationTick() <= ACTIVATION_TICKS) {
+//                blockEntity.setInitialActivationTick(blockEntity.getInitialActivationTick() + 1);
+//                blockEntity.markDirty();
+//                world.updateListeners(pos, state, state, 0);
+//            } else
+
+//            if (blockEntity.getCooldownTick() > 0) {
+//                blockEntity.setCooldownTick(blockEntity.getCooldownTick() - 1);
+//            } else
+            if (blockEntity.getTeleportTick() < 0) {
+                blockEntity.setTeleportTick(blockEntity.getTeleportTick() + 1);
                 blockEntity.markDirty();
                 world.updateListeners(pos, state, state, 0);
-            } else if (blockEntity.getCooldownTick() > 0) {
-                blockEntity.setCooldownTick(blockEntity.getCooldownTick() - 1);
+
+                // Todo: Play loading sound of guidelight here
+
+//                if (blockEntity.getTeleportTick() == 0) {
+//                    ((ServerWorld) world).playSound(null, pos.getX(), pos.getY(), pos.getZ(), SoundEvents.BLOCK_BEACON_ACTIVATE, SoundCategory.BLOCKS, 1, 0.5f, world.getTime());
+//                }
             } else if (blockEntity.isEntityNearby()) {
                 blockEntity.setTeleportTick(blockEntity.getTeleportTick() + 1);
-                if (blockEntity.getTeleportTick() >= TELEPORT_TICKS) {
-// Todo: HERE Teleport
 
-                    //T particle, double x, double y, double z, int count, double deltaX, double deltaY, double deltaZ, double speed
+                if (blockEntity.getTeleportTick() >= TELEPORT_TICKS) {
+// Todo: HERE Teleport and play teleport sound
+
 
                     // Test @Nullable PlayerEntity source, double x, double y, double z, RegistryEntry<SoundEvent> sound, SoundCategory category, float volume, float pitch, long seed
-                    ((ServerWorld) world).playSound(null, pos.getX(), pos.getY(), pos.getZ(), SoundEvents.ENTITY_GENERIC_EXPLODE, SoundCategory.BLOCKS, 1, 1, world.getTime());
-                    // TEST END
-                    blockEntity.setCooldownTick(COOLDOWN_TICKS);
-                    blockEntity.setTeleportTick(0);
+                    ((ServerWorld) world).playSound(null, pos.getX(), pos.getY(), pos.getZ(), SoundEvents.ENTITY_GENERIC_EXPLODE, SoundCategory.BLOCKS, 1f, 1f, world.getTime());
+
+                    blockEntity.setTeleportTick(-TELEPORT_COOLDOWN_TICKS);
                     blockEntity.setEntityNearby(false);
+
+                    blockEntity.markDirty();
                 }
                 world.updateListeners(pos, state, state, 0);
             } else if (blockEntity.getTeleportTick() > 0) {
@@ -173,10 +191,16 @@ public class GuidelightBlockEntity extends BlockEntity {
     }
 
     public static void clientTick(World world, BlockPos pos, BlockState state, GuidelightBlockEntity blockEntity) {
-//        if (state.get(DrillBlock.POWERED)) {
-//            blockEntity.ticksActive++;
-//        }
-//        System.out.println(world+" : "+blockEntity.getTeleportTick());
+        if (blockEntity.isActive()) {
+//            System.out.println(blockEntity.getTeleportTick());
+            if (blockEntity.getTeleportTick() == -1) {
+                world.playSound(null, pos.getX(), pos.getY(), pos.getZ(), SoundEvents.BLOCK_BEACON_ACTIVATE, SoundCategory.BLOCKS, 1, 0.5f);
+            } else if (blockEntity.getTeleportTick() > 0) {
+
+            } else if (blockEntity.getTeleportTick() <= 0) {
+
+            }
+        }
     }
 
 }
