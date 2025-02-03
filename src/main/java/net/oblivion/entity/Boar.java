@@ -1,20 +1,8 @@
 package net.oblivion.entity;
 
-import java.util.EnumSet;
-import java.util.UUID;
-
-import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.ai.NoPenaltyTargeting;
-import net.minecraft.entity.ai.goal.AnimalMateGoal;
-import net.minecraft.entity.ai.goal.EscapeDangerGoal;
-import net.minecraft.entity.ai.goal.FollowParentGoal;
-import net.minecraft.entity.ai.goal.Goal;
-import net.minecraft.entity.ai.goal.LookAroundGoal;
-import net.minecraft.entity.ai.goal.LookAtEntityGoal;
-import net.minecraft.entity.ai.goal.SwimGoal;
-import net.minecraft.entity.ai.goal.TemptGoal;
-import net.minecraft.entity.ai.goal.WanderAroundFarGoal;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.data.DataTracker;
@@ -22,24 +10,19 @@ import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.mob.Angerable;
 import net.minecraft.entity.mob.HostileEntity;
-import net.minecraft.entity.mob.MobEntity;
-import net.minecraft.entity.passive.*;
+import net.minecraft.entity.passive.AnimalEntity;
+import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
-import net.minecraft.registry.DynamicRegistryManager;
-import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.registry.tag.DamageTypeTags;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.util.DyeColor;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.oblivion.init.EntityInit;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.UUID;
 
 public class Boar extends AnimalEntity implements Angerable {
 
@@ -54,7 +37,8 @@ public class Boar extends AnimalEntity implements Angerable {
 
     public static DefaultAttributeContainer.Builder createBoarAttributes() {
         return HostileEntity.createHostileAttributes()
-                .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 35.0)
+                .add(EntityAttributes.GENERIC_MAX_HEALTH, 50.0D)
+                .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 20.0)
                 .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.23F)
                 .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 3.0)
                 .add(EntityAttributes.GENERIC_ARMOR, 2.0);
@@ -63,13 +47,18 @@ public class Boar extends AnimalEntity implements Angerable {
     @Override
     protected void initGoals() {
         this.goalSelector.add(0, new SwimGoal(this));
-        this.goalSelector.add(1, new EscapeDangerGoal(this, 2.0D));
-        this.goalSelector.add(2, new AnimalMateGoal(this, 1.0D));
-        this.goalSelector.add(3, new TemptGoal(this, 1.22D, Ingredient.ofItems(Items.SHORT_GRASS, Items.TALL_GRASS, Items.FERN), true));
-        this.goalSelector.add(4, new FollowParentGoal(this, 1.25D));
+        this.goalSelector.add(1, new MeleeAttackGoal(this, 1.5, true));
+        this.goalSelector.add(1, new EscapeDangerGoal(this, 2.0, boar -> boar.isBaby() ? DamageTypeTags.PANIC_CAUSES : DamageTypeTags.PANIC_ENVIRONMENTAL_CAUSES));
+        this.goalSelector.add(2, new WanderNearTargetGoal(this, 0.9, 32.0F));
+        this.goalSelector.add(2, new AnimalMateGoal(this, 0.8D));
+        this.goalSelector.add(3, new TemptGoal(this, 1.0D, Ingredient.ofItems(Items.SHORT_GRASS, Items.TALL_GRASS, Items.FERN), false));
+        this.goalSelector.add(4, new FollowParentGoal(this, 1.2D));
         this.goalSelector.add(6, new WanderAroundFarGoal(this, 1.0D));
         this.goalSelector.add(7, new LookAtEntityGoal(this, PlayerEntity.class, 6.0F));
         this.goalSelector.add(8, new LookAroundGoal(this));
+        this.targetSelector.add(1, new Boar.ProtectBabiesGoal());
+        this.targetSelector.add(2, new RevengeGoal(this));
+        this.targetSelector.add(3, new ActiveTargetGoal(this, PlayerEntity.class, 10, true, false, livingEntity -> this.shouldAngerAt((LivingEntity) livingEntity)));
     }
 
 //    @Override
@@ -91,6 +80,16 @@ public class Boar extends AnimalEntity implements Angerable {
 //    protected void playStepSound(BlockPos pos, BlockState state) {
 //        this.playSound(SoundEvents.ENTITY_WOLF_STEP, 0.15F, 1.0F);
 //    }
+
+
+    @Override
+    public void tickMovement() {
+        super.tickMovement();
+
+        if (!this.getWorld().isClient()) {
+            this.tickAngerLogic((ServerWorld) this.getWorld(), true);
+        }
+    }
 
     @Override
     protected void initDataTracker(net.minecraft.entity.data.DataTracker.Builder builder) {
@@ -132,6 +131,38 @@ public class Boar extends AnimalEntity implements Angerable {
     @Override
     public void setAngryAt(@Nullable UUID angryAt) {
         this.angryAt = angryAt;
+    }
+
+    @Override
+    protected int getXpToDrop() {
+        return 4 + this.getWorld().getRandom().nextInt(3);
+    }
+
+    private class ProtectBabiesGoal extends ActiveTargetGoal<PlayerEntity> {
+        public ProtectBabiesGoal() {
+            super(Boar.this, PlayerEntity.class, 20, true, true, null);
+        }
+
+        @Override
+        public boolean canStart() {
+            if (!Boar.this.isBaby()) {
+                if (super.canStart()) {
+                    for (Boar boar : Boar.this.getWorld()
+                            .getNonSpectatingEntities(Boar.class, Boar.this.getBoundingBox().expand(8.0, 4.0, 8.0))) {
+                        if (boar.isBaby()) {
+                            return true;
+                        }
+                    }
+                }
+
+            }
+            return false;
+        }
+
+        @Override
+        protected double getFollowRange() {
+            return super.getFollowRange() * 0.5;
+        }
     }
 
 }

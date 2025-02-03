@@ -87,6 +87,13 @@ public class ElysianWolfModel<T extends LivingEntity> extends EntityModel<T> {
         this.leg_right_back.pitch = MathHelper.cos(limbAngle * 0.6662F + 3.1415927F) * 1.4F * limbDistance;
         this.leg_right_front.pitch = MathHelper.cos(limbAngle * 0.6662F + 3.1415927F) * 1.4F * limbDistance;
         this.leg_left_back.pitch = MathHelper.cos(limbAngle * 0.6662F) * 1.4F * limbDistance;
+
+        this.tail.yaw = MathHelper.cos(limbAngle * 0.6662F) * 0.5F * limbDistance;
+
+        this.lower_yaw.pitch = 0f;
+        if (entity.handSwingProgress > 0.0f) {
+            this.lower_yaw.pitch = Math.max(0.0f, (float)Math.sin(entity.handSwingProgress*4f));
+        }
     }
 
     @Override

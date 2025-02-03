@@ -8,6 +8,7 @@ import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.MathHelper;
+import net.oblivion.entity.ElysianShaman;
 
 @Environment(EnvType.CLIENT)
 public class ElysianShamanModel<T extends LivingEntity> extends EntityModel<T> {
@@ -152,11 +153,39 @@ public class ElysianShamanModel<T extends LivingEntity> extends EntityModel<T> {
 
         this.leg_right.pitch = MathHelper.cos(limbAngle * 0.6662F) * 1.4F * limbDistance;
         this.leg_left.pitch = MathHelper.cos(limbAngle * 0.6662F + 3.1415927F) * 1.4F * limbDistance;
+
+        this.main.yaw = 0.0f;
+        this.arm_left.yaw = 0.0f;
+        this.arm_right.yaw = 0.0f;
+
+        if (entity.getDataTracker().get(ElysianShaman.SPIN_ATTACK)) {
+            this.main.yaw = animationProgress;
+            this.arm_left.pitch = 1.613f;
+            this.arm_left.yaw = 1.413f;
+            this.arm_right.pitch = 1.613f;
+            this.arm_right.yaw = -1.413f;
+
+        } else if (entity.handSwingProgress > 0.0f) {
+            float f = MathHelper.sin(entity.handSwingProgress * (float) Math.PI);
+            int handUsage = entity.getDataTracker().get(ElysianShaman.HAND_USAGE);
+            if (handUsage == 0) {
+                this.arm_right.pitch -= f / 6.28f / 1.5f;
+            } else if (handUsage == 1) {
+                this.arm_left.pitch -= f / 6.28f / 1.5f;
+            } else if (handUsage == 2) {
+                this.arm_left.pitch -= f / 6.28f / 1.5f;
+                this.arm_right.pitch -= f / 6.28f / 1.5f;
+            }
+        } else {
+            this.arm_right.pitch = (-0.2F + 1.5F * MathHelper.wrap(limbAngle, 13.0F)) * limbDistance;
+            this.arm_left.pitch = (-0.2F - 1.5F * MathHelper.wrap(limbAngle, 13.0F)) * limbDistance;
+        }
+
     }
 
     @Override
     public void render(MatrixStack matrices, VertexConsumer vertices, int light, int overlay, int color) {
-        this.main.render(matrices,vertices,light,overlay,color);
+        this.main.render(matrices, vertices, light, overlay, color);
     }
 
 }

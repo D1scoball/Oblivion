@@ -8,6 +8,7 @@ import net.minecraft.client.render.entity.model.EntityModel;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.MathHelper;
+import net.oblivion.entity.Shroom;
 
 @Environment(EnvType.CLIENT)
 public class ShroomModel<T extends LivingEntity> extends EntityModel<T> {
@@ -80,6 +81,9 @@ public class ShroomModel<T extends LivingEntity> extends EntityModel<T> {
         this.arm_right.pitch = MathHelper.cos(limbAngle * 0.6662F + 3.1415927F) * 1.4F * limbDistance;
         this.leg_right.pitch = MathHelper.cos(limbAngle * 0.6662F + 3.1415927F) * 1.4F * limbDistance;
         this.arm_left.pitch = MathHelper.cos(limbAngle * 0.6662F) * 1.4F * limbDistance;
+
+        this.hat.pitch = 0.16f-entity.getDataTracker().get(Shroom.TILT)*0.16f;
+        this.mushrooms.visible = entity.getDataTracker().get(Shroom.MUSHROOMS);
     }
 
     @Override

@@ -1,45 +1,49 @@
 package net.oblivion.entity;
 
-import net.minecraft.block.BlockState;
+import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.entity.EntityData;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
-import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.data.DataTracker;
+import net.minecraft.entity.data.TrackedData;
+import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.recipe.Ingredient;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
-import net.minecraft.world.BlockRenderView;
-import net.minecraft.world.World;
-import net.minecraft.world.WorldAccess;
-import net.minecraft.world.WorldView;
-import net.oblivion.init.BlockInit;
+import net.minecraft.world.*;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Iterator;
 
 public class Treeder extends PassiveEntity {
 
-    private int saplingTimer = -1;
+    public static final TrackedData<Boolean> SAPLING = DataTracker.registerData(Treeder.class, TrackedDataHandlerRegistry.BOOLEAN);
+
+    private int growSapling = 48000;
+    private int saplingTimer = 4800;
 
     public Treeder(EntityType<? extends PassiveEntity> entityType, World world) {
         super(entityType, world);
     }
 
     public static DefaultAttributeContainer.Builder createTreederAttributes() {
-        return MobEntity.createMobAttributes().add(EntityAttributes.GENERIC_MAX_HEALTH, 10.0D).add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.215D);
+        return MobEntity.createMobAttributes().add(EntityAttributes.GENERIC_MAX_HEALTH, 20.0D).add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.215D);
     }
 
     public static boolean isValidNaturalSpawn(EntityType<? extends AnimalEntity> type, WorldAccess world, SpawnReason spawnReason, BlockPos pos, Random random) {
@@ -62,34 +66,58 @@ public class Treeder extends PassiveEntity {
     }
 
     @Override
+    protected void initDataTracker(DataTracker.Builder builder) {
+        super.initDataTracker(builder);
+        builder.add(SAPLING, false);
+    }
+
+    @Override
     public void writeCustomDataToNbt(NbtCompound nbt) {
         super.writeCustomDataToNbt(nbt);
+        nbt.putBoolean("Sapling", this.dataTracker.get(SAPLING));
         nbt.putInt("SaplingTimer", this.saplingTimer);
+        nbt.putInt("GrowSapling", this.growSapling);
     }
 
     @Override
     public void readCustomDataFromNbt(NbtCompound nbt) {
         super.readCustomDataFromNbt(nbt);
+        this.dataTracker.set(SAPLING, nbt.getBoolean("Sapling"));
         this.saplingTimer = nbt.getInt("SaplingTimer");
+        this.growSapling = nbt.getInt("GrowSapling");
     }
 
     @Override
     public void tickMovement() {
         super.tickMovement();
         if (!this.getWorld().isClient()) {
-            if (this.saplingTimer <= 0) {
-                if (this.saplingTimer == 0 && this.getWorld().getBlockState(this.getBlockPos().down()).isOf(Blocks.GRASS_BLOCK)
-                        && this.getWorld().getBlockState(this.getBlockPos()).isAir()) {
+            if (this.dataTracker.get(SAPLING)) {
+                if (this.saplingTimer <= 0) {
+                    if (this.saplingTimer == 0 && this.getWorld().getBlockState(this.getBlockPos().down()).isOf(Blocks.GRASS_BLOCK)
+                            && this.getWorld().getBlockState(this.getBlockPos()).isAir()) {
+                        Iterator<RegistryEntry<Block>> iterator = Registries.BLOCK.iterateEntries(BlockTags.SAPLINGS).iterator();
 
-                    // Todo: May set other than oak saplings
-                    this.getWorld().setBlockState(this.getBlockPos(), Blocks.OAK_SAPLING.getDefaultState());
-                    if (!this.isSilent()) {
-                        this.getWorld().playSound(null, this.getX(), this.getY(), this.getZ(), SoundEvents.BLOCK_CHERRY_SAPLING_PLACE, SoundCategory.NEUTRAL, 1.0F, 1.0F, this.getRandom().nextLong());
+                        while (iterator.hasNext()) {
+                            if (this.getRandom().nextFloat() < 0.1f) {
+                                if (iterator.next().value().getDefaultState().canPlaceAt(this.getWorld(), this.getBlockPos())) {
+                                    this.getWorld().setBlockState(this.getBlockPos(), iterator.next().value().getDefaultState());
+                                    break;
+                                }
+                            }
+                        }
+                        if (!this.isSilent()) {
+                            this.getWorld().playSound(null, this.getX(), this.getY(), this.getZ(), SoundEvents.BLOCK_CHERRY_SAPLING_PLACE, SoundCategory.NEUTRAL, 1.0F, 1.0F, this.getRandom().nextLong());
+                        }
                     }
+                    this.saplingTimer = 3600 + this.getWorld().getRandom().nextInt(4800);
                 }
-                this.saplingTimer = 3600 + this.getWorld().getRandom().nextInt(4800);
+                this.saplingTimer--;
+            } else {
+                this.growSapling--;
+                if (this.growSapling <= 0) {
+                    this.dataTracker.set(SAPLING, true);
+                }
             }
-            this.saplingTimer--;
         }
     }
 
@@ -113,10 +141,18 @@ public class Treeder extends PassiveEntity {
 //        this.playSound(SoundEvents.ENTITY_WOLF_STEP, 0.15F, 1.0F);
 //    }
 
-    //Todo: May require different than grass block?
+
+    @Override
+    public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData) {
+        if (world.getRandom().nextFloat() < 0.01f) {
+            this.dataTracker.set(SAPLING, true);
+        }
+        return super.initialize(world, difficulty, spawnReason, entityData);
+    }
+
     @Override
     public float getPathfindingFavor(BlockPos pos, WorldView world) {
-        return world.getBlockState(pos.down()).isOf(Blocks.GRASS_BLOCK) ? 10.0F : world.getPhototaxisFavor(pos);
+        return world.getBlockState(pos.down()).isIn(BlockTags.DIRT) ? 10.0F : world.getPhototaxisFavor(pos);
     }
 
     @Override

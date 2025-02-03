@@ -8,6 +8,7 @@ import net.minecraft.util.Identifier;
 import net.oblivion.OblivionMain;
 import net.oblivion.entity.ElysianWolf;
 import net.oblivion.entity.model.ElysianWolfModel;
+import net.oblivion.entity.render.feature.ElysianWolfEyesFeatureRenderer;
 import net.oblivion.init.RenderInit;
 
 @Environment(EnvType.CLIENT)
@@ -16,6 +17,7 @@ public class ElysianWolfRenderer extends MobEntityRenderer<ElysianWolf, ElysianW
 
     public ElysianWolfRenderer(EntityRendererFactory.Context context) {
         super(context, new ElysianWolfModel<>(context.getPart(RenderInit.ELYSIAN_WOLF_LAYER)), 1.3F);
+        this.addFeature(new ElysianWolfEyesFeatureRenderer(this));
     }
 
     @Override

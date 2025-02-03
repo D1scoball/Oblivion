@@ -21,7 +21,7 @@ public class ShroomRenderer extends MobEntityRenderer<Shroom, ShroomModel<Shroom
 
     @Override
     protected void scale(Shroom entity, MatrixStack matrices, float amount) {
-        matrices.scale(0.8F + 0.1F * entity.getSize(), 0.8F + 0.1F * entity.getSize(), 0.8F + 0.1F * entity.getSize());
+        matrices.scale(0.7F + 0.13F * entity.getSize(), 0.7F + 0.13F * entity.getSize(), 0.7F + 0.13F * entity.getSize());
     }
 
     @Override

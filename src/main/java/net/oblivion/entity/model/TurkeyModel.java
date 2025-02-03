@@ -12,13 +12,14 @@ import net.minecraft.client.model.ModelPartData;
 import net.minecraft.client.model.ModelTransform;
 import net.minecraft.client.model.TexturedModelData;
 import net.minecraft.client.render.entity.model.AnimalModel;
-import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.util.math.MathHelper;
+import net.oblivion.entity.Turkey;
 
 @Environment(EnvType.CLIENT)
-public class TurkeyModel<T extends AnimalEntity> extends AnimalModel<T> {
+public class TurkeyModel<T extends Turkey> extends AnimalModel<T> {
     private final ModelPart head;
     private final ModelPart body;
+    private final ModelPart saddle;
     private final ModelPart right_leg;
     private final ModelPart left_leg;
     private final ModelPart right_wing;
@@ -29,6 +30,7 @@ public class TurkeyModel<T extends AnimalEntity> extends AnimalModel<T> {
         super(true, 18.0F, 4.0F);
         this.head = root.getChild("head");
         this.body = root.getChild("body");
+        this.saddle = body.getChild("saddle");
         this.right_leg = root.getChild("right_leg");
         this.left_leg = root.getChild("left_leg");
         this.right_wing = root.getChild("right_wing");
@@ -44,6 +46,8 @@ public class TurkeyModel<T extends AnimalEntity> extends AnimalModel<T> {
                 .uv(0, 10).cuboid(0.0F, -16.0F, -4.5F, 0.0F, 13.0F, 16.0F, new Dilation(0.0F)), ModelTransform.pivot(-0.5F, -2.0F, -10.0F));
 
         ModelPartData body = modelPartData.addChild("body", ModelPartBuilder.create().uv(0, 0).cuboid(-5.0F, -5.0F, -9.0F, 11.0F, 10.0F, 16.0F, new Dilation(0.0F)), ModelTransform.pivot(-0.5F, 10.0F, 0.0F));
+
+        ModelPartData saddle = body.addChild("saddle", ModelPartBuilder.create().uv(0, 72).cuboid(-5.0F, -5.0F, -9.0F, 11.0F, 10.0F, 16.0F, new Dilation(0.5F)), ModelTransform.pivot(0.0F, 0.0F, 0.0F));
 
         ModelPartData right_leg = modelPartData.addChild("right_leg", ModelPartBuilder.create().uv(33, 9).cuboid(-3.0F, 8.75F, -4.0F, 6.0F, 0.0F, 5.0F, new Dilation(0.0F))
                 .uv(0, 0).cuboid(-1.0F, 0.0F, -1.0F, 2.0F, 9.0F, 2.0F, new Dilation(0.0F)), ModelTransform.pivot(-4.5F, 15.0F, -1.0F));
@@ -68,7 +72,7 @@ public class TurkeyModel<T extends AnimalEntity> extends AnimalModel<T> {
 
     @Override
     protected Iterable<ModelPart> getBodyParts() {
-        return ImmutableList.of(this.body,this.neck,this.left_leg,this.right_leg,this.left_wing,this.right_wing);
+        return ImmutableList.of(this.body, this.neck, this.left_leg, this.right_leg, this.left_wing, this.right_wing);
     }
 
     @Override
@@ -78,9 +82,15 @@ public class TurkeyModel<T extends AnimalEntity> extends AnimalModel<T> {
 
         this.left_leg.pitch = MathHelper.cos(limbAngle * 0.6662F) * 1.4F * limbDistance;
         this.right_leg.pitch = MathHelper.cos(limbAngle * 0.6662F + 3.1415927F) * 1.4F * limbDistance;
-//        this.leg_front_right.pitch = MathHelper.cos(limbAngle * 0.6662F + 3.1415927F) * 1.4F * limbDistance;
-//        this.leg_back_left.pitch = MathHelper.cos(limbAngle * 0.6662F) * 1.4F * limbDistance;
-//        this.horns.visible = !entity.isBaby();
+
+        float g = MathHelper.lerp(animationProgress, entity.prevFlapProgress, entity.flapProgress);
+        float h = MathHelper.lerp(animationProgress, entity.prevMaxWingDeviation, entity.maxWingDeviation);
+        h = MathHelper.clamp(h, 0.0F, 1.0F);
+
+        this.left_wing.roll = -(MathHelper.sin(g) + 1.0F) * h;
+        this.right_wing.roll = (MathHelper.sin(g) + 1.0F) * h;
+
+        this.saddle.visible = entity.isSaddled();
     }
 
 }

@@ -11,6 +11,7 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.Arm;
 import net.minecraft.util.math.MathHelper;
+import net.oblivion.entity.Goblin;
 
 @Environment(EnvType.CLIENT)
 public class GoblinModel<T extends LivingEntity> extends EntityModel<T> implements ModelWithArms {
@@ -102,6 +103,12 @@ public class GoblinModel<T extends LivingEntity> extends EntityModel<T> implemen
             this.left_armor.visible = true;
             this.right_leg_armor.visible = true;
             this.left_leg_armor.visible = true;
+            if (entity.getDataTracker().get(Goblin.DEFENDING)) {
+                this.right_arm.pitch = this.left_arm.pitch * 0.5F - 0.9424779F + MathHelper.clamp(this.head.pitch, (float) (-Math.PI * 4.0 / 9.0), 0.43633232F);
+                this.right_arm.yaw = 30.0F * (float) (Math.PI / 180.0) + MathHelper.clamp(this.head.yaw, (float) (-Math.PI / 6), (float) (Math.PI / 6));
+            } else {
+                this.right_arm.yaw = 0.0f;
+            }
         } else {
             this.head_armor.visible = false;
             this.body_armor.visible = false;
@@ -119,7 +126,8 @@ public class GoblinModel<T extends LivingEntity> extends EntityModel<T> implemen
 
     @Override
     public void setArmAngle(Arm arm, MatrixStack matrices) {
-        matrices.translate(0.0f,0.7f,0.0f);
+        matrices.translate(0.0f, 0.7f, 0.0f);
+        matrices.scale(1.0f, 1.0f, 1.01f);
         this.getArm(arm).rotate(matrices);
     }
 
