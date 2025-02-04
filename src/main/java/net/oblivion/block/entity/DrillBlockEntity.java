@@ -1,5 +1,7 @@
 package net.oblivion.block.entity;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.client.MinecraftClient;
@@ -9,9 +11,7 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import net.oblivion.block.DrillBlock;
 import net.oblivion.block.MultiOreBlock;
@@ -23,17 +23,12 @@ public class DrillBlockEntity extends BlockEntity {
     private int ticksActive = 0;
     private boolean prevPowered;
 
-    private final SoundInstance drillOn;
-    private final SoundInstance drillIdle;
-    private final SoundInstance drillOff;
+    private SoundInstance drillOn = null;
+    private SoundInstance drillIdle = null;
+    private SoundInstance drillOff = null;
 
     public DrillBlockEntity(BlockPos pos, BlockState state) {
         super(BlockInit.DRILL_BLOCK_ENTITY, pos, state);
-
-        Random random = Random.create();
-        this.drillOn = new PositionedSoundInstance(SoundInit.DRILL_ON_EVENT, SoundCategory.BLOCKS, 1.0f, 1.0f, random, pos.getX(), pos.getY(), pos.getZ());
-        this.drillIdle = new PositionedSoundInstance(SoundInit.DRILL_IDLE_EVENT.getId(), SoundCategory.BLOCKS, 1.0f, 1.0f, random, true, 0, SoundInstance.AttenuationType.LINEAR, pos.getX(), pos.getY(), pos.getZ(), false);
-        this.drillOff = new PositionedSoundInstance(SoundInit.DRILL_OFF_EVENT, SoundCategory.BLOCKS, 1.0f, 1.0f, random, pos.getX(), pos.getY(), pos.getZ());
     }
 
     @Override
@@ -84,8 +79,14 @@ public class DrillBlockEntity extends BlockEntity {
         }
     }
 
+    @Environment(EnvType.CLIENT)
     public static void clientTick(World world, BlockPos pos, BlockState state, DrillBlockEntity blockEntity) {
         MinecraftClient client = MinecraftClient.getInstance();
+        if (blockEntity.drillOn == null) {
+            blockEntity.drillOn = new PositionedSoundInstance(SoundInit.DRILL_ON_EVENT, SoundCategory.BLOCKS, 1.0f, 1.0f, world.getRandom(), pos.getX(), pos.getY(), pos.getZ());
+            blockEntity.drillIdle = new PositionedSoundInstance(SoundInit.DRILL_IDLE_EVENT.getId(), SoundCategory.BLOCKS, 1.0f, 1.0f, world.getRandom(), true, 0, SoundInstance.AttenuationType.LINEAR, pos.getX(), pos.getY(), pos.getZ(), false);
+            blockEntity.drillOff = new PositionedSoundInstance(SoundInit.DRILL_OFF_EVENT, SoundCategory.BLOCKS, 1.0f, 1.0f, world.getRandom(), pos.getX(), pos.getY(), pos.getZ());
+        }
         if (state.get(DrillBlock.POWERED)) {
             blockEntity.ticksActive++;
             if (!blockEntity.prevPowered) {
