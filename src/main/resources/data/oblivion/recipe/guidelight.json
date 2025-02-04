@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "d": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "e": {
+      "item": "minecraft:glass"
+    },
+    "f": {
+      "item": "minecraft:end_rod"
+    },
+    "o": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "pattern": [
+    "efe",
+    "eoe",
+    "ddd"
+  ],
+  "result": {
+    "count": 1,
+    "id": "oblivion:guidelight"
+  }
+}
