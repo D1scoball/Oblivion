@@ -3,6 +3,7 @@
   "package": "net.oblivion.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "ItemMixin"
   ],
   "client": [
     "client.BuiltinModelItemRendererMixin",

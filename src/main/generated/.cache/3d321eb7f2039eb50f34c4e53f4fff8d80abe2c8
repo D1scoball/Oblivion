@@ -1,4 +1,4 @@
-// 1.21.1	2025-02-04T14:27:08.1673171	Oblivion/Model Definitions
+// 1.21.1	2025-02-04T19:45:05.7329841	Oblivion/Model Definitions
 1a959dcb565176fe0ab415d1ca0e57808d5c86b2 assets\oblivion\models\item\boar_meat.json
 a4eda44f8405bfaa9584c52ee9999885a3aa2e58 assets\oblivion\models\block\fiery_netherite_block.json
 176c56502a8d3448a4309ab57765eff2ade9ceaa assets\oblivion\models\item\fiery_netherite_boots.json
@@ -6,8 +6,8 @@ e218ab855d00c6e27126bbe349e15a9f35bbba9a assets\oblivion\models\item\cooked_shla
 089a3d8c6384066650001509a4d424b20db803ef assets\oblivion\models\item\fiery_netherite_helmet.json
 6775fb09c63c31da8edd066f486a9c319c3d0e0e assets\oblivion\models\item\cooked_turkey.json
 79a6c4f5a5b24ed21acb39086b8d4c64664e1c3d assets\oblivion\blockstates\fiery_netherite_block.json
-97dab5c3f559df96198560dbb738c4f5de2a9983 assets\oblivion\models\item\venison.json
 905fedecf3c5a4dd589d708508778d54adec0eb2 assets\oblivion\models\item\fiery_netherite_shovel.json
+97dab5c3f559df96198560dbb738c4f5de2a9983 assets\oblivion\models\item\venison.json
 5f7c25ed1cd64c79e137f8f04b4323703bad4720 assets\oblivion\models\item\fiery_netherite_block.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets\oblivion\models\item\spawn_elysian_shaman.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets\oblivion\models\item\spawn_shroom.json
@@ -24,8 +24,8 @@ dc238355f0372cd9f64f6e5b8a388de3153a7831 assets\oblivion\models\item\fiery_nethe
 4e35b47e6b1e95244be5a12dc527e61dfc97ca55 assets\oblivion\models\item\fiery_netherite_sword.json
 838c7d8123d2e27a10f30cdb77b116bb8d60c087 assets\oblivion\models\item\cooked_venison.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets\oblivion\models\item\spawn_goblin.json
-f3cb6c7a97cd9048dc60c419b11ce5e0d9ca8ed2 assets\oblivion\models\item\raw_fiery_netherite.json
 e0ee5aa4ef5c6f01a770a643d4f64e7db1ef632b assets\oblivion\models\item\shlamb.json
+f3cb6c7a97cd9048dc60c419b11ce5e0d9ca8ed2 assets\oblivion\models\item\raw_fiery_netherite.json
 5f4dddcca5c95ed7e0547ccaeaae33da15e8e38f assets\oblivion\models\block\fiery_netherite_ore.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets\oblivion\models\item\spawn_elysian_wolf.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets\oblivion\models\item\spawn_elysian_elk.json
