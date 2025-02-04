@@ -4,6 +4,7 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
+import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 import net.oblivion.OblivionMain;
 import net.oblivion.entity.ElysianShaman;
@@ -16,6 +17,11 @@ public class ElysianShamanRenderer extends MobEntityRenderer<ElysianShaman, Elys
 
     public ElysianShamanRenderer(EntityRendererFactory.Context context) {
         super(context, new ElysianShamanModel<>(context.getPart(RenderInit.ELYSIAN_SHAMAN_LAYER)), 0.7F);
+    }
+
+    @Override
+    public void scale(ElysianShaman entity, MatrixStack matrixStack, float f) {
+        matrixStack.scale(1.2F, 1.2F, 1.2F);
     }
 
     @Override
