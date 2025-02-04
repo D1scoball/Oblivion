@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "oblivion:fiery_netherite_ingot"
+  },
+  "base": {
+    "item": "minecraft:netherite_leggings"
+  },
+  "result": {
+    "count": 1,
+    "id": "oblivion:fiery_netherite_leggings"
+  },
+  "template": {
+    "item": "oblivion:fiery_netherite_upgrade_smithing_template"
+  }
+}

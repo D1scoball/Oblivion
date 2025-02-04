@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "fiery_netherite_ingot",
+  "ingredients": [
+    {
+      "item": "oblivion:fiery_netherite_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "oblivion:fiery_netherite_ingot"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 400,
+  "experience": 3.0,
+  "ingredient": {
+    "item": "oblivion:fiery_netherite_ore"
+  },
+  "result": {
+    "id": "oblivion:raw_fiery_netherite"
+  }
+}

@@ -1,9 +1,5 @@
 package net.oblivion.item;
 
-import java.util.EnumMap;
-import java.util.List;
-import java.util.function.Supplier;
-
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.recipe.Ingredient;
@@ -17,6 +13,10 @@ import net.minecraft.util.Util;
 import net.oblivion.OblivionMain;
 import net.oblivion.init.ItemInit;
 
+import java.util.EnumMap;
+import java.util.List;
+import java.util.function.Supplier;
+
 public class OblivionArmorMaterials {
 
 //    public static final RegistryEntry<ArmorMaterial> OCTARINE = register("octarine", Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
@@ -27,13 +27,21 @@ public class OblivionArmorMaterials {
 //        map.put(ArmorItem.Type.BODY, 11);
 //    }), 25, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 3.5f, 0.1f, () -> Ingredient.ofItems(ItemInit.OCTARINE_INGOT));
 
-    public static final RegistryEntry<ArmorMaterial> SCARLET = register("scarlet", Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
+//    public static final RegistryEntry<ArmorMaterial> SCARLET = register("scarlet", Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
+//        map.put(ArmorItem.Type.BOOTS, 3);
+//        map.put(ArmorItem.Type.LEGGINGS, 6);
+//        map.put(ArmorItem.Type.CHESTPLATE, 8);
+//        map.put(ArmorItem.Type.HELMET, 3);
+//        map.put(ArmorItem.Type.BODY, 11);
+//    }), 25, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 3.5f, 0.1f, () -> Ingredient.ofItems(ItemInit.SCARLET_INGOT));
+
+    public static final RegistryEntry<ArmorMaterial> FIERY_NETHERITE = register("fiery_netherite", Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
         map.put(ArmorItem.Type.BOOTS, 3);
         map.put(ArmorItem.Type.LEGGINGS, 6);
         map.put(ArmorItem.Type.CHESTPLATE, 8);
         map.put(ArmorItem.Type.HELMET, 3);
         map.put(ArmorItem.Type.BODY, 11);
-    }), 25, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 3.5f, 0.1f, () -> Ingredient.ofItems(ItemInit.SCARLET_INGOT));
+    }), 25, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 3.5f, 0.15f, () -> Ingredient.ofItems(ItemInit.FIERY_NETHERITE_INGOT));
 
     private static RegistryEntry<ArmorMaterial> register(String id, EnumMap<ArmorItem.Type, Integer> defense, int enchantability, RegistryEntry<SoundEvent> equipSound, float toughness,
             float knockbackResistance, Supplier<Ingredient> repairIngredient) {

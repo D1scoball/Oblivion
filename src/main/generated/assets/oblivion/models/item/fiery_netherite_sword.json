@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "oblivion:item/fiery_netherite_sword"
+  }
+}
