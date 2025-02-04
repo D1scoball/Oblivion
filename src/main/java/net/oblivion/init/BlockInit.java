@@ -108,17 +108,18 @@ public class BlockInit {
     public static final Block DRILL = register("drill", true, false, new DrillBlock(AbstractBlock.Settings.copy(Blocks.BARREL).nonOpaque().pistonBehavior(PistonBehavior.IGNORE)));
     public static final Block GUIDELIGHT = register("guidelight", true, false, new GuidelightBlock(AbstractBlock.Settings.copy(Blocks.BEACON)));
 
-    public static final Block TEST = register("test", true, false, new MultiOreBlock(AbstractBlock.Settings.copy(Blocks.DIAMOND_ORE)));
+//    public static final Block OCTARINE_ORE = register("octarine_ore", true, true, new ExperienceDroppingBlock(ConstantIntProvider.create(0), AbstractBlock.Settings.create().mapColor(MapColor.WATER_BLUE).instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(3.0F, 3.0F)));
+//    public static final Block DEEPSLATE_IRON_ORE = register("deepslate_octarine_ore", true, true, new ExperienceDroppingBlock(ConstantIntProvider.create(0), AbstractBlock.Settings.copyShallow(OCTARINE_ORE).mapColor(MapColor.WATER_BLUE).strength(4.5F, 3.0F).sounds(BlockSoundGroup.DEEPSLATE)));
+//    public static final Block OCTARINE_BLOCK = register("octarine_block", true, true, new Block(AbstractBlock.Settings.create().mapColor(MapColor.WATER_BLUE).instrument(NoteBlockInstrument.IRON_XYLOPHONE).requiresTool().strength(5.0F, 6.0F).sounds(BlockSoundGroup.METAL)));
+//    public static final Block RAW_OCTARINE_BLOCK = register("raw_octarine_block", true, true, new Block(AbstractBlock.Settings.create().mapColor(MapColor.RAW_IRON_PINK).instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(5.0F, 6.0F)));
 
-    public static final Block OCTARINE_ORE = register("octarine_ore", true, true, new ExperienceDroppingBlock(ConstantIntProvider.create(0), AbstractBlock.Settings.create().mapColor(MapColor.WATER_BLUE).instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(3.0F, 3.0F)));
-    public static final Block DEEPSLATE_IRON_ORE = register("deepslate_octarine_ore", true, true, new ExperienceDroppingBlock(ConstantIntProvider.create(0), AbstractBlock.Settings.copyShallow(OCTARINE_ORE).mapColor(MapColor.WATER_BLUE).strength(4.5F, 3.0F).sounds(BlockSoundGroup.DEEPSLATE)));
-    public static final Block OCTARINE_BLOCK = register("octarine_block", true, true, new Block(AbstractBlock.Settings.create().mapColor(MapColor.WATER_BLUE).instrument(NoteBlockInstrument.IRON_XYLOPHONE).requiresTool().strength(5.0F, 6.0F).sounds(BlockSoundGroup.METAL)));
-    public static final Block RAW_OCTARINE_BLOCK = register("raw_octarine_block", true, true, new Block(AbstractBlock.Settings.create().mapColor(MapColor.RAW_IRON_PINK).instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(5.0F, 6.0F)));
+    public static final Block SCARLET_ORE = register("scarlet_ore", true, true, new MultiOreBlock(20, AbstractBlock.Settings.create().mapColor(MapColor.WATER_BLUE).instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(3.0F, 3.0F)));
+    public static final Block SCARLET_BLOCK = register("scarlet_block", true, true, new Block(AbstractBlock.Settings.create().mapColor(MapColor.GRAY).instrument(NoteBlockInstrument.IRON_XYLOPHONE).requiresTool().strength(5.0F, 6.0F).sounds(BlockSoundGroup.METAL)));
 
     public static BlockEntityType<DrillBlockEntity> DRILL_BLOCK_ENTITY = Registry.register(Registries.BLOCK_ENTITY_TYPE, OblivionMain.identifierOf("drill_entity"),
             BlockEntityType.Builder.create(DrillBlockEntity::new, DRILL).build(null));
     public static BlockEntityType<MultiOreBlockEntity> MULTI_ORE_BLOCK_ENTITY = Registry.register(Registries.BLOCK_ENTITY_TYPE, OblivionMain.identifierOf("multi_ore_entity"),
-            BlockEntityType.Builder.create(MultiOreBlockEntity::new, TEST).build(null));
+            BlockEntityType.Builder.create(MultiOreBlockEntity::new, SCARLET_ORE).build(null));
     public static BlockEntityType<GuidelightBlockEntity> GUIDELIGHT_BLOCK_ENTITY = Registry.register(Registries.BLOCK_ENTITY_TYPE, OblivionMain.identifierOf("guidelight_entity"),
             BlockEntityType.Builder.create(GuidelightBlockEntity::new, GUIDELIGHT).build(null));
 

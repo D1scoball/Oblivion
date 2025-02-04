@@ -9,7 +9,8 @@ import net.oblivion.init.ItemInit;
 
 public class OblivionToolMaterials implements ToolMaterial {
 
-    public static final ToolMaterial OCTARINE = new OblivionToolMaterials(BlockTags.INCORRECT_FOR_WOODEN_TOOL, 2331, 9.0F, 4.0F, 15, Ingredient.ofItems(ItemInit.OCTARINE_INGOT), "octarine");
+    public static final ToolMaterial SCARLET = new OblivionToolMaterials(BlockTags.INCORRECT_FOR_WOODEN_TOOL, 2331, 9.0F, 4.0F, 15, Ingredient.ofItems(ItemInit.SCARLET_INGOT), "scarlet");
+//    public static final ToolMaterial OCTARINE = new OblivionToolMaterials(BlockTags.INCORRECT_FOR_WOODEN_TOOL, 2931, 12.0F, 5.0F, 20, Ingredient.ofItems(ItemInit.OCTARINE_INGOT), "octarine");
 
     private final TagKey<Block> inverseTag;
     private final int itemDurability;

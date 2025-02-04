@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "oblivion:item/octarine_sword"
+    "layer0": "oblivion:item/scarlet_axe"
   }
 }

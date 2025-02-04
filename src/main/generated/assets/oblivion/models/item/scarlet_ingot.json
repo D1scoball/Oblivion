@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "oblivion:item/raw_octarine"
+    "layer0": "oblivion:item/scarlet_ingot"
   }
 }
