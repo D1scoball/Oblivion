@@ -1,0 +1,11 @@
+{
+  "type": "oblivion:oblivion_type",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "oblivion:oblivion",
+    "biome_source": {
+      "type": "minecraft:multi_noise",
+      "preset": "minecraft:overworld"
+    }
+  }
+}
