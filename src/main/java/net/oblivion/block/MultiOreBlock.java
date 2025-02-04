@@ -41,11 +41,11 @@ public class MultiOreBlock extends BlockWithEntity {
         return BlockRenderType.MODEL;
     }
 
-    @Override
-    public BlockState onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
-        breakMultiOre(world, pos, player);
-        return super.onBreak(world, pos, state, player);
-    }
+    // @Override
+    // public BlockState onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
+    //     breakMultiOre(world, pos, player);
+    //     return super.onBreak(world, pos, state, player);
+    // }
 
     public void breakMultiOre(World world, BlockPos pos, @Nullable PlayerEntity player) {
         if (!world.isClient()) {
