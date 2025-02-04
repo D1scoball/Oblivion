@@ -30,6 +30,11 @@ public class MultiOreBlockEntity extends BlockEntity {
         super(BlockInit.MULTI_ORE_BLOCK_ENTITY, pos, state);
     }
 
+    public MultiOreBlockEntity(BlockPos pos, BlockState state, int drillCount) {
+        this(pos, state);
+        this.drillCount = drillCount;
+    }
+
     @Override
     protected void readNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup registryLookup) {
         super.readNbt(nbt, registryLookup);

@@ -16,8 +16,11 @@ import java.util.*;
 
 public class MultiOreBlock extends BlockWithEntity {
 
-    public MultiOreBlock(Settings settings) {
+    private final int drillCount;
+
+    public MultiOreBlock(int drillCount, Settings settings) {
         super(settings);
+        this.drillCount = drillCount;
     }
 
     @Override
@@ -40,7 +43,7 @@ public class MultiOreBlock extends BlockWithEntity {
 
     @Override
     public BlockState onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
-        breakMultiOre(world, pos,player);
+        breakMultiOre(world, pos, player);
         return super.onBreak(world, pos, state, player);
     }
 
@@ -104,6 +107,6 @@ public class MultiOreBlock extends BlockWithEntity {
 
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new MultiOreBlockEntity(pos, state);
+        return new MultiOreBlockEntity(pos, state, this.drillCount);
     }
 }
