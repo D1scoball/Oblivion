@@ -1,6 +1,7 @@
 package net.oblivion.entity;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityData;
 import net.minecraft.entity.EntityType;
@@ -8,6 +9,7 @@ import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
@@ -15,7 +17,9 @@ import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.entry.RegistryEntry;
@@ -24,6 +28,7 @@ import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.ItemScatterer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.*;
@@ -37,6 +42,7 @@ public class Treeder extends PassiveEntity {
 
     private int growSapling = 48000;
     private int saplingTimer = 4800;
+    private int regenerationTimer = 1200;
 
     public Treeder(EntityType<? extends PassiveEntity> entityType, World world) {
         super(entityType, world);
@@ -77,6 +83,7 @@ public class Treeder extends PassiveEntity {
         nbt.putBoolean("Sapling", this.dataTracker.get(SAPLING));
         nbt.putInt("SaplingTimer", this.saplingTimer);
         nbt.putInt("GrowSapling", this.growSapling);
+        nbt.putInt("Regeneration", this.regenerationTimer);
     }
 
     @Override
@@ -85,6 +92,25 @@ public class Treeder extends PassiveEntity {
         this.dataTracker.set(SAPLING, nbt.getBoolean("Sapling"));
         this.saplingTimer = nbt.getInt("SaplingTimer");
         this.growSapling = nbt.getInt("GrowSapling");
+        this.regenerationTimer = nbt.getInt("Regeneration");
+    }
+
+    @Override
+    public void tick() {
+        super.tick();
+        if (!this.getWorld().isClient() && this.getHealth() < this.getMaxHealth()) {
+            this.regenerationTimer--;
+            if (this.regenerationTimer < 0) {
+                this.setHealth(this.getMaxHealth());
+                for (int i = 0; i < 7; i++) {
+                    double d = this.random.nextGaussian() * 0.02;
+                    double e = this.random.nextGaussian() * 0.02;
+                    double f = this.random.nextGaussian() * 0.02;
+                    ((ServerWorld) this.getWorld()).spawnParticles(ParticleTypes.HEART, this.getParticleX(0.4), this.getRandomBodyY(), this.getParticleZ(0.4), 1, d, e, f, 0.0D);
+                }
+                this.regenerationTimer = 1200;
+            }
+        }
     }
 
     @Override
@@ -95,14 +121,20 @@ public class Treeder extends PassiveEntity {
                 if (this.saplingTimer <= 0) {
                     if (this.saplingTimer == 0 && this.getWorld().getBlockState(this.getBlockPos().down()).isOf(Blocks.GRASS_BLOCK)
                             && this.getWorld().getBlockState(this.getBlockPos()).isAir()) {
-                        Iterator<RegistryEntry<Block>> iterator = Registries.BLOCK.iterateEntries(BlockTags.SAPLINGS).iterator();
-
-                        while (iterator.hasNext()) {
-                            if (this.getRandom().nextFloat() < 0.1f) {
-                                if (iterator.next().value().getDefaultState().canPlaceAt(this.getWorld(), this.getBlockPos())) {
-                                    this.getWorld().setBlockState(this.getBlockPos(), iterator.next().value().getDefaultState());
-                                    break;
+                        if (this.getRandom().nextFloat() < 0.2f) {
+                            Iterator<RegistryEntry<Block>> iterator = Registries.BLOCK.iterateEntries(BlockTags.SAPLINGS).iterator();
+                            while (iterator.hasNext()) {
+                                if (this.getRandom().nextFloat() < 0.1f) {
+                                    if (iterator.next().value().getDefaultState().canPlaceAt(this.getWorld(), this.getBlockPos())) {
+                                        this.getWorld().setBlockState(this.getBlockPos(), iterator.next().value().getDefaultState());
+                                        break;
+                                    }
                                 }
+                            }
+                        } else {
+                            BlockState blockState = Blocks.OAK_SAPLING.getDefaultState();
+                            if (blockState.canPlaceAt(this.getWorld(), this.getBlockPos())) {
+                                this.getWorld().setBlockState(this.getBlockPos(), blockState);
                             }
                         }
                         if (!this.isSilent()) {
@@ -141,6 +173,24 @@ public class Treeder extends PassiveEntity {
 //        this.playSound(SoundEvents.ENTITY_WOLF_STEP, 0.15F, 1.0F);
 //    }
 
+
+    @Override
+    public boolean damage(DamageSource source, float amount) {
+        if (!this.getWorld().isClient() && amount > 0.0f && source.getAttacker() != null && source.isDirect() && this.getRandom().nextFloat() < 0.005f) {
+            if (this.getRandom().nextFloat() < 0.2f) {
+                Iterator<RegistryEntry<Block>> iterator = Registries.BLOCK.iterateEntries(BlockTags.SAPLINGS).iterator();
+                while (iterator.hasNext()) {
+                    if (this.getRandom().nextFloat() < 0.1f) {
+                        ItemScatterer.spawn(this.getWorld(), this.getX(), this.getY(), this.getZ(), new ItemStack(iterator.next().value().getDefaultState().getBlock()));
+                        break;
+                    }
+                }
+            } else {
+                ItemScatterer.spawn(this.getWorld(), this.getX(), this.getY(), this.getZ(), new ItemStack(Blocks.OAK_SAPLING));
+            }
+        }
+        return super.damage(source, amount);
+    }
 
     @Override
     public EntityData initialize(ServerWorldAccess world, LocalDifficulty difficulty, SpawnReason spawnReason, @Nullable EntityData entityData) {
