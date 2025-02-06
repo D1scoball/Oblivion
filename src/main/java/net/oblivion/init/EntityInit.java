@@ -32,7 +32,7 @@ public class EntityInit {
     public static final EntityType<Elk> ELK = register("elk", 5779211, 9724212, Elk.createElkAttributes(), EntityType.Builder.create(Elk::new, SpawnGroup.CREATURE).dimensions(1.5F, 2.2F).build());
     public static final EntityType<Boar> BOAR = register("boar", 4001544, 9724212, Boar.createBoarAttributes(), EntityType.Builder.create(Boar::new, SpawnGroup.CREATURE).dimensions(1.5F, 1.2F).build());
     public static final EntityType<Turkey> TURKEY = register("turkey", 1777190, 4801347, Turkey.createTurkeyAttributes(), EntityType.Builder.create(Turkey::new, SpawnGroup.CREATURE).dimensions(1.5F, 2.6F).passengerAttachments(new Vec3d(0.0f, 1.4f, 0.0f)).build());
-
+    public static final EntityType<WoolyCow> WOOLY_COW = register("wooly_cow", 13926720, 16767926, WoolyCow.createWoolyCowAttributes(), EntityType.Builder.create(WoolyCow::new, SpawnGroup.CREATURE).dimensions(0.9F, 1.4F).eyeHeight(1.3F).passengerAttachments(1.36875F).build());
     @SuppressWarnings("unchecked")
     private static <T extends Entity> EntityType<T> register(String id, int primaryColor, int secondaryColor, DefaultAttributeContainer.Builder builder, EntityType<T> entityType) {
         if (primaryColor != 0) {
