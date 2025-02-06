@@ -1,4 +1,4 @@
-// 1.21.1	2025-02-05T17:44:56.79319	Oblivion/Model Definitions
+// 1.21.1	2025-02-06T13:05:02.9182869	Oblivion/Model Definitions
 663449d79deb422fbded3efc313a81418f8bebb2 assets\oblivion\models\item\fiery_ancient_debris.json
 1a959dcb565176fe0ab415d1ca0e57808d5c86b2 assets\oblivion\models\item\boar_meat.json
 a4eda44f8405bfaa9584c52ee9999885a3aa2e58 assets\oblivion\models\block\fiery_netherite_block.json
@@ -7,14 +7,14 @@ e218ab855d00c6e27126bbe349e15a9f35bbba9a assets\oblivion\models\item\cooked_shla
 089a3d8c6384066650001509a4d424b20db803ef assets\oblivion\models\item\fiery_netherite_helmet.json
 6775fb09c63c31da8edd066f486a9c319c3d0e0e assets\oblivion\models\item\cooked_turkey.json
 79a6c4f5a5b24ed21acb39086b8d4c64664e1c3d assets\oblivion\blockstates\fiery_netherite_block.json
-97dab5c3f559df96198560dbb738c4f5de2a9983 assets\oblivion\models\item\venison.json
 905fedecf3c5a4dd589d708508778d54adec0eb2 assets\oblivion\models\item\fiery_netherite_shovel.json
+97dab5c3f559df96198560dbb738c4f5de2a9983 assets\oblivion\models\item\venison.json
 5f7c25ed1cd64c79e137f8f04b4323703bad4720 assets\oblivion\models\item\fiery_netherite_block.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets\oblivion\models\item\spawn_elysian_shaman.json
 3b7595ae028fea4c4c4a55eef2a5677b481368bd assets\oblivion\blockstates\fiery_ancient_debris.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets\oblivion\models\item\spawn_shroom.json
-d8feda7df9497efd32742836b393ae52162b849d assets\oblivion\models\item\turkey.json
 4a82f9d8dc034a5590661998d32f7580b820bd1c assets\oblivion\models\item\fiery_netherite_chestplate.json
+d8feda7df9497efd32742836b393ae52162b849d assets\oblivion\models\item\turkey.json
 a8c074165bc9d12cdf474f9b496a741e66381a44 assets\oblivion\models\item\fiery_netherite_upgrade_smithing_template.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets\oblivion\models\item\spawn_boar.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets\oblivion\models\item\spawn_elk.json
@@ -27,9 +27,10 @@ dc238355f0372cd9f64f6e5b8a388de3153a7831 assets\oblivion\models\item\fiery_nethe
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets\oblivion\models\item\spawn_goblin.json
 e0ee5aa4ef5c6f01a770a643d4f64e7db1ef632b assets\oblivion\models\item\shlamb.json
 f3cb6c7a97cd9048dc60c419b11ce5e0d9ca8ed2 assets\oblivion\models\item\raw_fiery_netherite.json
-0e7c1bd937a1238018c80013f5798b8b38802647 assets\oblivion\models\block\fiery_ancient_debris.json
+b7afc466df712966d3e7c680e3f9964d303d9802 assets\oblivion\models\block\fiery_ancient_debris.json
 c8f6254d75cc8a2ef7e03eedd1afeee4f8ff725c assets\oblivion\models\item\fiery_netherite_scrap.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets\oblivion\models\item\spawn_elysian_wolf.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets\oblivion\models\item\spawn_wooly_cow.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets\oblivion\models\item\spawn_elysian_elk.json
 b9e77a6e8d7b8ac9ce1a9a3e2579e1f0c00f9f2e assets\oblivion\models\item\cooked_boar_meat.json
 ed83b9d2a372c93e985431805ba80a60d3bcfda8 assets\oblivion\models\item\fiery_netherite_ingot.json

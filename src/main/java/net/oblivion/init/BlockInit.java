@@ -119,8 +119,8 @@ public class BlockInit {
 //    public static final Block SCARLET_ORE = register("scarlet_ore", true, true, new MultiOreBlock(20, AbstractBlock.Settings.create().mapColor(MapColor.WATER_BLUE).instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(3.0F, 3.0F)));
 //    public static final Block SCARLET_BLOCK = register("scarlet_block", true, true, new Block(AbstractBlock.Settings.create().mapColor(MapColor.GRAY).instrument(NoteBlockInstrument.IRON_XYLOPHONE).requiresTool().strength(5.0F, 6.0F).sounds(BlockSoundGroup.METAL)));
 
-    public static final Block FIERY_ANCIENT_DEBRIS = register("fiery_ancient_debris", -1, true, true, new MultiOreBlock(20, AbstractBlock.Settings.create().mapColor(MapColor.WATER_BLUE).instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(80.0F, 2400.0F)));
-    public static final Block FIERY_NETHERITE_BLOCK = register("fiery_netherite_block", -1, true, false, new Block(AbstractBlock.Settings.create().mapColor(MapColor.GRAY).instrument(NoteBlockInstrument.IRON_XYLOPHONE).requiresTool().strength(80.0F, 1200.0F).sounds(BlockSoundGroup.NETHERITE)));
+    public static final Block FIERY_ANCIENT_DEBRIS = register("fiery_ancient_debris", -1, true, false, new MultiOreBlock(20, AbstractBlock.Settings.create().mapColor(MapColor.WATER_BLUE).instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(80.0F, 2400.0F)));
+    public static final Block FIERY_NETHERITE_BLOCK = register("fiery_netherite_block", -1, true, true, new Block(AbstractBlock.Settings.create().mapColor(MapColor.GRAY).instrument(NoteBlockInstrument.IRON_XYLOPHONE).requiresTool().strength(80.0F, 1200.0F).sounds(BlockSoundGroup.NETHERITE)));
 
     public static BlockEntityType<DrillBlockEntity> DRILL_BLOCK_ENTITY = Registry.register(Registries.BLOCK_ENTITY_TYPE, OblivionMain.identifierOf("drill_entity"),
             BlockEntityType.Builder.create(DrillBlockEntity::new, DRILL).build(null));

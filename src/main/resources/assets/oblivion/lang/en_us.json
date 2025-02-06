@@ -11,6 +11,7 @@
   "entity.oblivion.elk": "Elk",
   "entity.oblivion.boar": "Boar",
   "entity.oblivion.turkey": "Turkey",
+  "entity.oblivion.wooly_cow": "Wooly Cow",
 
   "item.oblivion.spawn_shlama": "Shlama Spawn Egg",
   "item.oblivion.spawn_elysian_elk": "Elysian Elk Spawn Egg",
@@ -22,6 +23,7 @@
   "item.oblivion.spawn_elk": "Elk Spawn Egg",
   "item.oblivion.spawn_boar": "Boar Spawn Egg",
   "item.oblivion.spawn_turkey": "Turkey Spawn Egg",
+  "item.oblivion.spawn_wooly_cow": "Wooly Cow Spawn Egg",
 
   "item.oblivion.shlamb": "Shlamb",
   "item.oblivion.cooked_shlamb": "Cooked Shlamb",

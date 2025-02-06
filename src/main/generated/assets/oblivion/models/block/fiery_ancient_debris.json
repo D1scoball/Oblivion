@@ -1,6 +1,7 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "minecraft:block/cube_column",
   "textures": {
-    "all": "oblivion:block/fiery_ancient_debris"
+    "end": "oblivion:block/fiery_ancient_debris_top",
+    "side": "oblivion:block/fiery_ancient_debris_side"
   }
 }
