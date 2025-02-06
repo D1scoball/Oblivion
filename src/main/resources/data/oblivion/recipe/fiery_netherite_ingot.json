@@ -4,16 +4,16 @@
   "group": "fiery_netherite_ingot",
   "ingredients": [
     {
-      "item": "oblivion:raw_fiery_netherite"
+      "item": "oblivion:fiery_netherite_scrap"
     },
     {
-      "item": "oblivion:raw_fiery_netherite"
+      "item": "oblivion:fiery_netherite_scrap"
     },
     {
-      "item": "oblivion:raw_fiery_netherite"
+      "item": "oblivion:fiery_netherite_scrap"
     },
     {
-      "item": "oblivion:raw_fiery_netherite"
+      "item": "oblivion:fiery_netherite_scrap"
     }
   ],
   "result": {

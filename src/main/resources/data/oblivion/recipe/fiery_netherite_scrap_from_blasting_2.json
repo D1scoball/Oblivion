@@ -4,7 +4,7 @@
   "cookingtime": 200,
   "experience": 3.0,
   "ingredient": {
-    "item": "oblivion:fiery_ancient_debris"
+    "item": "oblivion:raw_fiery_netherite"
   },
   "result": {
     "id": "oblivion:fiery_netherite_scrap"

@@ -2,10 +2,8 @@ package net.oblivion.data;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.minecraft.data.client.BlockStateModelGenerator;
-import net.minecraft.data.client.ItemModelGenerator;
-import net.minecraft.data.client.ModelIds;
-import net.minecraft.data.client.Models;
+import net.minecraft.block.Blocks;
+import net.minecraft.data.client.*;
 import net.oblivion.init.BlockInit;
 import net.oblivion.init.EntityInit;
 import net.oblivion.init.ItemInit;
@@ -25,6 +23,7 @@ public class ModelLoader extends FabricModelProvider {
             blockStateModelGenerator.registerSimpleCubeAll(BlockInit.DATAGEN_BLOCKS.get(i));
             blockStateModelGenerator.registerParentedItemModel(BlockInit.DATAGEN_BLOCKS.get(i), ModelIds.getBlockModelId(BlockInit.DATAGEN_BLOCKS.get(i)));
         }
+        blockStateModelGenerator.registerSingleton(BlockInit.FIERY_ANCIENT_DEBRIS, TexturedModel.CUBE_COLUMN);
     }
 
     @Override

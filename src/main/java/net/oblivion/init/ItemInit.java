@@ -78,8 +78,8 @@ public class ItemInit {
 ////            new AnimalArmorItem(OblivionArmorMaterials.SCARLET, AnimalArmorItem.Type.EQUESTRIAN, false, new Item.Settings().maxCount(1)));
 
     public static final Item RAW_FIERY_NETHERITE = register("raw_fiery_netherite", new Item(new Item.Settings()));
+    public static final Item FIERY_NETHERITE_SCRAP = register("fiery_netherite_scrap", new Item(new Item.Settings()));
     public static final Item FIERY_NETHERITE_INGOT = register("fiery_netherite_ingot", new Item(new Item.Settings()));
-    //    public static final Item FIERY_NETHERITE_NUGGET = register("fiery_netherite_nugget", new Item(new Item.Settings()));
     public static final Item FIERY_NETHERITE_HELMET = register("fiery_netherite_helmet",
             new ArmorItem(OblivionArmorMaterials.FIERY_NETHERITE, ArmorItem.Type.HELMET, new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(20))));
     public static final Item FIERY_NETHERITE_CHESTPLATE = register("fiery_netherite_chestplate",

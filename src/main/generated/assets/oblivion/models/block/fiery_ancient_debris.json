@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "oblivion:block/fiery_netherite_ore"
+    "all": "oblivion:block/fiery_ancient_debris"
   }
 }

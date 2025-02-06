@@ -36,7 +36,7 @@ public class TagLoader {
             FabricTagBuilder pickaxeMineable = getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE);
             pickaxeMineable.add(BlockInit.FIERY_NETHERITE_BLOCK);
             pickaxeMineable.add(BlockInit.DRILL);
-            pickaxeMineable.add(BlockInit.FIERY_NETHERITE_ORE);
+            pickaxeMineable.add(BlockInit.FIERY_ANCIENT_DEBRIS);
         }
     }
 
