@@ -13,6 +13,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.oblivion.OblivionMain;
+import net.oblivion.item.ElysianBoneMeal;
 import net.oblivion.item.OblivionArmorMaterials;
 import net.oblivion.item.OblivionToolMaterials;
 
@@ -119,6 +120,9 @@ public class ItemInit {
     public static final Item TURKEY = register("turkey", new Item(new Item.Settings().food(new FoodComponent.Builder().nutrition(3).saturationModifier(0.6F).build())));
     public static final Item COOKED_TURKEY = register("cooked_turkey", new Item(new Item.Settings().food(new FoodComponent.Builder().nutrition(7).saturationModifier(1.2F).build())));
 
+    public static final Item ELYSIAN_BONE = register("elysian_bone", new Item(new Item.Settings()));
+    public static final Item ELYSIAN_BONE_MEAL = register("elysian_bone_meal", new ElysianBoneMeal(new Item.Settings()));
+
     private static Item register(String id, Item item) {
         if (item instanceof ToolItem) {
             TOOLS.add(item);
@@ -140,6 +144,5 @@ public class ItemInit {
     public static void init() {
         Registry.register(Registries.ITEM_GROUP, OBLIVION_ITEM_GROUP,
                 FabricItemGroup.builder().icon(() -> new ItemStack(ItemInit.FIERY_NETHERITE_INGOT)).displayName(Text.translatable("item.oblivion.item_group")).build());
-
     }
 }

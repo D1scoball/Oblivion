@@ -1,7 +1,8 @@
-// 1.21.1	2025-02-06T13:43:52.4612077	Oblivion/Model Definitions
+// 1.21.1	2025-02-06T14:36:05.2669735	Oblivion/Model Definitions
 663449d79deb422fbded3efc313a81418f8bebb2 assets\oblivion\models\item\fiery_ancient_debris.json
 1a959dcb565176fe0ab415d1ca0e57808d5c86b2 assets\oblivion\models\item\boar_meat.json
 a4eda44f8405bfaa9584c52ee9999885a3aa2e58 assets\oblivion\models\block\fiery_netherite_block.json
+e19e39c65ef99f39818ecc58d7c43ce9a573bd8f assets\oblivion\models\item\elysian_bone.json
 fc0a197e9f8ea1104431d7d720a757e1c87b7751 assets\oblivion\blockstates\shimmering_grass.json
 176c56502a8d3448a4309ab57765eff2ade9ceaa assets\oblivion\models\item\fiery_netherite_boots.json
 e218ab855d00c6e27126bbe349e15a9f35bbba9a assets\oblivion\models\item\cooked_shlamb.json
@@ -27,8 +28,9 @@ dc238355f0372cd9f64f6e5b8a388de3153a7831 assets\oblivion\models\item\fiery_nethe
 838c7d8123d2e27a10f30cdb77b116bb8d60c087 assets\oblivion\models\item\cooked_venison.json
 e43170270f375d4ee1cd888b7cbcfc2dc1043f10 assets\oblivion\models\block\shimmering_grass.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets\oblivion\models\item\spawn_goblin.json
-f3cb6c7a97cd9048dc60c419b11ce5e0d9ca8ed2 assets\oblivion\models\item\raw_fiery_netherite.json
+a12cb641220cc03414ee11125642150a23ed8033 assets\oblivion\models\item\elysian_bone_meal.json
 e0ee5aa4ef5c6f01a770a643d4f64e7db1ef632b assets\oblivion\models\item\shlamb.json
+f3cb6c7a97cd9048dc60c419b11ce5e0d9ca8ed2 assets\oblivion\models\item\raw_fiery_netherite.json
 7a94154ee9f0c8461d8e4a478196af359a1ce9aa assets\oblivion\models\block\shimmering_grass_lit.json
 b7afc466df712966d3e7c680e3f9964d303d9802 assets\oblivion\models\block\fiery_ancient_debris.json
 c8f6254d75cc8a2ef7e03eedd1afeee4f8ff725c assets\oblivion\models\item\fiery_netherite_scrap.json
