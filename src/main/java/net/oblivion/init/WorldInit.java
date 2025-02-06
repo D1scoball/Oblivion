@@ -1,8 +1,6 @@
 package net.oblivion.init;
 
 import com.mojang.serialization.MapCodec;
-import net.minecraft.client.gui.hud.InGameOverlayRenderer;
-import net.minecraft.client.render.WorldRenderer;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -11,7 +9,9 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.foliage.FoliagePlacer;
 import net.minecraft.world.gen.foliage.FoliagePlacerType;
 import net.oblivion.OblivionMain;
-import net.oblivion.world.*;
+import net.oblivion.world.IronTreeFoliagePlacer;
+import net.oblivion.world.RuneTreeFoliagePlacer;
+import net.oblivion.world.SlimTreeFoliagePlacer;
 
 public class WorldInit {
 
@@ -26,7 +26,7 @@ public class WorldInit {
     }
 
     // Dimension
-    // Todo: Mob drops
+    // Todo: Mob drops, Goblin
     // Todo: Mob Sounds
     // Guidelight teleport
     // Set wood toolRequired and mixin into item isCorrectForDrops, maybe requires earlystage compat
