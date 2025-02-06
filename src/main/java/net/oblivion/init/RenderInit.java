@@ -61,6 +61,8 @@ public class RenderInit {
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.GUIDELIGHT, RenderLayer.getCutout());
         BlockEntityRendererFactories.register(BlockInit.GUIDELIGHT_BLOCK_ENTITY, GuidelightBlockEntityRenderer::new);
 
+        BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.SHIMMERING_GRASS, RenderLayer.getCutout());
+
         // Entity Renderer
         EntityRendererRegistry.register(EntityInit.SHLAMA, ShlamaRenderer::new);
         EntityRendererRegistry.register(EntityInit.ELYSIAN_ELK, ElysianElkRenderer::new);

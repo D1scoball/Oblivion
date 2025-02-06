@@ -4,6 +4,8 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.client.*;
+import net.minecraft.state.property.Properties;
+import net.minecraft.util.Identifier;
 import net.oblivion.init.BlockInit;
 import net.oblivion.init.EntityInit;
 import net.oblivion.init.ItemInit;
@@ -24,6 +26,10 @@ public class ModelLoader extends FabricModelProvider {
             blockStateModelGenerator.registerParentedItemModel(BlockInit.DATAGEN_BLOCKS.get(i), ModelIds.getBlockModelId(BlockInit.DATAGEN_BLOCKS.get(i)));
         }
         blockStateModelGenerator.registerSingleton(BlockInit.FIERY_ANCIENT_DEBRIS, TexturedModel.CUBE_COLUMN);
+
+        Identifier identifier = blockStateModelGenerator.createSubModel(BlockInit.SHIMMERING_GRASS, "", Models.CROSS, TextureMap::cross);
+        Identifier identifier2 = blockStateModelGenerator.createSubModel(BlockInit.SHIMMERING_GRASS, "_lit", Models.CROSS, TextureMap::cross);
+        blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(BlockInit.SHIMMERING_GRASS).coordinate(BlockStateModelGenerator.createBooleanModelMap(Properties.LIT, identifier2, identifier)));
     }
 
     @Override

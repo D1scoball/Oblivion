@@ -21,6 +21,7 @@ import net.oblivion.OblivionMain;
 import net.oblivion.block.DrillBlock;
 import net.oblivion.block.GuidelightBlock;
 import net.oblivion.block.MultiOreBlock;
+import net.oblivion.block.ShimmeringGrassBlock;
 import net.oblivion.block.entity.DrillBlockEntity;
 import net.oblivion.block.entity.GuidelightBlockEntity;
 import net.oblivion.block.entity.MultiOreBlockEntity;
@@ -121,6 +122,9 @@ public class BlockInit {
 
     public static final Block FIERY_ANCIENT_DEBRIS = register("fiery_ancient_debris", -1, true, false, new MultiOreBlock(20, AbstractBlock.Settings.create().mapColor(MapColor.WATER_BLUE).instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(80.0F, 2400.0F)));
     public static final Block FIERY_NETHERITE_BLOCK = register("fiery_netherite_block", -1, true, true, new Block(AbstractBlock.Settings.create().mapColor(MapColor.GRAY).instrument(NoteBlockInstrument.IRON_XYLOPHONE).requiresTool().strength(80.0F, 1200.0F).sounds(BlockSoundGroup.NETHERITE)));
+
+    public static final Block SHIMMERING_GRASS = register("shimmering_grass", -1, true, false, new ShimmeringGrassBlock(AbstractBlock.Settings.create().mapColor(MapColor.DARK_GREEN).replaceable().noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).offset(AbstractBlock.OffsetType.XYZ).burnable().pistonBehavior(PistonBehavior.DESTROY).ticksRandomly()
+            .luminance(Blocks.createLightLevelFromLitBlockState(9))));
 
     public static BlockEntityType<DrillBlockEntity> DRILL_BLOCK_ENTITY = Registry.register(Registries.BLOCK_ENTITY_TYPE, OblivionMain.identifierOf("drill_entity"),
             BlockEntityType.Builder.create(DrillBlockEntity::new, DRILL).build(null));

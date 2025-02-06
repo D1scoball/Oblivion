@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "oblivion:block/shimmering_grass"
+    },
+    "lit=true": {
+      "model": "oblivion:block/shimmering_grass_lit"
+    }
+  }
+}
