@@ -1,9 +1,9 @@
 package net.oblivion;
 
 import net.fabricmc.api.ModInitializer;
-
 import net.minecraft.util.Identifier;
 import net.oblivion.init.*;
+import net.oblivion.network.OblivionServerPacket;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -22,6 +22,7 @@ public class OblivionMain implements ModInitializer {
         SpawnInit.init();
         TagInit.init();
         WorldInit.init();
+        OblivionServerPacket.init();
     }
 
     public static Identifier identifierOf(String name) {

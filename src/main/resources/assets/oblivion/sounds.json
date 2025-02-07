@@ -13,5 +13,15 @@
     "sounds": [
       "oblivion:drill_off"
     ]
+  },
+  "guidelight_teleport": {
+    "sounds": [
+      "oblivion:guidelight_teleport"
+    ]
+  },
+  "guidelight_stop": {
+    "sounds": [
+      "oblivion:guidelight_stop"
+    ]
   }
 }

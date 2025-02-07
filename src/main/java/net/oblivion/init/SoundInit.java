@@ -11,6 +11,9 @@ public class SoundInit {
     public static SoundEvent DRILL_IDLE_EVENT = register("drill_idle");
     public static SoundEvent DRILL_OFF_EVENT = register("drill_off");
 
+    public static SoundEvent GUIDELIGHT_TELEPORT_EVENT = register("guidelight_teleport");
+    public static SoundEvent GUIDELIGHT_STOP_EVENT = register("guidelight_stop");
+
     private static SoundEvent register(String id) {
         return Registry.register(Registries.SOUND_EVENT, id, SoundEvent.of(OblivionMain.identifierOf(id)));
     }

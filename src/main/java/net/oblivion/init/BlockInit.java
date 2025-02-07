@@ -110,7 +110,7 @@ public class BlockInit {
     public static final Block RUNE_WOOD_DOOR = register("rune_wood_door", 2, true, false, new DoorBlock(RUNE_WOOD_SET_TYPE, AbstractBlock.Settings.create().mapColor(RUNE_WOOD_PLANKS.getDefaultMapColor()).instrument(NoteBlockInstrument.BASS).strength(3.0F).nonOpaque().burnable().pistonBehavior(PistonBehavior.DESTROY)));
 
     public static final Block DRILL = register("drill", -1, true, false, new DrillBlock(AbstractBlock.Settings.copy(Blocks.BARREL).nonOpaque().pistonBehavior(PistonBehavior.IGNORE)));
-    public static final Block GUIDELIGHT = register("guidelight", -1, true, false, new GuidelightBlock(AbstractBlock.Settings.copy(Blocks.BEACON)));
+    public static final Block GUIDELIGHT = register("guidelight", -1, true, false, new GuidelightBlock(AbstractBlock.Settings.copy(Blocks.BEACON).strength(240.0f,3600.0f)));
 
 //    public static final Block OCTARINE_ORE = register("octarine_ore", true, true, new ExperienceDroppingBlock(ConstantIntProvider.create(0), AbstractBlock.Settings.create().mapColor(MapColor.WATER_BLUE).instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(3.0F, 3.0F)));
 //    public static final Block DEEPSLATE_IRON_ORE = register("deepslate_octarine_ore", true, true, new ExperienceDroppingBlock(ConstantIntProvider.create(0), AbstractBlock.Settings.copyShallow(OCTARINE_ORE).mapColor(MapColor.WATER_BLUE).strength(4.5F, 3.0F).sounds(BlockSoundGroup.DEEPSLATE)));
