@@ -1,0 +1,38 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "fiery_netherite_ingot",
+  "ingredients": [
+    {
+      "item": "oblivion:raw_solarite"
+    },
+    {
+      "item": "oblivion:raw_solarite"
+    },
+    {
+      "item": "oblivion:raw_solarite"
+    },
+    {
+      "item": "oblivion:raw_solarite"
+    },
+    {
+      "item": "oblivion:raw_solarite"
+    },
+    {
+      "item": "oblivion:raw_solarite"
+    },
+    {
+      "item": "oblivion:raw_solarite"
+    },
+    {
+      "item": "oblivion:raw_solarite"
+    },
+    {
+      "item": "oblivion:raw_solarite"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "oblivion:fiery_netherite_ingot"
+  }
+}

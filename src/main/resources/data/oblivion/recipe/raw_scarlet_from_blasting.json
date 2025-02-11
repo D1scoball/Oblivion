@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 400,
+  "experience": 6.0,
+  "ingredient": {
+    "item": "oblivion:raw_scarlet_block"
+  },
+  "result": {
+    "id": "oblivion:raw_solarite",
+    "count": 4
+  }
+}

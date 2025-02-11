@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "oblivion:scarlet_ingot"
+  },
+  "base": {
+    "item": "oblivion:fiery_netherite_boots"
+  },
+  "result": {
+    "count": 1,
+    "id": "oblivion:scarlet_boots"
+  },
+  "template": {
+    "item": "oblivion:scarlet_upgrade_smithing_template"
+  }
+}

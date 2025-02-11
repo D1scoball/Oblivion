@@ -53,34 +53,62 @@ public class ItemInit {
 //    public static final Item OCTARINE_HORSE_ARMOR = register("octarine_horse_armor",
 //            new AnimalArmorItem(OblivionArmorMaterials.OCTARINE, AnimalArmorItem.Type.EQUESTRIAN, false, new Item.Settings().maxCount(1)));
 
-//    public static final Item RAW_SCARLET = register("raw_scarlet", new Item(new Item.Settings()));
-//    public static final Item SCARLET_INGOT = register("scarlet_ingot", new Item(new Item.Settings()));
-////    public static final Item SCARLET_NUGGET = register("scarlet_nugget", new Item(new Item.Settings()));
-//    public static final Item SCARLET_HELMET = register("scarlet_helmet",
-//            new ArmorItem(OblivionArmorMaterials.SCARLET, ArmorItem.Type.HELMET, new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(20))));
-//    public static final Item SCARLET_CHESTPLATE = register("scarlet_chestplate",
-//            new ArmorItem(OblivionArmorMaterials.SCARLET, ArmorItem.Type.CHESTPLATE, new Item.Settings().maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(20))));
-//    public static final Item SCARLET_LEGGINGS = register("scarlet_leggings",
-//            new ArmorItem(OblivionArmorMaterials.SCARLET, ArmorItem.Type.LEGGINGS, new Item.Settings().maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(20))));
-//    public static final Item SCARLET_BOOTS = register("scarlet_boots",
-//            new ArmorItem(OblivionArmorMaterials.SCARLET, ArmorItem.Type.BOOTS, new Item.Settings().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(20))));
-//
-//    public static final Item SCARLET_SWORD = register("scarlet_sword",
-//            new SwordItem(OblivionToolMaterials.SCARLET, new Item.Settings().attributeModifiers(SwordItem.createAttributeModifiers(OblivionToolMaterials.SCARLET, 3, -2.4f))));
-//    public static final Item SCARLET_SHOVEL = register("scarlet_shovel",
-//            new ShovelItem(OblivionToolMaterials.SCARLET, new Item.Settings().attributeModifiers(ShovelItem.createAttributeModifiers(OblivionToolMaterials.SCARLET, 1.5f, -3.0f))));
-//    public static final Item SCARLET_PICKAXE = register("scarlet_pickaxe",
-//            new PickaxeItem(OblivionToolMaterials.SCARLET, new Item.Settings().attributeModifiers(PickaxeItem.createAttributeModifiers(OblivionToolMaterials.SCARLET, 1.0f, -2.8f))));
-//    public static final Item SCARLET_AXE = register("scarlet_axe",
-//            new AxeItem(OblivionToolMaterials.SCARLET, new Item.Settings().attributeModifiers(AxeItem.createAttributeModifiers(OblivionToolMaterials.SCARLET, 6.0f, -3.1f))));
-//    public static final Item SCARLET_HOE = register("scarlet_hoe",
-//            new HoeItem(OblivionToolMaterials.SCARLET, new Item.Settings().attributeModifiers(HoeItem.createAttributeModifiers(OblivionToolMaterials.SCARLET, -2.0f, -1.0f))));
-////    public static final Item SCARLET_HORSE_ARMOR = register("scarlet_horse_armor",
-////            new AnimalArmorItem(OblivionArmorMaterials.SCARLET, AnimalArmorItem.Type.EQUESTRIAN, false, new Item.Settings().maxCount(1)));
+    public static final Item RAW_SOLARITE = register("raw_solarite", new Item(new Item.Settings()));
+    public static final Item SOLARITE_INGOT = register("solarite_ingot", new Item(new Item.Settings()));
+
+    public static final Item RAW_SCARLET = register("raw_scarlet", new Item(new Item.Settings()));
+    public static final Item SCARLET_INGOT = register("scarlet_ingot", new Item(new Item.Settings()));
 
     public static final Item RAW_FIERY_NETHERITE = register("raw_fiery_netherite", new Item(new Item.Settings()));
     public static final Item FIERY_NETHERITE_SCRAP = register("fiery_netherite_scrap", new Item(new Item.Settings()));
     public static final Item FIERY_NETHERITE_INGOT = register("fiery_netherite_ingot", new Item(new Item.Settings()));
+
+    public static final Item SOLARITE_HELMET = register("solarite_helmet",
+            new ArmorItem(OblivionArmorMaterials.SOLARITE, ArmorItem.Type.HELMET, new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(25))));
+    public static final Item SOLARITE_CHESTPLATE = register("solarite_chestplate",
+            new ArmorItem(OblivionArmorMaterials.SOLARITE, ArmorItem.Type.CHESTPLATE, new Item.Settings().maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(25))));
+    public static final Item SOLARITE_LEGGINGS = register("solarite_leggings",
+            new ArmorItem(OblivionArmorMaterials.SOLARITE, ArmorItem.Type.LEGGINGS, new Item.Settings().maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(25))));
+    public static final Item SOLARITE_BOOTS = register("solarite_boots",
+            new ArmorItem(OblivionArmorMaterials.SOLARITE, ArmorItem.Type.BOOTS, new Item.Settings().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(25))));
+
+    public static final Item SOLARITE_SWORD = register("solarite_sword",
+            new SwordItem(OblivionToolMaterials.SOLARITE, new Item.Settings().attributeModifiers(SwordItem.createAttributeModifiers(OblivionToolMaterials.SOLARITE, 5, -2.4f))));
+    public static final Item SOLARITE_SHOVEL = register("solarite_shovel",
+            new ShovelItem(OblivionToolMaterials.SOLARITE, new Item.Settings().attributeModifiers(ShovelItem.createAttributeModifiers(OblivionToolMaterials.SOLARITE, 3.5f, -3.0f))));
+    public static final Item SOLARITE_PICKAXE = register("solarite_pickaxe",
+            new PickaxeItem(OblivionToolMaterials.SOLARITE, new Item.Settings().attributeModifiers(PickaxeItem.createAttributeModifiers(OblivionToolMaterials.SOLARITE, 3.0f, -2.8f))));
+    public static final Item SOLARITE_AXE = register("solarite_axe",
+            new AxeItem(OblivionToolMaterials.SOLARITE, new Item.Settings().attributeModifiers(AxeItem.createAttributeModifiers(OblivionToolMaterials.SOLARITE, 8.0f, -3.1f))));
+    public static final Item SOLARITE_HOE = register("solarite_hoe",
+            new HoeItem(OblivionToolMaterials.SOLARITE, new Item.Settings().attributeModifiers(HoeItem.createAttributeModifiers(OblivionToolMaterials.SOLARITE, 0.0f, -1.0f))));
+    // public static final Item SOLARITE_HORSE_ARMOR = register("solarite_horse_armor",
+    //         new AnimalArmorItem(OblivionArmorMaterials.SOLARITE, AnimalArmorItem.Type.EQUESTRIAN, false, new Item.Settings().maxCount(1)));
+
+
+    public static final Item SCARLET_HELMET = register("scarlet_helmet",
+            new ArmorItem(OblivionArmorMaterials.SCARLET, ArmorItem.Type.HELMET, new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(22))));
+    public static final Item SCARLET_CHESTPLATE = register("scarlet_chestplate",
+            new ArmorItem(OblivionArmorMaterials.SCARLET, ArmorItem.Type.CHESTPLATE, new Item.Settings().maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(22))));
+    public static final Item SCARLET_LEGGINGS = register("scarlet_leggings",
+            new ArmorItem(OblivionArmorMaterials.SCARLET, ArmorItem.Type.LEGGINGS, new Item.Settings().maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(22))));
+    public static final Item SCARLET_BOOTS = register("scarlet_boots",
+            new ArmorItem(OblivionArmorMaterials.SCARLET, ArmorItem.Type.BOOTS, new Item.Settings().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(22))));
+
+    public static final Item SCARLET_SWORD = register("scarlet_sword",
+            new SwordItem(OblivionToolMaterials.SCARLET, new Item.Settings().attributeModifiers(SwordItem.createAttributeModifiers(OblivionToolMaterials.SCARLET, 4, -2.4f))));
+    public static final Item SCARLET_SHOVEL = register("scarlet_shovel",
+            new ShovelItem(OblivionToolMaterials.SCARLET, new Item.Settings().attributeModifiers(ShovelItem.createAttributeModifiers(OblivionToolMaterials.SCARLET, 2.5f, -3.0f))));
+    public static final Item SCARLET_PICKAXE = register("scarlet_pickaxe",
+            new PickaxeItem(OblivionToolMaterials.SCARLET, new Item.Settings().attributeModifiers(PickaxeItem.createAttributeModifiers(OblivionToolMaterials.SCARLET, 2.0f, -2.8f))));
+    public static final Item SCARLET_AXE = register("scarlet_axe",
+            new AxeItem(OblivionToolMaterials.SCARLET, new Item.Settings().attributeModifiers(AxeItem.createAttributeModifiers(OblivionToolMaterials.SCARLET, 7.0f, -3.1f))));
+    public static final Item SCARLET_HOE = register("scarlet_hoe",
+            new HoeItem(OblivionToolMaterials.SCARLET, new Item.Settings().attributeModifiers(HoeItem.createAttributeModifiers(OblivionToolMaterials.SCARLET, -1.0f, -1.0f))));
+    // public static final Item SCARLET_HORSE_ARMOR = register("scarlet_horse_armor",
+    //         new AnimalArmorItem(OblivionArmorMaterials.SCARLET, AnimalArmorItem.Type.EQUESTRIAN, false, new Item.Settings().maxCount(1)));
+
+
     public static final Item FIERY_NETHERITE_HELMET = register("fiery_netherite_helmet",
             new ArmorItem(OblivionArmorMaterials.FIERY_NETHERITE, ArmorItem.Type.HELMET, new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(20))));
     public static final Item FIERY_NETHERITE_CHESTPLATE = register("fiery_netherite_chestplate",
@@ -100,8 +128,24 @@ public class ItemInit {
             new AxeItem(OblivionToolMaterials.FIERY_NETHERITE, new Item.Settings().attributeModifiers(AxeItem.createAttributeModifiers(OblivionToolMaterials.FIERY_NETHERITE, 6.0f, -3.1f))));
     public static final Item FIERY_NETHERITE_HOE = register("fiery_netherite_hoe",
             new HoeItem(OblivionToolMaterials.FIERY_NETHERITE, new Item.Settings().attributeModifiers(HoeItem.createAttributeModifiers(OblivionToolMaterials.FIERY_NETHERITE, -2.0f, -1.0f))));
-//    public static final Item FIERY_NETHERITE_HORSE_ARMOR = register("fiery_netherite_horse_armor",
-//            new AnimalArmorItem(OblivionArmorMaterials.FIERY_NETHERITE, AnimalArmorItem.Type.EQUESTRIAN, false, new Item.Settings().maxCount(1)));
+    // public static final Item FIERY_NETHERITE_HORSE_ARMOR = register("fiery_netherite_horse_armor",
+    //        new AnimalArmorItem(OblivionArmorMaterials.FIERY_NETHERITE, AnimalArmorItem.Type.EQUESTRIAN, false, new Item.Settings().maxCount(1)));
+
+    public static final Item SOLARITE_UPGRADE_SMITHING_TEMPLATE = register("solarite_upgrade_smithing_template",
+            new SmithingTemplateItem(Text.translatable("item.minecraft.smithing_template.solarite_upgrade.applies_to").formatted(Formatting.BLUE),
+                    Text.translatable("item.minecraft.smithing_template.solarite_upgrade.ingredients").formatted(Formatting.BLUE),
+                    Text.translatable("item.oblivion.solarite_upgrade").formatted(Formatting.GRAY), Text.translatable("item.smithing_template.solarite_upgrade.base_slot_description"),
+                    Text.translatable("item.oblivion.smithing_template.solarite_upgrade.additions_slot_description"), List.of(Identifier.of("item/empty_armor_slot_helmet"),
+                    Identifier.of("item/empty_armor_slot_chestplate"), Identifier.of("item/empty_armor_slot_leggings"), Identifier.of("item/empty_armor_slot_boots")),
+                    List.of(Identifier.ofVanilla("item/empty_slot_ingot"))));
+
+    public static final Item SCARLET_UPGRADE_SMITHING_TEMPLATE = register("scarlet_upgrade_smithing_template",
+            new SmithingTemplateItem(Text.translatable("item.minecraft.smithing_template.scarlet_upgrade.applies_to").formatted(Formatting.BLUE),
+                    Text.translatable("item.minecraft.smithing_template.scarlet_upgrade.ingredients").formatted(Formatting.BLUE),
+                    Text.translatable("item.oblivion.scarlet_upgrade").formatted(Formatting.GRAY), Text.translatable("item.smithing_template.scarlet_upgrade.base_slot_description"),
+                    Text.translatable("item.oblivion.smithing_template.scarlet_upgrade.additions_slot_description"), List.of(Identifier.of("item/empty_armor_slot_helmet"),
+                    Identifier.of("item/empty_armor_slot_chestplate"), Identifier.of("item/empty_armor_slot_leggings"), Identifier.of("item/empty_armor_slot_boots")),
+                    List.of(Identifier.ofVanilla("item/empty_slot_ingot"))));
 
     public static final Item FIERY_NETHERITE_UPGRADE_SMITHING_TEMPLATE = register("fiery_netherite_upgrade_smithing_template",
             new SmithingTemplateItem(Text.translatable("item.minecraft.smithing_template.fiery_netherite_upgrade.applies_to").formatted(Formatting.BLUE),
@@ -109,7 +153,7 @@ public class ItemInit {
                     Text.translatable("item.oblivion.fiery_netherite_upgrade").formatted(Formatting.GRAY), Text.translatable("item.smithing_template.fiery_netherite_upgrade.base_slot_description"),
                     Text.translatable("item.oblivion.smithing_template.fiery_netherite_upgrade.additions_slot_description"), List.of(Identifier.of("item/empty_armor_slot_helmet"),
                     Identifier.of("item/empty_armor_slot_chestplate"), Identifier.of("item/empty_armor_slot_leggings"), Identifier.of("item/empty_armor_slot_boots")),
-                    List.of(OblivionMain.identifierOf("item/empty_slot_fiery_netherite_netherite_fragment"))));
+                    List.of(OblivionMain.identifierOf("item/empty_slot_fiery_netherite_ingot"))));
 
     public static final Item SHLAMB = register("shlamb", new Item(new Item.Settings().food(new FoodComponent.Builder().nutrition(3).saturationModifier(0.6F).build())));
     public static final Item COOKED_SHLAMB = register("cooked_shlamb", new Item(new Item.Settings().food(new FoodComponent.Builder().nutrition(7).saturationModifier(1.6F).build())));

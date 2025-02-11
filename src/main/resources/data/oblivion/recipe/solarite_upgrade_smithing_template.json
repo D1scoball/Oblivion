@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "oblivion:solarite_ingot"
+    },
+    "S": {
+      "item": "oblivion:solarite_upgrade_smithing_template"
+    }
+  },
+  "pattern": [
+    "#S#",
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 2,
+    "id": "oblivion:solarite_upgrade_smithing_template"
+  }
+}

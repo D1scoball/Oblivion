@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "scarlet_ingot",
+  "ingredients": [
+    {
+      "item": "oblivion:raw_scarlet"
+    },
+    {
+      "item": "oblivion:raw_scarlet"
+    },
+    {
+      "item": "oblivion:raw_scarlet"
+    },
+    {
+      "item": "oblivion:raw_scarlet"
+    },
+    {
+      "item": "oblivion:raw_scarlet"
+    },
+    {
+      "item": "oblivion:raw_scarlet"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "oblivion:scarlet_ingot"
+  }
+}

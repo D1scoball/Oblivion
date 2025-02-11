@@ -27,13 +27,21 @@ public class OblivionArmorMaterials {
 //        map.put(ArmorItem.Type.BODY, 11);
 //    }), 25, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 3.5f, 0.1f, () -> Ingredient.ofItems(ItemInit.OCTARINE_INGOT));
 
-//    public static final RegistryEntry<ArmorMaterial> SCARLET = register("scarlet", Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
-//        map.put(ArmorItem.Type.BOOTS, 3);
-//        map.put(ArmorItem.Type.LEGGINGS, 6);
-//        map.put(ArmorItem.Type.CHESTPLATE, 8);
-//        map.put(ArmorItem.Type.HELMET, 3);
-//        map.put(ArmorItem.Type.BODY, 11);
-//    }), 25, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 3.5f, 0.1f, () -> Ingredient.ofItems(ItemInit.SCARLET_INGOT));
+    public static final RegistryEntry<ArmorMaterial> SOLARITE = register("solarite", Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
+        map.put(ArmorItem.Type.BOOTS, 5);
+        map.put(ArmorItem.Type.LEGGINGS, 8);
+        map.put(ArmorItem.Type.CHESTPLATE, 10);
+        map.put(ArmorItem.Type.HELMET, 5);
+        map.put(ArmorItem.Type.BODY, 13);
+    }), 25, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 4.0f, 0.25f, () -> Ingredient.ofItems(ItemInit.SOLARITE_INGOT));
+
+    public static final RegistryEntry<ArmorMaterial> SCARLET = register("scarlet", Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
+        map.put(ArmorItem.Type.BOOTS, 4);
+        map.put(ArmorItem.Type.LEGGINGS, 7);
+        map.put(ArmorItem.Type.CHESTPLATE, 9);
+        map.put(ArmorItem.Type.HELMET, 4);
+        map.put(ArmorItem.Type.BODY, 12);
+    }), 25, SoundEvents.ITEM_ARMOR_EQUIP_NETHERITE, 3.75f, 0.2f, () -> Ingredient.ofItems(ItemInit.SCARLET_INGOT));
 
     public static final RegistryEntry<ArmorMaterial> FIERY_NETHERITE = register("fiery_netherite", Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
         map.put(ArmorItem.Type.BOOTS, 3);

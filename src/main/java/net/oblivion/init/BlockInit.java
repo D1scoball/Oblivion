@@ -110,7 +110,7 @@ public class BlockInit {
     public static final Block RUNE_WOOD_DOOR = register("rune_wood_door", 2, true, false, new DoorBlock(RUNE_WOOD_SET_TYPE, AbstractBlock.Settings.create().mapColor(RUNE_WOOD_PLANKS.getDefaultMapColor()).instrument(NoteBlockInstrument.BASS).strength(3.0F).nonOpaque().burnable().pistonBehavior(PistonBehavior.DESTROY)));
 
     public static final Block DRILL = register("drill", -1, true, false, new DrillBlock(AbstractBlock.Settings.copy(Blocks.BARREL).nonOpaque().pistonBehavior(PistonBehavior.IGNORE)));
-    public static final Block GUIDELIGHT = register("guidelight", -1, true, false, new GuidelightBlock(AbstractBlock.Settings.copy(Blocks.BEACON).strength(240.0f,3600.0f)));
+    public static final Block GUIDELIGHT = register("guidelight", -1, true, false, new GuidelightBlock(AbstractBlock.Settings.copy(Blocks.BEACON).strength(240.0f, 3600.0f)));
 
 //    public static final Block OCTARINE_ORE = register("octarine_ore", true, true, new ExperienceDroppingBlock(ConstantIntProvider.create(0), AbstractBlock.Settings.create().mapColor(MapColor.WATER_BLUE).instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(3.0F, 3.0F)));
 //    public static final Block DEEPSLATE_IRON_ORE = register("deepslate_octarine_ore", true, true, new ExperienceDroppingBlock(ConstantIntProvider.create(0), AbstractBlock.Settings.copyShallow(OCTARINE_ORE).mapColor(MapColor.WATER_BLUE).strength(4.5F, 3.0F).sounds(BlockSoundGroup.DEEPSLATE)));
@@ -122,6 +122,12 @@ public class BlockInit {
 
     public static final Block FIERY_ANCIENT_DEBRIS = register("fiery_ancient_debris", -1, true, false, new MultiOreBlock(20, AbstractBlock.Settings.create().mapColor(MapColor.WATER_BLUE).instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(80.0F, 2400.0F)));
     public static final Block FIERY_NETHERITE_BLOCK = register("fiery_netherite_block", -1, true, true, new Block(AbstractBlock.Settings.create().mapColor(MapColor.GRAY).instrument(NoteBlockInstrument.IRON_XYLOPHONE).requiresTool().strength(80.0F, 1200.0F).sounds(BlockSoundGroup.NETHERITE)));
+
+    public static final Block SCARLET_BLOCK = register("scarlet_block", -1, true, true, new Block(AbstractBlock.Settings.create().mapColor(MapColor.GRAY).instrument(NoteBlockInstrument.IRON_XYLOPHONE).requiresTool().strength(100.0F, 2600.0F).sounds(BlockSoundGroup.NETHERITE)));
+    public static final Block RAW_SCARLET_BLOCK = register("raw_scarlet_block", -1, true, true, new MultiOreBlock(20, AbstractBlock.Settings.create().mapColor(MapColor.GRAY).instrument(NoteBlockInstrument.IRON_XYLOPHONE).requiresTool().strength(100.0F, 1400.0F).sounds(BlockSoundGroup.NETHERITE)));
+
+    public static final Block SOLARITE_BLOCK = register("solarite_block", -1, true, true, new Block(AbstractBlock.Settings.create().mapColor(MapColor.GRAY).instrument(NoteBlockInstrument.IRON_XYLOPHONE).requiresTool().strength(120.0F, 3000.0F).sounds(BlockSoundGroup.NETHERITE)));
+    public static final Block RAW_SOLARITE_BLOCK = register("raw_solarite_block", -1, true, true, new MultiOreBlock(20, AbstractBlock.Settings.create().mapColor(MapColor.GRAY).instrument(NoteBlockInstrument.IRON_XYLOPHONE).requiresTool().strength(120.0F, 1600.0F).sounds(BlockSoundGroup.NETHERITE)));
 
     public static final Block SHIMMERING_GRASS = register("shimmering_grass", -1, true, false, new ShimmeringGrassBlock(AbstractBlock.Settings.create().mapColor(MapColor.DARK_GREEN).replaceable().noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).offset(AbstractBlock.OffsetType.XYZ).burnable().pistonBehavior(PistonBehavior.DESTROY).ticksRandomly()
             .luminance(Blocks.createLightLevelFromLitBlockState(9))));
