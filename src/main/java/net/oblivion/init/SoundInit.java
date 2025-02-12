@@ -18,6 +18,10 @@ public class SoundInit {
     public static SoundEvent BOAR_HURT_EVENT = register("boar_hurt");
     public static SoundEvent BOAR_DEATH_EVENT = register("boar_death");
 
+    public static SoundEvent TURKEY_IDLE_EVENT = register("turkey_idle");
+    public static SoundEvent TURKEY_HURT_EVENT = register("turkey_hurt");
+    public static SoundEvent TURKEY_DEATH_EVENT = register("turkey_death");
+
     private static SoundEvent register(String id) {
         return Registry.register(Registries.SOUND_EVENT, id, SoundEvent.of(OblivionMain.identifierOf(id)));
     }

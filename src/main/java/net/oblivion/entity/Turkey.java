@@ -1,5 +1,6 @@
 package net.oblivion.entity;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.goal.*;
@@ -21,12 +22,14 @@ import net.minecraft.particle.ParticleTypes;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.*;
 import net.minecraft.world.World;
 import net.oblivion.init.EntityInit;
+import net.oblivion.init.SoundInit;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.HashMap;
@@ -139,25 +142,25 @@ public class Turkey extends AnimalEntity implements Saddleable {
     }
 
 
-//    @Override
-//    protected SoundEvent getAmbientSound() {
-//        return this.isBaby() ? SoundInit.BABY_DEER_IDLE_EVENT : SoundInit.DEER_IDLE_EVENT;
-//    }
-//
-//    @Override
-//    protected SoundEvent getHurtSound(DamageSource source) {
-//        return this.isBaby() ? SoundInit.BABY_DEER_HURT_EVENT : SoundInit.DEER_HURT_EVENT;
-//    }
-//
-//    @Override
-//    protected SoundEvent getDeathSound() {
-//        return this.isBaby() ? SoundInit.BABY_DEER_HURT_EVENT : SoundInit.DEER_DEATH_EVENT;
-//    }
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return SoundInit.TURKEY_IDLE_EVENT;
+    }
 
-//    @Override
-//    protected void playStepSound(BlockPos pos, BlockState state) {
-//        this.playSound(SoundEvents.ENTITY_WOLF_STEP, 0.15F, 1.0F);
-//    }
+    @Override
+    protected SoundEvent getHurtSound(DamageSource source) {
+        return SoundInit.TURKEY_HURT_EVENT;
+    }
+
+    @Override
+    protected SoundEvent getDeathSound() {
+        return SoundInit.TURKEY_DEATH_EVENT;
+    }
+
+    @Override
+    protected void playStepSound(BlockPos pos, BlockState state) {
+        this.playSound(SoundEvents.ENTITY_CHICKEN_STEP, 0.15F, 1.0F);
+    }
 
     @Override
     public ActionResult interactMob(PlayerEntity player, Hand hand) {

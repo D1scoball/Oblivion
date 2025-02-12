@@ -40,5 +40,23 @@
     "sounds": [
       "oblivion:boar_death_1"
     ]
+  },
+  "turkey_idle": {
+    "sounds": [
+      "oblivion:turkey_idle_1",
+      "oblivion:turkey_idle_2",
+      "oblivion:turkey_idle_3"
+    ]
+  },
+  "turkey_hurt": {
+    "sounds": [
+      "oblivion:turkey_hurt_1",
+      "oblivion:turkey_hurt_2"
+    ]
+  },
+  "turkey_death": {
+    "sounds": [
+      "oblivion:turkey_death_1"
+    ]
   }
 }
