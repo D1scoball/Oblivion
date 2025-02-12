@@ -27,11 +27,13 @@ import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ItemScatterer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.*;
+import net.oblivion.init.SoundInit;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Iterator;
@@ -153,26 +155,25 @@ public class Treeder extends PassiveEntity {
         }
     }
 
-//    @Override
-//    protected SoundEvent getAmbientSound() {
-//        return SoundInit.FUNGUS_IDLE_EVENT;
-//    }
-//
-//    @Override
-//    protected SoundEvent getHurtSound(DamageSource source) {
-//        return SoundInit.FUNGUS_HURT_EVENT;
-//    }
-//
-//    @Override
-//    protected SoundEvent getDeathSound() {
-//        return SoundInit.FUNGUS_DEATH_EVENT;
-//    }
-//
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return SoundInit.TREEDER_IDLE_EVENT;
+    }
+
+    @Override
+    protected SoundEvent getHurtSound(DamageSource source) {
+        return SoundInit.TREEDER_HURT_EVENT;
+    }
+
+    @Override
+    protected SoundEvent getDeathSound() {
+        return SoundInit.TREEDER_DEATH_EVENT;
+    }
+
 //    @Override
 //    protected void playStepSound(BlockPos pos, BlockState state) {
 //        this.playSound(SoundEvents.ENTITY_WOLF_STEP, 0.15F, 1.0F);
 //    }
-
 
     @Override
     public boolean damage(DamageSource source, float amount) {

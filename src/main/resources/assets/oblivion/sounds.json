@@ -96,5 +96,24 @@
     "sounds": [
       "oblivion:goblin_death_1"
     ]
+  },
+  "treeder_idle": {
+    "sounds": [
+      "oblivion:treeder_idle_1",
+      "oblivion:treeder_idle_2",
+      "oblivion:treeder_idle_3",
+      "oblivion:treeder_idle_4"
+    ]
+  },
+  "treeder_hurt": {
+    "sounds": [
+      "oblivion:treeder_hurt_1"
+    ]
+  },
+  "treeder_death": {
+    "sounds": [
+      "oblivion:treeder_death_1",
+      "oblivion:treeder_death_2"
+    ]
   }
 }

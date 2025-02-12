@@ -30,6 +30,10 @@ public class SoundInit {
     public static SoundEvent GOBLIN_HURT_EVENT = register("goblin_hurt");
     public static SoundEvent GOBLIN_DEATH_EVENT = register("goblin_death");
 
+    public static SoundEvent TREEDER_IDLE_EVENT = register("treeder_idle");
+    public static SoundEvent TREEDER_HURT_EVENT = register("treeder_hurt");
+    public static SoundEvent TREEDER_DEATH_EVENT = register("treeder_death");
+
 
     private static SoundEvent register(String id) {
         return Registry.register(Registries.SOUND_EVENT, id, SoundEvent.of(OblivionMain.identifierOf(id)));
