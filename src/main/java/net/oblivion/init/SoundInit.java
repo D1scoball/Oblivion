@@ -38,6 +38,10 @@ public class SoundInit {
     public static SoundEvent SHLAMA_HURT_EVENT = register("shlama_hurt");
     public static SoundEvent SHLAMA_DEATH_EVENT = register("shlama_death");
 
+    public static SoundEvent ELK_IDLE_EVENT = register("elk_idle");
+    public static SoundEvent ELK_HURT_EVENT = register("elk_hurt");
+    public static SoundEvent ELK_DEATH_EVENT = register("elk_death");
+
     private static SoundEvent register(String id) {
         return Registry.register(Registries.SOUND_EVENT, id, SoundEvent.of(OblivionMain.identifierOf(id)));
     }

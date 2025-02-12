@@ -138,5 +138,27 @@
       "oblivion:shlama_idle_4",
       "oblivion:shlama_idle_5"
     ]
+  },
+  "elk_idle": {
+    "sounds": [
+      "oblivion:elk_idle_1",
+      "oblivion:elk_idle_2",
+      "oblivion:elk_idle_3",
+      "oblivion:elk_idle_4"
+    ]
+  },
+  "elk_hurt": {
+    "sounds": [
+      "oblivion:elk_hurt_1",
+      "oblivion:elk_hurt_2",
+      "oblivion:elk_hurt_3"
+    ]
+  },
+  "elk_death": {
+    "sounds": [
+      "oblivion:elk_hurt_1",
+      "oblivion:elk_hurt_2",
+      "oblivion:elk_hurt_3"
+    ]
   }
 }
