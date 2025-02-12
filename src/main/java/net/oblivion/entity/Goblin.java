@@ -20,12 +20,14 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.registry.tag.DamageTypeTags;
 import net.minecraft.registry.tag.ItemTags;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.LocalDifficulty;
 import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
 import net.oblivion.entity.goal.ComeTogetherGoal;
+import net.oblivion.init.SoundInit;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
@@ -102,20 +104,20 @@ public class Goblin extends HostileEntity {
         return 1.2F - 0.1F * (float) this.getSize();
     }
 
-//    @Override
-//    protected SoundEvent getAmbientSound() {
-//        return SoundInit.ORC_IDLE_EVENT;
-//    }
-//
-//    @Override
-//    protected SoundEvent getHurtSound(DamageSource source) {
-//        return SoundInit.ORC_HURT_EVENT;
-//    }
-//
-//    @Override
-//    protected SoundEvent getDeathSound() {
-//        return SoundInit.ORC_DEATH_EVENT;
-//    }
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return SoundInit.GOBLIN_IDLE_EVENT;
+    }
+
+    @Override
+    protected SoundEvent getHurtSound(DamageSource source) {
+        return SoundInit.GOBLIN_HURT_EVENT;
+    }
+
+    @Override
+    protected SoundEvent getDeathSound() {
+        return SoundInit.GOBLIN_DEATH_EVENT;
+    }
 
 //    @Override
 //    protected void playStepSound(BlockPos pos, BlockState state) {
