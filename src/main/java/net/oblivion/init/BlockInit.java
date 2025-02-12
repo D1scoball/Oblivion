@@ -135,7 +135,7 @@ public class BlockInit {
     public static BlockEntityType<DrillBlockEntity> DRILL_BLOCK_ENTITY = Registry.register(Registries.BLOCK_ENTITY_TYPE, OblivionMain.identifierOf("drill_entity"),
             BlockEntityType.Builder.create(DrillBlockEntity::new, DRILL).build(null));
     public static BlockEntityType<MultiOreBlockEntity> MULTI_ORE_BLOCK_ENTITY = Registry.register(Registries.BLOCK_ENTITY_TYPE, OblivionMain.identifierOf("multi_ore_entity"),
-            BlockEntityType.Builder.create(MultiOreBlockEntity::new, FIERY_ANCIENT_DEBRIS).build(null));
+            BlockEntityType.Builder.create(MultiOreBlockEntity::new, FIERY_ANCIENT_DEBRIS, RAW_SCARLET_BLOCK, RAW_SOLARITE_BLOCK).build(null));
     public static BlockEntityType<GuidelightBlockEntity> GUIDELIGHT_BLOCK_ENTITY = Registry.register(Registries.BLOCK_ENTITY_TYPE, OblivionMain.identifierOf("guidelight_entity"),
             BlockEntityType.Builder.create(GuidelightBlockEntity::new, GUIDELIGHT).build(null));
 
