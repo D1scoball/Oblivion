@@ -34,6 +34,9 @@ public class SoundInit {
     public static SoundEvent TREEDER_HURT_EVENT = register("treeder_hurt");
     public static SoundEvent TREEDER_DEATH_EVENT = register("treeder_death");
 
+    public static SoundEvent SHLAMA_IDLE_EVENT = register("shlama_idle");
+    public static SoundEvent SHLAMA_HURT_EVENT = register("shlama_hurt");
+    public static SoundEvent SHLAMA_DEATH_EVENT = register("shlama_death");
 
     private static SoundEvent register(String id) {
         return Registry.register(Registries.SOUND_EVENT, id, SoundEvent.of(OblivionMain.identifierOf(id)));

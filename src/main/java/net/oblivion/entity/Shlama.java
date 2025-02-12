@@ -1,11 +1,11 @@
 package net.oblivion.entity;
 
-import java.util.EnumSet;
-
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.entity.*;
-import net.minecraft.entity.ai.NoPenaltyTargeting;
+import net.minecraft.entity.EntityData;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.Shearable;
+import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
@@ -15,11 +15,11 @@ import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.AnimalEntity;
-import net.minecraft.entity.passive.ChickenEntity;
 import net.minecraft.entity.passive.PassiveEntity;
-import net.minecraft.entity.passive.SheepEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.*;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
+import net.minecraft.item.ShearsItem;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.server.world.ServerWorld;
@@ -27,17 +27,15 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
-import net.minecraft.util.DyeColor;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ItemScatterer;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.LocalDifficulty;
 import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
 import net.minecraft.world.event.GameEvent;
 import net.oblivion.init.EntityInit;
+import net.oblivion.init.SoundInit;
 import org.jetbrains.annotations.Nullable;
 
 public class Shlama extends AnimalEntity implements Shearable {
@@ -102,25 +100,26 @@ public class Shlama extends AnimalEntity implements Shearable {
         }
     }
 
-//    @Override
-//    protected SoundEvent getAmbientSound() {
-//        return this.isBaby() ? SoundInit.BABY_DEER_IDLE_EVENT : SoundInit.DEER_IDLE_EVENT;
-//    }
-//
-//    @Override
-//    protected SoundEvent getHurtSound(DamageSource source) {
-//        return this.isBaby() ? SoundInit.BABY_DEER_HURT_EVENT : SoundInit.DEER_HURT_EVENT;
-//    }
-//
-//    @Override
-//    protected SoundEvent getDeathSound() {
-//        return this.isBaby() ? SoundInit.BABY_DEER_HURT_EVENT : SoundInit.DEER_DEATH_EVENT;
-//    }
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return SoundInit.SHLAMA_IDLE_EVENT;
+    }
 
-//    @Override
-//    protected void playStepSound(BlockPos pos, BlockState state) {
-//        this.playSound(SoundEvents.ENTITY_WOLF_STEP, 0.15F, 1.0F);
-//    }
+
+    @Override
+    protected SoundEvent getHurtSound(DamageSource source) {
+        return SoundInit.SHLAMA_HURT_EVENT;
+    }
+
+    @Override
+    protected SoundEvent getDeathSound() {
+        return SoundInit.SHLAMA_DEATH_EVENT;
+    }
+
+    @Override
+    protected void playStepSound(BlockPos pos, BlockState state) {
+        this.playSound(SoundEvents.ENTITY_SHEEP_STEP, 0.15F, 1.0F);
+    }
 
 
     @Override

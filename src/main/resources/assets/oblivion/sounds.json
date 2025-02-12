@@ -115,5 +115,28 @@
       "oblivion:treeder_death_1",
       "oblivion:treeder_death_2"
     ]
+  },
+  "shlama_idle": {
+    "sounds": [
+      "oblivion:shlama_idle_1",
+      "oblivion:shlama_idle_2",
+      "oblivion:shlama_idle_3",
+      "oblivion:shlama_idle_4",
+      "oblivion:shlama_idle_5"
+    ]
+  },
+  "shlama_hurt": {
+    "sounds": [
+      "oblivion:shlama_idle_3",
+      "oblivion:shlama_idle_4",
+      "oblivion:shlama_idle_5"
+    ]
+  },
+  "shlama_death": {
+    "sounds": [
+      "oblivion:shlama_idle_3",
+      "oblivion:shlama_idle_4",
+      "oblivion:shlama_idle_5"
+    ]
   }
 }
