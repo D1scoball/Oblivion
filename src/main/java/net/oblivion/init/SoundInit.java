@@ -22,6 +22,10 @@ public class SoundInit {
     public static SoundEvent TURKEY_HURT_EVENT = register("turkey_hurt");
     public static SoundEvent TURKEY_DEATH_EVENT = register("turkey_death");
 
+    public static SoundEvent SHROOM_IDLE_EVENT = register("shroom_idle");
+    public static SoundEvent SHROOM_HURT_EVENT = register("shroom_hurt");
+    public static SoundEvent SHROOM_DEATH_EVENT = register("shroom_death");
+
     private static SoundEvent register(String id) {
         return Registry.register(Registries.SOUND_EVENT, id, SoundEvent.of(OblivionMain.identifierOf(id)));
     }

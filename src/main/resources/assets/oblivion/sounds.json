@@ -58,5 +58,26 @@
     "sounds": [
       "oblivion:turkey_death_1"
     ]
+  },
+  "shroom_idle": {
+    "sounds": [
+      "oblivion:shroom_idle_1",
+      "oblivion:shroom_idle_2",
+      "oblivion:shroom_idle_3",
+      "oblivion:shroom_idle_4"
+    ]
+  },
+  "shroom_hurt": {
+    "sounds": [
+      "oblivion:shroom_hurt_1",
+      "oblivion:shroom_hurt_2",
+      "oblivion:shroom_hurt_3"
+    ]
+  },
+  "shroom_death": {
+    "sounds": [
+      "oblivion:shroom_death_1",
+      "oblivion:shroom_death_2"
+    ]
   }
 }

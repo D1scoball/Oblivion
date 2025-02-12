@@ -15,14 +15,17 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.passive.MerchantEntity;
+import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.LocalDifficulty;
 import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
+import net.oblivion.init.SoundInit;
 import org.jetbrains.annotations.Nullable;
 
 public class Shroom extends HostileEntity {
@@ -116,24 +119,24 @@ public class Shroom extends HostileEntity {
         return 1.2F - 0.1F * (float) this.getSize();
     }
 
-//    @Override
-//    protected SoundEvent getAmbientSound() {
-//        return SoundInit.ORC_IDLE_EVENT;
-//    }
-//
-//    @Override
-//    protected SoundEvent getHurtSound(DamageSource source) {
-//        return SoundInit.ORC_HURT_EVENT;
-//    }
-//
-//    @Override
-//    protected SoundEvent getDeathSound() {
-//        return SoundInit.ORC_DEATH_EVENT;
-//    }
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return SoundInit.SHROOM_IDLE_EVENT;
+    }
+
+    @Override
+    protected SoundEvent getHurtSound(DamageSource source) {
+        return SoundInit.SHROOM_HURT_EVENT;
+    }
+
+    @Override
+    protected SoundEvent getDeathSound() {
+        return SoundInit.SHROOM_DEATH_EVENT;
+    }
 
 //    @Override
 //    protected void playStepSound(BlockPos pos, BlockState state) {
-//        this.playSound(SoundInit.ORC_STEP_EVENT, 1.0F, 1.0F);
+//        this.playSound(SoundEvents.ENTITY_STEP, 1.0F, 1.0F);
 //    }
 
     @Nullable
