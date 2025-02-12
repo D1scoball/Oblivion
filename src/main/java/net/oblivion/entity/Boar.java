@@ -1,10 +1,12 @@
 package net.oblivion.entity;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
@@ -12,14 +14,19 @@ import net.minecraft.entity.mob.Angerable;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
+import net.minecraft.entity.passive.PigEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.registry.tag.DamageTypeTags;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundEvent;
+import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.oblivion.init.EntityInit;
+import net.oblivion.init.SoundInit;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.UUID;
@@ -61,25 +68,25 @@ public class Boar extends AnimalEntity implements Angerable {
         this.targetSelector.add(3, new ActiveTargetGoal(this, PlayerEntity.class, 10, true, false, livingEntity -> this.shouldAngerAt((LivingEntity) livingEntity)));
     }
 
-//    @Override
-//    protected SoundEvent getAmbientSound() {
-//        return this.isBaby() ? SoundInit.BABY_DEER_IDLE_EVENT : SoundInit.DEER_IDLE_EVENT;
-//    }
-//
-//    @Override
-//    protected SoundEvent getHurtSound(DamageSource source) {
-//        return this.isBaby() ? SoundInit.BABY_DEER_HURT_EVENT : SoundInit.DEER_HURT_EVENT;
-//    }
-//
-//    @Override
-//    protected SoundEvent getDeathSound() {
-//        return this.isBaby() ? SoundInit.BABY_DEER_HURT_EVENT : SoundInit.DEER_DEATH_EVENT;
-//    }
+    @Override
+    protected SoundEvent getAmbientSound() {
+        return SoundInit.BOAR_IDLE_EVENT;
+    }
 
-//    @Override
-//    protected void playStepSound(BlockPos pos, BlockState state) {
-//        this.playSound(SoundEvents.ENTITY_WOLF_STEP, 0.15F, 1.0F);
-//    }
+    @Override
+    protected SoundEvent getHurtSound(DamageSource source) {
+        return SoundInit.BOAR_HURT_EVENT;
+    }
+
+    @Override
+    protected SoundEvent getDeathSound() {
+        return SoundInit.BOAR_DEATH_EVENT;
+    }
+
+    @Override
+    protected void playStepSound(BlockPos pos, BlockState state) {
+        this.playSound(SoundEvents.ENTITY_PIG_STEP, 0.15F, 1.0F);
+    }
 
 
     @Override

@@ -23,5 +23,22 @@
     "sounds": [
       "oblivion:guidelight_stop"
     ]
+  },
+  "boar_idle": {
+    "sounds": [
+      "oblivion:boar_idle_1",
+      "oblivion:boar_idle_2",
+      "oblivion:boar_idle_3"
+    ]
+  },
+  "boar_hurt": {
+    "sounds": [
+      "oblivion:boar_hurt_1"
+    ]
+  },
+  "boar_death": {
+    "sounds": [
+      "oblivion:boar_death_1"
+    ]
   }
 }
