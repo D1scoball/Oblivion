@@ -1,12 +1,12 @@
 {
-  "feature": "oblivion:rune_trees",
+  "feature": "oblivion:silver_birch_trees",
   "placement": [
     {
       "type": "minecraft:block_predicate_filter",
       "predicate": {
         "type": "minecraft:would_survive",
         "state": {
-          "Name": "oblivion:rune_wood_sapling",
+          "Name": "oblivion:silver_birch_sapling",
           "Properties": {
             "stage": "0"
           }

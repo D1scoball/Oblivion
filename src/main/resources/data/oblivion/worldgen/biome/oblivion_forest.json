@@ -73,21 +73,19 @@
     ],
     [],
     [
-      "minecraft:spring_water",
-      "minecraft:spring_lava"
+      "minecraft:spring_water"
     ],
     [
       "minecraft:glow_lichen",
       "minecraft:forest_flowers",
-      "minecraft:trees_birch_and_oak",
+      "oblivion:forest_iron_trees",
       "minecraft:flower_default",
       "minecraft:patch_grass_forest",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
-      "oblivion:patch_shimmering_grass_forest",
-      "oblivion:iron_trees"
+      "oblivion:patch_shimmering_grass_forest"
     ],
     [
       "minecraft:freeze_top_layer"

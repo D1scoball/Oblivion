@@ -9,15 +9,15 @@
       }
     },
     "foliage_placer": {
-      "type": "minecraft:iron_tree_foliage_placer",
-      "height": 9,
+      "type": "minecraft:rune_tree_foliage_placer",
+      "height": 7,
       "offset": 0,
       "radius": 3
     },
     "foliage_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "oblivion:iron_wood_leaves",
+        "Name": "oblivion:rune_wood_leaves",
         "Properties": {
           "distance": "7",
           "persistent": "false",
@@ -42,7 +42,7 @@
     "trunk_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "oblivion:iron_wood_log",
+        "Name": "oblivion:rune_wood_log",
         "Properties": {
           "axis": "y"
         }

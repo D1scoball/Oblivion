@@ -9,7 +9,7 @@
       }
     },
     "foliage_placer": {
-      "type": "minecraft:iron_tree_foliage_placer",
+      "type": "minecraft:slim_tree_foliage_placer",
       "height": 9,
       "offset": 0,
       "radius": 3
@@ -17,7 +17,7 @@
     "foliage_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "oblivion:iron_wood_leaves",
+        "Name": "oblivion:silver_birch_leaves",
         "Properties": {
           "distance": "7",
           "persistent": "false",
@@ -42,7 +42,7 @@
     "trunk_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "oblivion:iron_wood_log",
+        "Name": "oblivion:silver_birch_log",
         "Properties": {
           "axis": "y"
         }
