@@ -1,0 +1,16 @@
+{
+  "type": "oblivion:oblivion_ore",
+  "config": {
+    "size": 2,
+    "state_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "oblivion:fiery_ancient_debris"
+      }
+    },
+    "target": {
+      "predicate_type": "minecraft:tag_match",
+      "tag": "minecraft:stone_ore_replaceables"
+    }
+  }
+}
