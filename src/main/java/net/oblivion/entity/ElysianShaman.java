@@ -26,6 +26,7 @@ import net.minecraft.util.math.random.Random;
 import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
 import net.oblivion.OblivionMain;
+import net.oblivion.init.SoundInit;
 
 import java.util.EnumSet;
 
@@ -94,20 +95,17 @@ public class ElysianShaman extends HostileEntity {
 
     @Override
     protected SoundEvent getAmbientSound() {
-        return super.getAmbientSound();
-//        return SoundInit.ORC_IDLE_EVENT;
+        return SoundInit.ELYSIAN_SHAMAN_IDLE_EVENT;
     }
 
     @Override
     protected SoundEvent getHurtSound(DamageSource source) {
-        return super.getHurtSound(source);
-//        return SoundInit.ORC_HURT_EVENT;
+        return SoundInit.ELYSIAN_SHAMAN_HURT_EVENT;
     }
 
     @Override
     protected SoundEvent getDeathSound() {
-        return super.getDeathSound();
-//        return SoundInit.ORC_DEATH_EVENT;
+        return SoundInit.ELYSIAN_SHAMAN_DEATH_EVENT;
     }
 
     @Override

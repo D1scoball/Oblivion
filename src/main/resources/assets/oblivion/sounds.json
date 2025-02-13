@@ -160,5 +160,66 @@
       "oblivion:elk_hurt_2",
       "oblivion:elk_hurt_3"
     ]
+  },
+  "elysian_shaman_idle": {
+    "sounds": [
+      "oblivion:elysian_shaman_idle_1",
+      "oblivion:elysian_shaman_idle_2",
+      "oblivion:elysian_shaman_idle_3",
+      "oblivion:elysian_shaman_idle_4",
+      "oblivion:elysian_shaman_idle_5"
+    ]
+  },
+  "elysian_shaman_hurt": {
+    "sounds": [
+      "oblivion:elysian_shaman_hurt_1",
+      "oblivion:elysian_shaman_hurt_2"
+    ]
+  },
+  "elysian_shaman_death": {
+    "sounds": [
+      "oblivion:elysian_shaman_hurt_1",
+      "oblivion:elysian_shaman_hurt_2"
+    ]
+  },
+  "elysian_wolf_idle": {
+    "sounds": [
+      "oblivion:elysian_wolf_idle_1",
+      "oblivion:elysian_wolf_idle_2",
+      "oblivion:elysian_wolf_idle_3",
+      "oblivion:elysian_wolf_idle_4"
+    ]
+  },
+  "elysian_wolf_hurt": {
+    "sounds": [
+      "oblivion:elysian_wolf_hurt_1",
+      "oblivion:elysian_wolf_hurt_2",
+      "oblivion:elysian_wolf_hurt_3"
+    ]
+  },
+  "elysian_wolf_death": {
+    "sounds": [
+      "oblivion:elysian_wolf_death_1",
+      "oblivion:elysian_wolf_death_2"
+    ]
+  },
+  "elysian_elk_idle": {
+    "sounds": [
+      "oblivion:elysian_elk_idle_1",
+      "oblivion:elysian_elk_idle_2",
+      "oblivion:elysian_elk_idle_3",
+      "oblivion:elysian_elk_idle_4"
+    ]
+  },
+  "elysian_elk_hurt": {
+    "sounds": [
+      "oblivion:elysian_elk_hurt_1",
+      "oblivion:elysian_elk_hurt_2"
+    ]
+  },
+  "elysian_elk_death": {
+    "sounds": [
+      "oblivion:elysian_elk_death_1"
+    ]
   }
 }

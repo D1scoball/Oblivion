@@ -15,6 +15,7 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.oblivion.OblivionMain;
+import net.oblivion.init.SoundInit;
 
 public class ElysianWolf extends HostileEntity {
 
@@ -58,20 +59,17 @@ public class ElysianWolf extends HostileEntity {
 
     @Override
     protected SoundEvent getAmbientSound() {
-        return super.getAmbientSound();
-//        return SoundInit.ORC_IDLE_EVENT;
+        return SoundInit.ELYSIAN_WOLF_IDLE_EVENT;
     }
 
     @Override
     protected SoundEvent getHurtSound(DamageSource source) {
-        return super.getHurtSound(source);
-//        return SoundInit.ORC_HURT_EVENT;
+        return SoundInit.ELYSIAN_WOLF_HURT_EVENT;
     }
 
     @Override
     protected SoundEvent getDeathSound() {
-        return super.getDeathSound();
-//        return SoundInit.ORC_DEATH_EVENT;
+        return SoundInit.ELYSIAN_WOLF_DEATH_EVENT;
     }
 
     @Override
