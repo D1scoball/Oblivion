@@ -1,4 +1,4 @@
-package net.oblivion.world;
+package net.oblivion.world.feature;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.block.Block;

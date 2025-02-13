@@ -27,7 +27,7 @@ import net.oblivion.init.TagInit;
 import net.oblivion.init.WorldInit;
 import net.oblivion.network.packet.GuidelightSoundPacket;
 import net.oblivion.state.GuidelightPersistantState;
-import net.oblivion.world.GuidelightFeature;
+import net.oblivion.world.feature.GuidelightFeature;
 
 import java.util.ArrayList;
 import java.util.List;
