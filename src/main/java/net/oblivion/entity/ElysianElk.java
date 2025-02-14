@@ -2,6 +2,7 @@ package net.oblivion.entity;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
@@ -19,6 +20,10 @@ import net.minecraft.item.Items;
 import net.minecraft.registry.tag.DamageTypeTags;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.random.Random;
+import net.minecraft.world.Difficulty;
+import net.minecraft.world.ServerWorldAccess;
 import net.minecraft.world.World;
 import net.oblivion.init.EntityInit;
 import net.oblivion.init.SoundInit;
@@ -44,6 +49,12 @@ public class ElysianElk extends AnimalEntity implements Angerable {
                 .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.24F)
                 .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 7.0)
                 .add(EntityAttributes.GENERIC_ARMOR, 3.0);
+    }
+
+    public static boolean canSpawnInDark(EntityType<? extends AnimalEntity> type, ServerWorldAccess world, SpawnReason spawnReason, BlockPos pos, Random random) {
+        return world.getDifficulty() != Difficulty.PEACEFUL
+                && (SpawnReason.isTrialSpawner(spawnReason) || HostileEntity.isSpawnDark(world, pos, random))
+                && canMobSpawn(type, world, spawnReason, pos, random);
     }
 
     @Override

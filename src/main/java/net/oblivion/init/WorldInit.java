@@ -35,11 +35,9 @@ public class WorldInit {
         return Registry.register(Registries.FEATURE, OblivionMain.identifierOf(name), feature);
     }
 
-    // Todo: Mob drops, Goblin
+    // Todo: Goblin item drop
     // Set wood toolRequired and mixin into item isCorrectForDrops, maybe requires earlystage compat
     // Solarite and Scarlet require wood handles
-    // Mob spawns
-    // ancient debree
 
     public static void init() {
     }

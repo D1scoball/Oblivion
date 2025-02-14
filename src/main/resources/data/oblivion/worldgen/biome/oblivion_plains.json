@@ -22,8 +22,7 @@
   "features": [
     [],
     [
-      "minecraft:lake_lava_underground",
-      "minecraft:lake_lava_surface"
+      "minecraft:lake_lava_underground"
     ],
     [
       "minecraft:amethyst_geode"
@@ -90,102 +89,59 @@
   "has_precipitation": true,
   "spawn_costs": {},
   "spawners": {
-    "ambient": [
-      {
-        "type": "minecraft:bat",
-        "maxCount": 8,
-        "minCount": 8,
-        "weight": 10
-      }
-    ],
+    "ambient": [],
     "axolotls": [],
     "creature": [
       {
-        "type": "minecraft:sheep",
+        "type": "oblivion:shlama",
         "maxCount": 4,
         "minCount": 4,
         "weight": 12
       },
       {
-        "type": "minecraft:pig",
+        "type": "oblivion:boar",
         "maxCount": 4,
         "minCount": 4,
         "weight": 10
       },
       {
-        "type": "minecraft:chicken",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 10
-      },
-      {
-        "type": "minecraft:cow",
-        "maxCount": 4,
-        "minCount": 4,
+        "type": "oblivion:elk",
+        "maxCount": 3,
+        "minCount": 1,
         "weight": 8
       },
       {
-        "type": "minecraft:horse",
+        "type": "oblivion:turkey",
         "maxCount": 6,
         "minCount": 2,
         "weight": 5
-      },
-      {
-        "type": "minecraft:donkey",
-        "maxCount": 3,
-        "minCount": 1,
-        "weight": 1
       }
     ],
     "misc": [],
     "monster": [
       {
-        "type": "minecraft:spider",
-        "maxCount": 4,
-        "minCount": 4,
+        "type": "oblivion:elysian_elk",
+        "maxCount": 2,
+        "minCount": 1,
         "weight": 100
       },
       {
-        "type": "minecraft:zombie",
+        "type": "oblivion:elysian_shaman",
         "maxCount": 4,
         "minCount": 4,
         "weight": 95
       },
       {
-        "type": "minecraft:zombie_villager",
+        "type": "oblivion:elysian_wolf",
         "maxCount": 1,
         "minCount": 1,
-        "weight": 5
+        "weight": 80
       },
       {
-        "type": "minecraft:skeleton",
+        "type": "oblivion:shroom",
         "maxCount": 4,
         "minCount": 4,
-        "weight": 100
-      },
-      {
-        "type": "minecraft:creeper",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 100
-      },
-      {
-        "type": "minecraft:slime",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 100
-      },
-      {
-        "type": "minecraft:enderman",
-        "maxCount": 4,
-        "minCount": 1,
-        "weight": 10
-      },
-      {
-        "type": "minecraft:witch",
-        "maxCount": 1,
-        "minCount": 1,
-        "weight": 5
+        "weight": 80
       }
     ],
     "underground_water_creature": [
