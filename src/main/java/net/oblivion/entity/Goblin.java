@@ -210,7 +210,6 @@ public class Goblin extends HostileEntity {
         return this.dataTracker.get(SIZE);
     }
 
-    // Todo: Set correct base values
     public void setSize(int size, boolean heal) {
         this.dataTracker.set(SIZE, size);
         this.refreshPosition();
