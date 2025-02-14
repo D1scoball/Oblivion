@@ -36,8 +36,6 @@ public class WorldInit {
     }
 
     // Todo: Goblin item drop
-    // Set wood toolRequired and mixin into item isCorrectForDrops, maybe requires earlystage compat
-
     public static void init() {
     }
 }
