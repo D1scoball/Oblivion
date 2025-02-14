@@ -130,12 +130,17 @@ public class GuidelightBlockEntity extends BlockEntity {
                 world.updateListeners(pos, state, state, 0);
             }
             if (blockEntity.isActive() && blockEntity.getTeleportTick() >= 0) {
-                List<LivingEntity> entities = world.getEntitiesByClass(LivingEntity.class, blockEntity.box, EntityPredicates.EXCEPT_SPECTATOR);
-                if (!entities.isEmpty() && entities.stream().anyMatch(entity -> !blockEntity.lastTeleportedIds.contains(entity.getId())) && entities.stream().anyMatch(entity -> entity instanceof ServerPlayerEntity)) {
-                    blockEntity.setEntityNearby(true);
-                } else {
+                if (world.getRegistryKey() != WorldInit.OBLIVION_WORLD && world.getRegistryKey() != World.OVERWORLD) {
                     blockEntity.setEntityNearby(false);
                     blockEntity.lastTeleportedIds.clear();
+                } else {
+                    List<LivingEntity> entities = world.getEntitiesByClass(LivingEntity.class, blockEntity.box, EntityPredicates.EXCEPT_SPECTATOR);
+                    if (!entities.isEmpty() && entities.stream().anyMatch(entity -> !blockEntity.lastTeleportedIds.contains(entity.getId())) && entities.stream().anyMatch(entity -> entity instanceof ServerPlayerEntity)) {
+                        blockEntity.setEntityNearby(true);
+                    } else {
+                        blockEntity.setEntityNearby(false);
+                        blockEntity.lastTeleportedIds.clear();
+                    }
                 }
             }
         }
