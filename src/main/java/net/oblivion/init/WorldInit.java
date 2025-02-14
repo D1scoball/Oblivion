@@ -37,7 +37,6 @@ public class WorldInit {
 
     // Todo: Goblin item drop
     // Set wood toolRequired and mixin into item isCorrectForDrops, maybe requires earlystage compat
-    // Solarite and Scarlet require wood handles
 
     public static void init() {
     }
