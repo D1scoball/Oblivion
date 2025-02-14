@@ -1,0 +1,26 @@
+{
+  "type": "oblivion:quicksand",
+  "config": {
+    "size": 2,
+    "depth": 2,
+    "requires_block_below": true,
+    "rock_count": 3,
+    "state_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "oblivion:quicksand"
+      }
+    },
+    "valid_blocks": [
+      "minecraft:stone",
+      "minecraft:granite",
+      "minecraft:diorite",
+      "minecraft:andesite",
+      "minecraft:deepslate",
+      "minecraft:tuff",
+      "minecraft:calcite",
+      "minecraft:dirt",
+      "minecraft:grass_block"
+    ]
+  }
+}

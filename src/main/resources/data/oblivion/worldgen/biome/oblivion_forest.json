@@ -73,7 +73,8 @@
     ],
     [],
     [
-      "minecraft:spring_water"
+      "minecraft:spring_water",
+      "oblivion:quicksand"
     ],
     [
       "minecraft:glow_lichen",

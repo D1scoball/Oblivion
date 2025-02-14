@@ -18,10 +18,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.gen.feature.ConfiguredFeatures;
 import net.oblivion.OblivionMain;
-import net.oblivion.block.DrillBlock;
-import net.oblivion.block.GuidelightBlock;
-import net.oblivion.block.MultiOreBlock;
-import net.oblivion.block.ShimmeringGrassBlock;
+import net.oblivion.block.*;
 import net.oblivion.block.entity.DrillBlockEntity;
 import net.oblivion.block.entity.GuidelightBlockEntity;
 import net.oblivion.block.entity.MultiOreBlockEntity;
@@ -44,7 +41,6 @@ public class BlockInit {
     public static final SaplingGenerator IRON_WOOD_SAPLING_GENERATOR = new SaplingGenerator("iron_wood", Optional.empty(), Optional.of(ConfiguredFeatures.of("iron_wood")), Optional.empty());
     public static final SaplingGenerator SILVER_BIRCH_SAPLING_GENERATOR = new SaplingGenerator("silver_birch", Optional.empty(), Optional.of(ConfiguredFeatures.of("silver_birch")), Optional.empty());
     public static final SaplingGenerator RUNE_WOOD_SAPLING_GENERATOR = new SaplingGenerator("rune_wood", Optional.empty(), Optional.of(ConfiguredFeatures.of("rune_wood")), Optional.empty());
-
 
     public static final Block IRON_WOOD_PLANKS = register("iron_wood_planks", 0, true, false, new Block(AbstractBlock.Settings.create().mapColor(MapColor.BROWN).instrument(NoteBlockInstrument.BASS).strength(4.0F, 6.0F).sounds(BlockSoundGroup.WOOD).burnable().requiresTool()));
     public static final Block IRON_WOOD_SAPLING = register("iron_wood_sapling", 0, true, false, new SaplingBlock(IRON_WOOD_SAPLING_GENERATOR, AbstractBlock.Settings.create().mapColor(MapColor.PINK).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.CHERRY_SAPLING).pistonBehavior(PistonBehavior.DESTROY).requiresTool()));
@@ -131,6 +127,8 @@ public class BlockInit {
 
     public static final Block SHIMMERING_GRASS = register("shimmering_grass", -1, true, false, new ShimmeringGrassBlock(AbstractBlock.Settings.create().mapColor(MapColor.DARK_GREEN).replaceable().noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).offset(AbstractBlock.OffsetType.XYZ).burnable().pistonBehavior(PistonBehavior.DESTROY).ticksRandomly()
             .luminance(Blocks.createLightLevelFromLitBlockState(9))));
+
+    public static final Block QUICKSAND = register("quicksand", -1, true, true, new QuicksandBlock(AbstractBlock.Settings.create().mapColor(MapColor.BROWN).strength(0.5f).sounds(BlockSoundGroup.ROOTED_DIRT).dynamicBounds().solidBlock(Blocks::never)));
 
     public static BlockEntityType<DrillBlockEntity> DRILL_BLOCK_ENTITY = Registry.register(Registries.BLOCK_ENTITY_TYPE, OblivionMain.identifierOf("drill_entity"),
             BlockEntityType.Builder.create(DrillBlockEntity::new, DRILL).build(null));
