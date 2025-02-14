@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "oblivion:rune_wood_stick"
+    },
+    "X": {
+      "item": "oblivion:solarite_ingot"
+    }
+  },
+  "pattern": [
+    "X",
+    "#",
+    "#"
+  ],
+  "result": {
+    "count": 1,
+    "id": "oblivion:solarite_shovel"
+  }
+}

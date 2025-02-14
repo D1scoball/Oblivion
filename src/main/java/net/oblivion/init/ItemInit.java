@@ -167,6 +167,9 @@ public class ItemInit {
     public static final Item ELYSIAN_BONE = register("elysian_bone", new Item(new Item.Settings()));
     public static final Item ELYSIAN_BONE_MEAL = register("elysian_bone_meal", new ElysianBoneMeal(new Item.Settings()));
 
+    public static final Item IRON_WOOD_STICK = register("iron_wood_stick", new Item(new Item.Settings()));
+    public static final Item RUNE_WOOD_STICK = register("rune_wood_stick", new Item(new Item.Settings()));
+
     private static Item register(String id, Item item) {
         if (item instanceof ToolItem) {
             TOOLS.add(item);

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "oblivion:iron_wood_stick"
+    },
+    "X": {
+      "item": "oblivion:scarlet_ingot"
+    }
+  },
+  "pattern": [
+    "XX",
+    " #",
+    " #"
+  ],
+  "result": {
+    "count": 1,
+    "id": "oblivion:scarlet_hoe"
+  }
+}
