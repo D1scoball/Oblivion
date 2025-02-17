@@ -1,11 +1,13 @@
 package net.oblivion.block;
 
 import com.mojang.serialization.MapCodec;
-import net.minecraft.block.*;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockRenderType;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.BlockWithEntity;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
-import net.minecraft.block.entity.ConduitBlockEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.StateManager;
@@ -23,10 +25,6 @@ import net.oblivion.init.BlockInit;
 import org.jetbrains.annotations.Nullable;
 
 public class DrillBlock extends BlockWithEntity {
-
-//    public static final MapCodec<BannerBlock> CODEC = RecordCodecBuilder.mapCodec(
-//            instance -> instance.group(DyeColor.CODEC.fieldOf("color").forGetter(AbstractBannerBlock::getColor), createSettingsCodec()).apply(instance, BannerBlock::new)
-//    );
 
     public static final DirectionProperty FACING = Properties.FACING;
     public static final BooleanProperty POWERED = Properties.POWERED;

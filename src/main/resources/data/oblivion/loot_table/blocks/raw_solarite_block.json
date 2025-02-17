@@ -26,7 +26,7 @@
                   }
                 }
               ],
-              "name": "minecraft:raw_solarite_block"
+              "name": "oblivion:raw_solarite_block"
             },
             {
               "type": "minecraft:item",
