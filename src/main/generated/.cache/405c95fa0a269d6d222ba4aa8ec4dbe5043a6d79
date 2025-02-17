@@ -1,10 +1,10 @@
-// 1.21.1	2025-02-14T15:50:40.3500178	Oblivion/Tags for minecraft:item
-359b6211f7f17201b656405777f0fb8e54718b98 data\minecraft\tags\item\leg_armor.json
-e794156e17d226a94805529a9207b353113a44ff data\minecraft\tags\item\foot_armor.json
-b5b8d0cf16023aa35c0936f3b5450514d0b7ab26 data\minecraft\tags\item\chest_armor.json
-1ec0ffab7ca1898eb41535c7a2ea2087fd6af049 data\minecraft\tags\item\pickaxes.json
-151c50dba2fb234233bb06894100eef122cc3232 data\minecraft\tags\item\hoes.json
-8427d810fc0e71b3dbddcddbc8f72b2d48dc5b9f data\minecraft\tags\item\head_armor.json
-5069b4f727e8147b551fcdaac14e545816a4eff3 data\minecraft\tags\item\shovels.json
-69430f65ca5f2e1c61b58a432cfb91064b55e1f6 data\minecraft\tags\item\axes.json
-090f694b265144c954515fe71e30aba8360a00a1 data\minecraft\tags\item\swords.json
+// 1.21.1	2025-02-17T10:14:56.6215287	Oblivion/Tags for minecraft:item
+689778ac79acb4139292be5040fe6aa554fc4858 data\minecraft\tags\item\foot_armor.json
+7c21ae80a69afde46c85881e0702c1899bb45857 data\minecraft\tags\item\leg_armor.json
+c4210a985f1a00c91668738dc202b58335e1a1c0 data\minecraft\tags\item\chest_armor.json
+85e10feb252bfa04210cfc5031f8d2fa3c7e3e5e data\minecraft\tags\item\pickaxes.json
+4629d9934c501d3362c704f801c870de85d9e3a0 data\minecraft\tags\item\hoes.json
+1665e609a43413b62db29a00abe6bbfa1addee5f data\minecraft\tags\item\head_armor.json
+763ab31b8cbf951fd0b1eaa7000e3da88cc2a368 data\minecraft\tags\item\shovels.json
+d09495a6bd86383c9e6cf194c082b9f0bb3f5f65 data\minecraft\tags\item\axes.json
+403539d7bfb43f77600120231989a8187d5ae812 data\minecraft\tags\item\swords.json

@@ -2,6 +2,10 @@
   "values": [
     "oblivion:fiery_netherite_block",
     "oblivion:drill",
-    "oblivion:fiery_ancient_debris"
+    "oblivion:fiery_ancient_debris",
+    "oblivion:scarlet_block",
+    "oblivion:raw_scarlet_block",
+    "oblivion:solarite_block",
+    "oblivion:raw_solarite_block"
   ]
 }

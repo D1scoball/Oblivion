@@ -16,8 +16,12 @@ public class ItemMixin {
     // New Set: add requiresTool() to block in BlockInit
     @Inject(method = "isCorrectForDrops", at = @At("HEAD"), cancellable = true)
     private void isCorrectForDropsMixin(ItemStack stack, BlockState state, CallbackInfoReturnable<Boolean> info) {
-        if (stack.isIn(ItemTags.AXES) && state.isIn(TagInit.IRON_WOOD)) {
-            info.setReturnValue(stack.isIn(TagInit.CORRECT_FOR_IRON_WOOD));
+        if (stack.isIn(ItemTags.AXES)) {
+            if (state.isIn(TagInit.IRON_WOOD)) {
+                info.setReturnValue(stack.isIn(TagInit.CORRECT_FOR_IRON_WOOD));
+            } else if (state.isIn(TagInit.RUNE_WOOD)) {
+                info.setReturnValue(stack.isIn(TagInit.CORRECT_FOR_RUNE_WOOD));
+            }
         }
     }
 }
