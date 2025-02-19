@@ -12,6 +12,7 @@
   "entity.oblivion.boar": "Boar",
   "entity.oblivion.turkey": "Turkey",
   "entity.oblivion.wooly_cow": "Wooly Cow",
+  "entity.oblivion.piranha": "Piranha",
 
   "item.oblivion.spawn_shlama": "Shlama Spawn Egg",
   "item.oblivion.spawn_elysian_elk": "Elysian Elk Spawn Egg",
@@ -24,6 +25,7 @@
   "item.oblivion.spawn_boar": "Boar Spawn Egg",
   "item.oblivion.spawn_turkey": "Turkey Spawn Egg",
   "item.oblivion.spawn_wooly_cow": "Wooly Cow Spawn Egg",
+  "item.oblivion.spawn_piranha": "Piranha Spawn Egg",
 
   "item.oblivion.shlamb": "Shlamb",
   "item.oblivion.cooked_shlamb": "Cooked Shlamb",
@@ -38,6 +40,7 @@
   "item.oblivion.elysian_bone_meal": "Elysian Bone Meal",
   "item.oblivion.iron_wood_stick": "Iron Wood Stick",
   "item.oblivion.rune_wood_stick": "Rune Wood Stick",
+  "item.oblivion.piranha_bucket": "Bucket of Piranha",
 
   "item.oblivion.solarite_axe": "Solarite Axe",
   "item.oblivion.solarite_boots": "Solarite Boots",

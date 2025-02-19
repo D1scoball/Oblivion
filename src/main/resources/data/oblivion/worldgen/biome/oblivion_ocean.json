@@ -138,10 +138,16 @@
     ],
     "water_creature": [
       {
+        "type": "oblivion:piranha",
+        "maxCount": 4,
+        "minCount": 1,
+        "weight": 2
+      },
+      {
         "type": "minecraft:squid",
         "maxCount": 4,
         "minCount": 1,
-        "weight": 1
+        "weight": 2
       },
       {
         "type": "minecraft:dolphin",

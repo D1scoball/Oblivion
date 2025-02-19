@@ -33,6 +33,7 @@ public class EntityInit {
     public static final EntityType<Boar> BOAR = register("boar", 4001544, 9724212, Boar.createBoarAttributes(), EntityType.Builder.create(Boar::new, SpawnGroup.CREATURE).dimensions(1.5F, 1.2F).build());
     public static final EntityType<Turkey> TURKEY = register("turkey", 1777190, 4801347, Turkey.createTurkeyAttributes(), EntityType.Builder.create(Turkey::new, SpawnGroup.CREATURE).dimensions(1.5F, 2.6F).passengerAttachments(new Vec3d(0.0f, 1.4f, 0.0f)).build());
     public static final EntityType<WoolyCow> WOOLY_COW = register("wooly_cow", 13926720, 16767926, WoolyCow.createWoolyCowAttributes(), EntityType.Builder.create(WoolyCow::new, SpawnGroup.CREATURE).dimensions(0.9F, 1.4F).eyeHeight(1.3F).passengerAttachments(1.36875F).build());
+    public static final EntityType<Piranha> PIRANHA = register("piranha", 3430802, 16035176, Piranha.createPiranhaAttributes(), EntityType.Builder.create(Piranha::new, SpawnGroup.WATER_AMBIENT).dimensions(0.5F, 0.4F).build());
 
     @SuppressWarnings("unchecked")
     private static <T extends Entity> EntityType<T> register(String id, int primaryColor, int secondaryColor, DefaultAttributeContainer.Builder builder, EntityType<T> entityType) {
@@ -58,7 +59,8 @@ public class EntityInit {
         SpawnRestriction.register(EntityInit.ELK, SpawnLocationTypes.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, AnimalEntity::isValidNaturalSpawn);
         SpawnRestriction.register(EntityInit.BOAR, SpawnLocationTypes.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, AnimalEntity::isValidNaturalSpawn);
         SpawnRestriction.register(EntityInit.TURKEY, SpawnLocationTypes.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, AnimalEntity::isValidNaturalSpawn);
-        SpawnRestriction.register(EntityInit.WOOLY_COW, SpawnLocationTypes.UNRESTRICTED, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, AnimalEntity::isValidNaturalSpawn);
+        SpawnRestriction.register(EntityInit.WOOLY_COW, SpawnLocationTypes.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, AnimalEntity::isValidNaturalSpawn);
+        SpawnRestriction.register(EntityInit.PIRANHA, SpawnLocationTypes.IN_WATER, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, Piranha::canPiranhaSpawn);
     }
 
 }

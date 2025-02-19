@@ -3,12 +3,16 @@ package net.oblivion.init;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.component.ComponentType;
+import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.FoodComponent;
+import net.minecraft.component.type.NbtComponent;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
@@ -154,6 +158,9 @@ public class ItemInit {
                     Text.translatable("item.oblivion.smithing_template.fiery_netherite_upgrade.additions_slot_description"), List.of(Identifier.of("item/empty_armor_slot_helmet"),
                     Identifier.of("item/empty_armor_slot_chestplate"), Identifier.of("item/empty_armor_slot_leggings"), Identifier.of("item/empty_armor_slot_boots")),
                     List.of(OblivionMain.identifierOf("item/empty_slot_fiery_netherite_ingot"))));
+
+    public static final Item PIRANHA_BUCKET = register("piranha_bucket", new EntityBucketItem(
+            EntityInit.PIRANHA, Fluids.WATER, SoundEvents.ITEM_BUCKET_EMPTY_FISH, new Item.Settings().maxCount(1).component(DataComponentTypes.BUCKET_ENTITY_DATA, NbtComponent.DEFAULT)));
 
     public static final Item SHLAMB = register("shlamb", new Item(new Item.Settings().food(new FoodComponent.Builder().nutrition(3).saturationModifier(0.6F).build())));
     public static final Item COOKED_SHLAMB = register("cooked_shlamb", new Item(new Item.Settings().food(new FoodComponent.Builder().nutrition(7).saturationModifier(1.6F).build())));

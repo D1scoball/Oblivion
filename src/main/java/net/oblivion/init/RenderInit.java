@@ -31,7 +31,7 @@ public class RenderInit {
 
     public static final EntityModelLayer DRILL_LAYER = new EntityModelLayer(OblivionMain.identifierOf("drill_render_layer"), "drill_render_layer");
 
-    public static void init(){
+    public static void init() {
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.IRON_WOOD_SAPLING, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.IRON_WOOD_DOOR, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(BlockInit.IRON_WOOD_TRAPDOOR, RenderLayer.getCutout());
@@ -75,6 +75,7 @@ public class RenderInit {
         EntityRendererRegistry.register(EntityInit.BOAR, BoarRenderer::new);
         EntityRendererRegistry.register(EntityInit.TURKEY, TurkeyRenderer::new);
         EntityRendererRegistry.register(EntityInit.WOOLY_COW, WoolyCowRenderer::new);
+        EntityRendererRegistry.register(EntityInit.PIRANHA, PiranhaRenderer::new);
         // Entity Model
         EntityModelLayerRegistry.registerModelLayer(SHLAMA_LAYER, ShlamaModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(ELYSIAN_ELK_LAYER, ElysianElkModel::getTexturedModelData);
