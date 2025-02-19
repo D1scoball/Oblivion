@@ -128,7 +128,7 @@ public class BlockInit {
     public static final Block SHIMMERING_GRASS = register("shimmering_grass", -1, true, false, new ShimmeringGrassBlock(AbstractBlock.Settings.create().mapColor(MapColor.DARK_GREEN).replaceable().noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS).offset(AbstractBlock.OffsetType.XYZ).burnable().pistonBehavior(PistonBehavior.DESTROY).ticksRandomly()
             .luminance(Blocks.createLightLevelFromLitBlockState(9))));
 
-    public static final Block QUICKSAND = register("quicksand", -1, true, true, new QuicksandBlock(AbstractBlock.Settings.create().mapColor(MapColor.BROWN).strength(0.5f).sounds(BlockSoundGroup.ROOTED_DIRT).dynamicBounds().solidBlock(Blocks::never)));
+    public static final Block QUICKSAND = register("quicksand", -1, true, false, new QuicksandBlock(AbstractBlock.Settings.create().mapColor(MapColor.BROWN).strength(1.5f).sounds(BlockSoundGroup.ROOTED_DIRT).dynamicBounds().solidBlock(Blocks::never)));
 
     public static BlockEntityType<DrillBlockEntity> DRILL_BLOCK_ENTITY = Registry.register(Registries.BLOCK_ENTITY_TYPE, OblivionMain.identifierOf("drill_entity"),
             BlockEntityType.Builder.create(DrillBlockEntity::new, DRILL).build(null));

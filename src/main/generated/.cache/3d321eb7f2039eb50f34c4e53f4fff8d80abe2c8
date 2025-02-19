@@ -1,4 +1,4 @@
-// 1.21.1	2025-02-17T10:14:56.6225318	Oblivion/Model Definitions
+// 1.21.1	2025-02-17T14:51:04.652332	Oblivion/Model Definitions
 1a959dcb565176fe0ab415d1ca0e57808d5c86b2 assets\oblivion\models\item\boar_meat.json
 774b17fd30ffd0b4d45df61e1fc64ab98917de75 assets\oblivion\models\item\solarite_hoe.json
 e19e39c65ef99f39818ecc58d7c43ce9a573bd8f assets\oblivion\models\item\elysian_bone.json
@@ -8,18 +8,16 @@ e218ab855d00c6e27126bbe349e15a9f35bbba9a assets\oblivion\models\item\cooked_shla
 089a3d8c6384066650001509a4d424b20db803ef assets\oblivion\models\item\fiery_netherite_helmet.json
 598b4c8e070dcd5f3a6688fcf73e97c87a430aff assets\oblivion\blockstates\scarlet_block.json
 4fe34c20f534fe707dbd3f8c94675252cfae7f4c assets\oblivion\models\item\scarlet_helmet.json
-fb66a3167fe3178b5d3b4057984c240d55353714 assets\oblivion\models\item\quicksand.json
 717eb3e467175f5078307d306a05c36ff78a8a05 assets\oblivion\models\item\solarite_shovel.json
 e1dcbaec617826687e91faf6015faf2b2f4a3e25 assets\oblivion\models\item\raw_solarite_block.json
 a0714b11c26b43238dcd107df1ed06e5f5ad80a7 assets\oblivion\models\item\solarite_chestplate.json
-3142e643da60d4c879dc57cc65ecd57974ef0a19 assets\oblivion\models\block\quicksand.json
 5f7c25ed1cd64c79e137f8f04b4323703bad4720 assets\oblivion\models\item\fiery_netherite_block.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets\oblivion\models\item\spawn_elysian_shaman.json
 daa09b59b882955d656220fad728e37cbfe2502e assets\oblivion\models\item\scarlet_chestplate.json
 c1eb8cf98ee5e3ff0e2b83c794fc397479c49e7b assets\oblivion\models\item\solarite_sword.json
 96bbd07cd5a5ec309b288c4644a446405e155d1f assets\oblivion\models\item\scarlet_leggings.json
-d8feda7df9497efd32742836b393ae52162b849d assets\oblivion\models\item\turkey.json
 4a82f9d8dc034a5590661998d32f7580b820bd1c assets\oblivion\models\item\fiery_netherite_chestplate.json
+d8feda7df9497efd32742836b393ae52162b849d assets\oblivion\models\item\turkey.json
 e966c99e36a0bd847b57b8a64c1aec25b7fe7e64 assets\oblivion\models\item\scarlet_block.json
 a8c074165bc9d12cdf474f9b496a741e66381a44 assets\oblivion\models\item\fiery_netherite_upgrade_smithing_template.json
 4baf1006aca91ca8eb3bb66ea25a9a4d4713b050 assets\oblivion\models\item\iron_wood_stick.json
@@ -37,7 +35,6 @@ c8f6254d75cc8a2ef7e03eedd1afeee4f8ff725c assets\oblivion\models\item\fiery_nethe
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets\oblivion\models\item\spawn_elysian_wolf.json
 6376a8b7fad3599cc8c24a58523b252cae506b21 assets\oblivion\models\item\scarlet_shovel.json
 62967d536d79440e2641d893c054a65fc3bac9f1 assets\oblivion\models\block\solarite_block.json
-9a92c5d97c4f32a7a399cbcd9271b220f1d286cc assets\oblivion\blockstates\quicksand.json
 d5a8717bf6a445da0b060ffb89715e1bff4e588f assets\oblivion\models\item\scarlet_pickaxe.json
 55a1f44216850fdb5ace9e49047a03ef110862ef assets\oblivion\models\block\scarlet_block.json
 ed83b9d2a372c93e985431805ba80a60d3bcfda8 assets\oblivion\models\item\fiery_netherite_ingot.json
@@ -49,8 +46,8 @@ c3d4cd7d9df1e248ee52c5453137e27e396eb051 assets\oblivion\models\item\raw_solarit
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets\oblivion\models\item\spawn_turkey.json
 663449d79deb422fbded3efc313a81418f8bebb2 assets\oblivion\models\item\fiery_ancient_debris.json
 c87ed4a0740634dd81124a201ce0353d4cfde8d1 assets\oblivion\models\item\rune_wood_stick.json
-a4eda44f8405bfaa9584c52ee9999885a3aa2e58 assets\oblivion\models\block\fiery_netherite_block.json
 e75051339f000dc7479352072858e6501b241c3f assets\oblivion\models\item\solarite_axe.json
+a4eda44f8405bfaa9584c52ee9999885a3aa2e58 assets\oblivion\models\block\fiery_netherite_block.json
 fc0a197e9f8ea1104431d7d720a757e1c87b7751 assets\oblivion\blockstates\shimmering_grass.json
 e8aa362f5c765667abac19a8c89250c99a3594cc assets\oblivion\models\item\solarite_leggings.json
 264e37c5f2ec78299cc0201576cfeeceb3a25ff7 assets\oblivion\models\item\solarite_ingot.json
@@ -70,8 +67,8 @@ fd803f694a3df1e67e7de6456d791d0057e7594e assets\oblivion\models\item\scarlet_hoe
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets\oblivion\models\item\spawn_elk.json
 433140cabb3275a7d2eb0f8199bb427a70a5a23d assets\oblivion\models\item\fiery_netherite_pickaxe.json
 58e571e0eb08a5a4eadd42b1a2bdd873b013d86f assets\oblivion\models\item\fiery_netherite_hoe.json
-1304083a96474a11165f99bb7edad9833fdc5248 assets\oblivion\models\item\solarite_block.json
 dc238355f0372cd9f64f6e5b8a388de3153a7831 assets\oblivion\models\item\fiery_netherite_leggings.json
+1304083a96474a11165f99bb7edad9833fdc5248 assets\oblivion\models\item\solarite_block.json
 4e35b47e6b1e95244be5a12dc527e61dfc97ca55 assets\oblivion\models\item\fiery_netherite_sword.json
 838c7d8123d2e27a10f30cdb77b116bb8d60c087 assets\oblivion\models\item\cooked_venison.json
 a12cb641220cc03414ee11125642150a23ed8033 assets\oblivion\models\item\elysian_bone_meal.json
