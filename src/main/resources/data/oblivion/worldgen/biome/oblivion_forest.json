@@ -105,6 +105,12 @@
         "weight": 12
       },
       {
+        "type": "oblivion:horned_sheep",
+        "maxCount": 4,
+        "minCount": 4,
+        "weight": 12
+      },
+      {
         "type": "oblivion:treeder",
         "maxCount": 1,
         "minCount": 1,

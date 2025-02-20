@@ -10,7 +10,8 @@
     "client.BuiltinModelItemRendererMixin",
     "client.InGameOverlayRendererMixin",
     "client.ClientPlayerEntityMixin",
-    "client.WorldRenderMixin"
+    "client.WorldRenderMixin",
+    "client.QuadrupedEntityModelAccess"
   ],
   "injectors": {
     "defaultRequire": 1
