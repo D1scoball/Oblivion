@@ -19,7 +19,6 @@ public class OblivionMain implements ModInitializer {
         EventInit.init();
         ItemInit.init();
         SoundInit.init();
-        SpawnInit.init();
         TagInit.init();
         WorldInit.init();
         OblivionServerPacket.init();
