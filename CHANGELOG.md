@@ -1,6 +1,8 @@
 ### Added:
-- Added quicksand
+- Added entity tags
+- Added horned sheep
+- Added piranha
 ### Fixed:
-- Fixed data stuff
+- 
 ### Changed:
 - 
