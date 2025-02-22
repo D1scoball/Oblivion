@@ -1,0 +1,159 @@
+{
+  "melee_20": {
+    "replace": false,
+    "skills": {
+      "melee": 20
+    },
+    "blocks": [],
+    "crafting": [],
+    "entities": [],
+    "items": [
+      "oblivion:solarite_sword",
+      "oblivion:scarlet_sword",
+      "oblivion:fiery_netherite_sword"
+    ],
+    "mining": []
+  },
+  "defense_20": {
+    "replace": false,
+    "skills": {
+      "defense": 20
+    },
+    "blocks": [],
+    "crafting": [],
+    "entities": [],
+    "items": [
+      "oblivion:solarite_helmet",
+      "oblivion:solarite_chestplate",
+      "oblivion:solarite_leggings",
+      "oblivion:solarite_boots",
+      "oblivion:fiery_netherite_helmet",
+      "oblivion:fiery_netherite_chestplate",
+      "oblivion:fiery_netherite_leggings",
+      "oblivion:fiery_netherite_boots",
+      "oblivion:scarlet_helmet",
+      "oblivion:scarlet_chestplate",
+      "oblivion:scarlet_leggings",
+      "oblivion:scarlet_boots"
+    ],
+    "mining": []
+  },
+  "smithing_20": {
+    "replace": false,
+    "skills": {
+      "smithing": 20
+    },
+    "blocks": [],
+    "crafting": [
+      "oblivion:solarite_shovel",
+      "oblivion:scarlet_shovel",
+      "oblivion:fiery_netherite_shovel",
+      "oblivion:solarite_sword",
+      "oblivion:scarlet_sword",
+      "oblivion:fiery_netherite_sword",
+      "oblivion:solarite_helmet",
+      "oblivion:solarite_chestplate",
+      "oblivion:solarite_leggings",
+      "oblivion:solarite_boots",
+      "oblivion:fiery_netherite_helmet",
+      "oblivion:fiery_netherite_chestplate",
+      "oblivion:fiery_netherite_leggings",
+      "oblivion:fiery_netherite_boots",
+      "oblivion:scarlet_helmet",
+      "oblivion:scarlet_chestplate",
+      "oblivion:scarlet_leggings",
+      "oblivion:scarlet_boots",
+      "oblivion:solarite_axe",
+      "oblivion:scarlet_axe",
+      "oblivion:fiery_netherite_axe",
+      "oblivion:solarite_hoe",
+      "oblivion:solarite_hoe",
+      "oblivion:fiery_netherite_hoe",
+      "oblivion:solarite_pickaxe",
+      "oblivion:scarlet_pickaxe",
+      "oblivion:fiery_netherite_pickaxe"
+    ],
+    "entities": [],
+    "items": [],
+    "mining": []
+  },
+  "farming_8": {
+    "replace": false,
+    "skills": {
+      "farming": 8
+    },
+    "blocks": [],
+    "crafting": [],
+    "entities": [],
+    "items": [
+      "oblivion:piranha_bucket"
+    ],
+    "mining": []
+  },
+  "farming_20": {
+    "replace": false,
+    "skills": {
+      "farming": 20
+    },
+    "blocks": [],
+    "crafting": [],
+    "entities": [],
+    "items": [
+      "oblivion:solarite_axe",
+      "oblivion:scarlet_axe",
+      "oblivion:fiery_netherite_axe",
+      "oblivion:solarite_hoe",
+      "oblivion:solarite_hoe",
+      "oblivion:fiery_netherite_hoe"
+    ],
+    "mining": []
+  },
+  "mining_12": {
+    "replace": false,
+    "skills": {
+      "mining": 12
+    },
+    "blocks": [
+      "oblivion:drill"
+    ],
+    "crafting": [],
+    "entities": [],
+    "items": [],
+    "mining": []
+  },
+  "mining_20": {
+    "replace": false,
+    "skills": {
+      "mining": 20
+    },
+    "blocks": [
+      "oblivion:fiery_netherite_block",
+      "oblivion:scarlet_block",
+      "oblivion:solarite_block",
+      "oblivion:fiery_ancient_debris",
+      "oblivion:raw_scarlet_block",
+      "oblivion:raw_solarite_block"
+    ],
+    "crafting": [],
+    "entities": [],
+    "items": [
+      "oblivion:solarite_pickaxe",
+      "oblivion:scarlet_pickaxe",
+      "oblivion:fiery_netherite_pickaxe"
+    ],
+    "mining": []
+  },
+  "magic_12": {
+    "replace": false,
+    "skills": {
+      "mining": 12
+    },
+    "blocks": [
+      "oblivion:guidelight"
+    ],
+    "crafting": [],
+    "entities": [],
+    "items": [],
+    "mining": []
+  }
+}
