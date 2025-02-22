@@ -2,11 +2,14 @@ package net.oblivion.world.feature;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
 import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.util.FeatureContext;
+import net.oblivion.init.BlockInit;
 
 public class QuicksandFeature extends Feature<QuicksandFeatureConfig> {
 
@@ -33,7 +36,11 @@ public class QuicksandFeature extends Feature<QuicksandFeatureConfig> {
                     if (pos.getY() == blockPos.getY() && blockPos.toCenterPos().distanceTo(pos.toCenterPos()) > quicksandFeatureConfig.size && structureWorldAccess.getRandom().nextFloat() < 0.8f) {
                         continue;
                     }
-                    structureWorldAccess.setBlockState(pos, quicksandFeatureConfig.stateProvider.get(structureWorldAccess.getRandom(), pos), Block.NOTIFY_LISTENERS);
+                    BlockState state = quicksandFeatureConfig.stateProvider.get(structureWorldAccess.getRandom(), pos);
+                    if (state.isOf(BlockInit.QUICKSAND) && structureWorldAccess.getBlockState(pos.up()).isOf(BlockInit.QUICKSAND)) {
+                        state = state.with(Properties.BOTTOM, true);
+                    }
+                    structureWorldAccess.setBlockState(pos, state, Block.NOTIFY_LISTENERS);
                 }
 
                 return true;

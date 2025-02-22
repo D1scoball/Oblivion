@@ -13,12 +13,6 @@
     },
     "valid_blocks": [
       "minecraft:stone",
-      "minecraft:granite",
-      "minecraft:diorite",
-      "minecraft:andesite",
-      "minecraft:deepslate",
-      "minecraft:tuff",
-      "minecraft:calcite",
       "minecraft:dirt",
       "minecraft:grass_block"
     ]
