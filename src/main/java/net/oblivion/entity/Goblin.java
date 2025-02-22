@@ -20,7 +20,6 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.registry.tag.DamageTypeTags;
-import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
@@ -32,6 +31,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.oblivion.entity.goal.ComeTogetherGoal;
 import net.oblivion.init.SoundInit;
+import net.oblivion.init.TagInit;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
@@ -139,7 +139,7 @@ public class Goblin extends HostileEntity {
         this.setSize(this.getRandom().nextInt(3) + 1, true);
         if (this.getRandom().nextFloat() <= 0.5f) {
             this.equipStack(EquipmentSlot.CHEST, new ItemStack(Items.IRON_CHESTPLATE));
-            Optional<RegistryEntry<Item>> optional = Registries.ITEM.getRandomEntry(ItemTags.SWORDS, this.getRandom());
+            Optional<RegistryEntry<Item>> optional = Registries.ITEM.getRandomEntry(TagInit.GOBLIN_HOLDABLE, this.getRandom());
             optional.ifPresent(itemRegistryEntry -> this.equipStack(EquipmentSlot.MAINHAND, new ItemStack(itemRegistryEntry)));
             if (this.getRandom().nextFloat() <= 0.5f) {
                 this.equipStack(EquipmentSlot.OFFHAND, new ItemStack(Items.SHIELD));

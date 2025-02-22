@@ -1,5 +1,5 @@
 ### Added:
-- 
+- Added goblin holdable tag
 ### Fixed:
 - 
 ### Changed:

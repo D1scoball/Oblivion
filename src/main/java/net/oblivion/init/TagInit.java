@@ -8,7 +8,6 @@ import net.oblivion.OblivionMain;
 
 public class TagInit {
 
-    // Block
     public static final TagKey<Block> GUIDELIGHT_BASE_BLOCKS = TagKey.of(RegistryKeys.BLOCK, OblivionMain.identifierOf("guidelight_base"));
 
     public static final TagKey<Block> INCORRECT_FOR_FIERY_NETHERITE_TOOL = TagKey.of(RegistryKeys.BLOCK, OblivionMain.identifierOf("incorrect_for_fiery_netherite_tool"));
@@ -25,6 +24,8 @@ public class TagInit {
 
     public static final TagKey<Block> RUNE_WOOD = TagKey.of(RegistryKeys.BLOCK, OblivionMain.identifierOf("rune_wood"));
     public static final TagKey<Item> CORRECT_FOR_RUNE_WOOD = TagKey.of(RegistryKeys.ITEM, OblivionMain.identifierOf("correct_for_rune_wood"));
+
+    public static final TagKey<Item> GOBLIN_HOLDABLE = TagKey.of(RegistryKeys.ITEM, OblivionMain.identifierOf("goblin_holdable"));
 
     public static void init(){
     }
